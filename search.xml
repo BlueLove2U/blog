@@ -3,7 +3,28 @@
   <entry>
     <title>你好3月</title>
     <url>/blog/2023/03/01/%E4%BD%A0%E5%A5%BD3%E6%9C%88/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content><![CDATA[<blockquote>
+<p>[!NOTE]</p>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+</blockquote>
+<blockquote>
+<p>[!NOTE]<br>Highlights information that users should take into account, even when skimming.</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]<br>Optional information to help a user be more successful.</p>
+</blockquote>
+<blockquote>
+<p>[!IMPORTANT]<br>Crucial information necessary for users to succeed.</p>
+</blockquote>
+<blockquote>
+<p>[!WARNING]<br>Critical content demanding immediate user attention due to potential risks.</p>
+</blockquote>
+<blockquote>
+<p>[!CAUTION]<br>Negative potential consequences of an action.</p>
+</blockquote>
+<blockquote>
+<p><strong>Warning</strong><br>This is a warning</p>
+</blockquote>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
