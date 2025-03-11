@@ -7,24 +7,47 @@
 <p>[!NOTE]</p>
 <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 </blockquote>
-<blockquote>
-<p>[!NOTE]<br>Highlights information that users should take into account, even when skimming.</p>
-</blockquote>
-<blockquote>
-<p>[!TIP]<br>Optional information to help a user be more successful.</p>
-</blockquote>
-<blockquote>
-<p>[!IMPORTANT]<br>Crucial information necessary for users to succeed.</p>
-</blockquote>
-<blockquote>
-<p>[!WARNING]<br>Critical content demanding immediate user attention due to potential risks.</p>
-</blockquote>
-<blockquote>
-<p>[!CAUTION]<br>Negative potential consequences of an action.</p>
-</blockquote>
-<blockquote>
-<p><strong>Warning</strong><br>This is a warning</p>
-</blockquote>
+<p>除了计算机编程外，我想不出还有其他让我感兴趣的工作。<br>我可以无中生有地创造出精美的范式和结构，<br>在此过程中也解决了无数的小谜团。<br>I can’t think of any other job other than computer programming that interests me.<br>I can create beautiful paradigms and structures out of nothing,<br>Countless small mysteries are also solved in the process.</p>
+<div class="note modern"><p>默认 提示块标签</p>
+</div>
+
+<div class="note default flat"><p>default 提示块标签</p>
+</div>
+
+<div class="note primary disabled"><p>primary 提示块标签</p>
+</div>
+
+<div class="note success flat"><p>success 提示块标签</p>
+</div>
+
+<div class="note info simple"><p>info simple 提示块标签</p>
+</div>
+
+<div class="note info flat"><p>info flat 提示块标签</p>
+</div>
+
+<div class="note warning simple"><p>warning 提示块标签</p>
+</div>
+
+<div class="note danger simple"><p>danger 提示块标签</p>
+</div>
+
+
+<div class="note icon-padding simple"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p>
+</div>
+<div class="note blue icon-padding simple"><i class="note-icon fas fa-bullhorn"></i><p>2021 年快到了….</p>
+</div>
+<div class="note pink icon-padding simple"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p>
+</div>
+<div class="note red icon-padding simple"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p>
+</div>
+<div class="note orange icon-padding simple"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p>
+</div>
+<div class="note purple icon-padding simple"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p>
+</div>
+<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p>绿色 开始火箭</p>
+</div>
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -43,6 +66,10 @@
 
 <h3 id="Math-Test"><a href="#Math-Test" class="headerlink" title="Math Test"></a>Math Test</h3><p>$$<br>D(x) &#x3D; \begin{cases}<br>\lim\limits_{x \to 0} \frac{a^x}{b+c}, &amp; x&lt;3 \<br>\pi, &amp; x&#x3D;3 \<br>\int_{a}^{3b}x_{ij}+e^2 \mathrm{d}x,&amp; x&gt;3 \<br>\end{cases}<br>$$</p>
 <p>行内公式：$D(x) &#x3D; \begin{cases}<br>\lim\limits_{x \to 0} \frac{a^x}{b+c}, &amp; x&lt;3 \<br>\pi, &amp; x&#x3D;3 \<br>\int_{a}^{3b}x_{ij}+e^2 \mathrm{d}x,&amp; x&gt;3 \<br>\end{cases}$</p>
+<h3 id="Mermaid-Test"><a href="#Mermaid-Test" class="headerlink" title="Mermaid Test"></a>Mermaid Test</h3><pre><code class="highlight mermaid">flowchart LR
+    Start --&gt; Stop
+</code></pre>
+
 ]]></content>
       <categories>
         <category>考研项目</category>
