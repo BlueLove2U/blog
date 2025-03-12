@@ -1,8 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>你好3月</title>
-    <url>/blog/2023/03/01/%E4%BD%A0%E5%A5%BD3%E6%9C%88/</url>
+    <title>搭建一个自己的博客（一）：前言</title>
+    <url>/blog/2025/03/11/e34678730000/</url>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p>系列 · 搭建一个自己的博客<br>摘要：本文主要介绍了作者搭建博客的背景和一些相关的技术知识。</p>
+</div>
+
+<div class="note blue icon-padding flat"><i class="note-icon fa-solid fa-seedling"></i><p>一直也想有自己的博客，可以写一些自己的所思所想。但是，常见的博客大都是第三方平台提供的，如CSDN、知乎、简书、博客园、掘金等。因为这些第三方提供的博客可能会有一些广告，我并不喜欢这样，所以才久久未使用它们来搭建自己的博客，只是在电脑本地写一些文章。<br>最近在查找资料的时候，经常会见到一些博主搭建的网站，正是自己想搭建的博客的样子。它们的网址常常以<code>github.io</code>结尾。探索之下才了解到了 GitHub Pages ，也才知道原来还可以有静态博客。<br>于是，我便着手开始了搭建一个自己的博客的工作。陆陆续续地忙碌了三、四天，才基本将博客搭建起来。<br>为了记录这段自己搭建博客的经历，也为了后续更方便地维护博客，便写下了这个系列《搭建一个自己的博客》。<br>本文是这个系列的第一篇文章。</p>
+</div>
+
+
+
+<h2 id="什么是博客"><a href="#什么是博客" class="headerlink" title="什么是博客"></a>什么是博客</h2><p>“博客”其实是 Blog 的音译，为 Web Log 的混成词。其正式名称为网络日记；又音译为“部落格”“部落阁”等。写博客的人被称为 Blogger，也称为“博客”“博主”“部落客”等。有时也用“Blogger”指博客平台。</p>
+<h2 id="搭建博客的方案"><a href="#搭建博客的方案" class="headerlink" title="搭建博客的方案"></a>搭建博客的方案</h2><h3 id="方案一：第三方平台（CSDN等）"><a href="#方案一：第三方平台（CSDN等）" class="headerlink" title="方案一：第三方平台（CSDN等）"></a>方案一：第三方平台（CSDN等）</h3><ul>
+<li>优点：<ul>
+<li>零技术门槛：无需编程或服务器知识，注册即可使用，适合非技术用户。</li>
+<li>专注内容创作：内置编辑器支持直接发布，无需关注技术细节。</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>自定义受限：界面风格和功能受平台限制，无法完全自主设计。</li>
+<li>平台依赖风险：数据归属权在平台方，迁移或备份困难。</li>
+</ul>
+</li>
+</ul>
+<h3 id="方案二：静态网站生成器（Hexo、Jekyll、Hugo）-免费托管（GitHub-Pages、Vercel）"><a href="#方案二：静态网站生成器（Hexo、Jekyll、Hugo）-免费托管（GitHub-Pages、Vercel）" class="headerlink" title="方案二：静态网站生成器（Hexo、Jekyll、Hugo）+ 免费托管（GitHub Pages、Vercel）"></a>方案二：静态网站生成器（Hexo、Jekyll、Hugo）+ 免费托管（GitHub Pages、Vercel）</h3><ul>
+<li>核心方案：<ul>
+<li><a href="https://jekyllrb.com/">Jekyll</a>：集成于 GitHub Pages ，原生支持，适合<code>Ruby</code>开发者。</li>
+<li><a href="https://gohugo.io/">Hugo</a>：自称“世界上最快的网站构建框架”。它编译速度极快，无依赖，适合追求高效的用户。</li>
+<li><a href="https://hexo.io/zh-cn/index.html">Hexo</a>：自称“快速、简洁且高效的博客框架”。它基于<code>Node.js</code>，主题丰富，支持<code>Markdown</code>快速生成静态页面。</li>
+</ul>
+</li>
+<li>优点：<ul>
+<li>零成本：依托 GitHub Pages、Vercel 等免费托管服务，无需服务器费用。</li>
+<li>高度可定制：支持自定义主题、插件（如评论系统、<code>SEO</code>优化）。</li>
+<li>技术可控性：数据本地存储，版本管理通过<code>Git</code>实现。</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>学习成本较高：需掌握命令行、<code>Git</code>和静态生成器配置。</li>
+<li>动态功能缺失：无法直接支持登录、数据库交互等复杂功能。</li>
+</ul>
+</li>
+</ul>
+<div class="note info flat"><p>SEO，全称是 Search Engine Optimization，即搜索引擎优化，目标是通过技术手段和内容策略，提升网站在搜索引擎（如 Google、百度）的搜索结果中的自然排名，吸引更多免费流量。</p>
+<p>对静态博客而言，需结合技术优化（速度、结构）与内容策略（关键词、外链）实现长期流量增长。</p>
+<ul>
+<li>推荐工具：Google Analytics（流量分析）、Screaming Frog（技术审计）、SEMrush（竞品分析）。</li>
+</ul>
+</div>
+
+<h3 id="方案三：内容管理系统（WordPress、Ghost）-自购服务器"><a href="#方案三：内容管理系统（WordPress、Ghost）-自购服务器" class="headerlink" title="方案三：内容管理系统（WordPress、Ghost）+ 自购服务器"></a>方案三：内容管理系统（WordPress、Ghost）+ 自购服务器</h3><ul>
+<li><p>优点：</p>
+<ul>
+<li>功能全面：支持后台管理、多用户协作、数据库集成等动态功能。</li>
+<li>主题生态成熟：WordPress 拥有海量插件和主题，扩展性强。</li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li>运维成本高：需自行购买域名、服务器并维护安全性。</li>
+<li>性能负担：动态页面生成速度较慢，对服务器资源要求较高。</li>
+</ul>
+</li>
+</ul>
+<h3 id="方案四：手写前端代码（HTML-CSS-JS）-静态托管"><a href="#方案四：手写前端代码（HTML-CSS-JS）-静态托管" class="headerlink" title="方案四：手写前端代码（HTML&#x2F;CSS&#x2F;JS）+ 静态托管"></a>方案四：手写前端代码（HTML&#x2F;CSS&#x2F;JS）+ 静态托管</h3><ul>
+<li><p>优点：</p>
+<ul>
+<li>完全自主控制：从设计到功能均可自由实现，适合前端开发者。</li>
+<li>极致轻量化：无框架依赖，页面加载速度最快。</li>
+</ul>
+</li>
+<li><p>缺点：</p>
+<ul>
+<li>开发效率低：需从零编写代码，内容更新和维护成本高。</li>
+<li>功能重复造轮子：评论、搜索等基础功能需自行开发。</li>
+</ul>
+</li>
+</ul>
+<h3 id="综合对比"><a href="#综合对比" class="headerlink" title="综合对比"></a>综合对比</h3><table>
+<thead>
+<tr>
+<th align="center">方案</th>
+<th align="center">适合人群</th>
+<th align="center">成本</th>
+<th align="center">技术门槛</th>
+<th align="center">扩展性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">第三方平台</td>
+<td align="center">非技术用户、快速发布</td>
+<td align="center">免费</td>
+<td align="center">低</td>
+<td align="center">低</td>
+</tr>
+<tr>
+<td align="center">静态生成器 + 免费托管</td>
+<td align="center">开发者、技术博主</td>
+<td align="center">免费</td>
+<td align="center">中高</td>
+<td align="center">高</td>
+</tr>
+<tr>
+<td align="center">CMS + 自购服务器</td>
+<td align="center">企业、多用户需求</td>
+<td align="center">中高</td>
+<td align="center">中</td>
+<td align="center">极高</td>
+</tr>
+<tr>
+<td align="center">手写前端 + 托管</td>
+<td align="center">前端工程师、极简主义</td>
+<td align="center">免费</td>
+<td align="center">高</td>
+<td align="center">中</td>
+</tr>
+</tbody></table>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>追求零成本与自由度：优先选择“Hexo&#x2F;Jekyll + GitHub Pages”。</li>
+<li>需动态功能与后台管理：考虑“WordPress + 自购服务器”。</li>
+<li>非技术用户快速建站：直接使用第三方平台。</li>
+</ul>
+<div class="note success flat"><p>我的选择：“Hexo + GitHub Pages”。主要原因：方案免费、框架成熟、主题丰富。</p>
+</div>
+
+
+
+<h2 id="什么是GitHub-Pages？"><a href="#什么是GitHub-Pages？" class="headerlink" title="什么是GitHub Pages？"></a>什么是GitHub Pages？</h2><p>GitHub Pages 是 GitHub 提供的静态站点托管服务，可直接从仓库获取<code>HTML</code>、<code>CSS</code>、<code>JavaScript</code> 等文件，并自动构建发布为可访问的网页，无需后端服务；专为个人、组织或项目提供免费、轻量级的网站托管能力，适用于博客、文档、作品集等场景。</p>
+<p>GitHub Pages 的核心功能特性是免费托管与自动部署。它支持公开仓库（GitHub Free）及部分私有仓库（需 GitHub Pro&#x2F;Team 等订阅），每次代码提交后自动触发站点更新；支持自定义域名，可将独立域名（如 example.com）绑定至 GitHub Pages，增强品牌标识。</p>
+<p>GitHub Pages 兼容很多优秀的静态网站生成器框架，包括Jekyll、Hugo、Hexo等。</p>
+<ul>
+<li><p><strong>Jekyl</strong>：Jekyll 是一个基于<code>Ruby</code>的静态站点生成器，它通过<code>Markdown</code>文件和模板来生成静态网站。Jekyll 的社区非常庞大，提供了丰富的插件和主题支持。尽管使用起来需要一定的<code>Ruby</code>语言基础，但其强大的功能和丰富的资源使其成为许多开发者的首选。</p>
+</li>
+<li><p><strong>Hugo</strong>：Hugo 是一个使用<code>Go</code>语言编写的静态网站生成器，以其极快的生成速度和简洁的界面著称。Hugo 的安装和使用都非常简单，只需要一个二进制文件即可进行本地调试和生成静态页面。Hugo 支持<code>Markdown</code>格式的文章自动转换为静态网页，并且内置了web服务器，方便在修改后即时预览效果。</p>
+</li>
+<li><p><strong>Hexo</strong>：Hexo 是一个基于<code>Node.js</code>的静态博客网站生成器，适合熟悉<code>JavaScript</code>的用户。Hexo提供了丰富的插件和主题，能够快速生成个性化的博客网站。使用 Hexo 之前需要安装<code>Git</code>和<code>Node.js</code>，但一旦安装完成，配置和使用都非常简单。</p>
+</li>
+</ul>
+<p>总之，GitHub Pages 通过静态托管+自动化构建，为开发者提供了零成本、高效率的网站发布方案，尤其适合个人技术展示与开源项目管理。其与<code>Git</code>的深度集成和扩展性（如 Jekyll 支持），进一步降低了技术门槛与维护成本。</p>
+<h2 id="什么是-Hexo"><a href="#什么是-Hexo" class="headerlink" title="什么是 Hexo"></a>什么是 Hexo</h2><p>前文陆陆续续地有提及 Hexo，想必大家对其也有所了解，这里再详细介绍一下。</p>
+<p>Hexo 是一个基于<code>Node.js</code>的静态网站生成器，主要用于快速、简单地生成静态网页。Hexo 使用<code>Markdown</code>语法编写文章，能够在几秒钟内生成静态页面并部署到服务器上。与传统的动态博客系统（如 WordPress）相比，Hexo 具有以下优势：</p>
+<ul>
+<li>快速：Hexo 生成网页的速度非常快，全站仅需几秒钟就可以完成。</li>
+<li>简单：Hexo 的安装和配置都非常简单，即使是初学者也可以很快上手。</li>
+<li>多功能：Hexo 提供了丰富的插件生态圈，可以满足各种个性化需求。</li>
+<li>安全：静态网页不需要数据库，不会受到黑客攻击和<code>SQL</code>注入等威胁。</li>
+<li>免费：Hexo 是完全免费的开源项目，可以免费部署到 GitHub Pages 等平台上。而且，部署过程相对简单，只需将生成的静态文件推送到对应的仓库即可实现自动部署。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工程师</category>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>技术笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客写作笔记</title>
+    <url>/blog/2025/03/08/%E4%BD%A0%E5%A5%BD3%E6%9C%88/</url>
     <content><![CDATA[<blockquote>
 <p>[!NOTE]</p>
 <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -72,85 +229,11 @@
 
 ]]></content>
       <categories>
-        <category>考研项目</category>
-        <category>学习项目</category>
-        <category>个人笔记</category>
+        <category>工程师</category>
+        <category>运维</category>
       </categories>
       <tags>
-        <tag>考研</tag>
-        <tag>工作</tag>
-        <tag>学习</tag>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你好4月</title>
-    <url>/blog/2023/04/01/%E4%BD%A0%E5%A5%BD4%E6%9C%88/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="Code-Test"><a href="#Code-Test" class="headerlink" title="Code Test"></a>Code Test</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Math-Test"><a href="#Math-Test" class="headerlink" title="Math Test"></a>Math Test</h3><p>$$<br>D(x) &#x3D; \begin{cases}<br>\lim\limits_{x \to 0} \frac{a^x}{b+c}, &amp; x&lt;3 \<br>\pi, &amp; x&#x3D;3 \<br>\int_{a}^{3b}x_{ij}+e^2 \mathrm{d}x,&amp; x&gt;3 \<br>\end{cases}<br>$$</p>
-<p>行内公式：$D(x) &#x3D; \begin{cases}<br>\lim\limits_{x \to 0} \frac{a^x}{b+c}, &amp; x&lt;3 \<br>\pi, &amp; x&#x3D;3 \<br>\int_{a}^{3b}x_{ij}+e^2 \mathrm{d}x,&amp; x&gt;3 \<br>\end{cases}$</p>
-]]></content>
-      <categories>
-        <category>考研项目</category>
-        <category>学习项目</category>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>考研</tag>
-        <tag>工作</tag>
-        <tag>学习</tag>
-        <tag>AI</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你好5月</title>
-    <url>/blog/2023/05/01/%E4%BD%A0%E5%A5%BD5%E6%9C%88/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="Code-Test"><a href="#Code-Test" class="headerlink" title="Code Test"></a>Code Test</h3><figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">  <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Math-Test"><a href="#Math-Test" class="headerlink" title="Math Test"></a>Math Test</h3><p>$$<br>D(x) &#x3D; \begin{cases}<br>\lim\limits_{x \to 0} \frac{a^x}{b+c}, &amp; x&lt;3 \<br>\pi, &amp; x&#x3D;3 \<br>\int_{a}^{3b}x_{ij}+e^2 \mathrm{d}x,&amp; x&gt;3 \<br>\end{cases}<br>$$</p>
-<p>行内公式：$D(x) &#x3D; \begin{cases}<br>\lim\limits_{x \to 0} \frac{a^x}{b+c}, &amp; x&lt;3 \<br>\pi, &amp; x&#x3D;3 \<br>\int_{a}^{3b}x_{ij}+e^2 \mathrm{d}x,&amp; x&gt;3 \<br>\end{cases}$</p>
-]]></content>
-      <categories>
-        <category>考研项目</category>
-        <category>学习项目</category>
-        <category>个人笔记</category>
-      </categories>
-      <tags>
-        <tag>考研</tag>
-        <tag>工作</tag>
-        <tag>学习</tag>
-        <tag>AI</tag>
+        <tag>技术笔记</tag>
       </tags>
   </entry>
 </search>
