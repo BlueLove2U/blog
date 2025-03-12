@@ -3,7 +3,298 @@
   <entry>
     <title>搭建一个自己的博客（二）：环境准备</title>
     <url>/blog/2025/03/12/a99972b70000/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p>系列 · 搭建一个自己的博客<br>摘要：本文主要介绍了本地博客环境准备工作。</p>
+</div>
+
+<div class="note info flat"><p>由于 Hexo 是基于 Node.js 开发的，因此首先需要安装 Node.js 和 Git。可以在官方网站下载并安装它们。</p>
+</div>
+
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><a href="https://nodejs.org/">Node.js</a> 是一个基于 Chrome V8 引擎的开源、跨平台的<code>JavaScript</code>运行时环境，主要用于服务器端编程。它通过事件驱动和非阻塞 I&#x2F;O 模型，实现了轻量级和高并发处理能力。</p>
+<p>Node.js 允许开发者使用<code>JavaScript</code>来编写服务器端应用程序，扩展了<code>JavaScript</code>在服务器端的能力。它使用 V8 引擎，这使得 Node.js 中的<code>JavaScript</code>代码与浏览器中的<code>JavaScript</code>代码语法基本相同，但提供了更多的API支持服务器端开发。</p>
+<p>Node.js 由 Ryan Dahl 于2009年创建，旨在解决传统服务器架构中的痛点，如阻塞式 I&#x2F;O 导致的低效性能。Node.js 的发布标志着<code>JavaScript</code>在服务器端的广泛应用，成为与<code>PHP</code>、<code>Python</code>、<code>Perl</code>、<code>Ruby</code>等服务端语言平起平坐的脚本语言。</p>
+<div class="note info flat"><p>运行时环境（Runtime Environment）是指在程序执行期间所需的软件和硬件环境的总和，为程序的执行提供了必要的基础设施和资源。它包括操作系统、虚拟机或解释器、运行时库、框架和组件、动态链接器、垃圾收集器、性能监控和分析工具、安全机制以及国际化支持等组成部分。</p>
+</div>
+
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>Node.js使用事件驱动、非阻塞式I&#x2F;O模型，使得其轻量且高效。Node.js 的核心在于其事件循环和非阻塞的 I&#x2F;O 操作。它使用单线程模型，通过事件循环来处理异步任务。当新的请求进来时，Node.js会将请求放入队列中，并继续执行后续代码。当请求的结果准备好后，通过回调函数进行处理。</p>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>Node.js 允许<code>JavaScript</code>代码在服务器端运行，扩展了<code>JavaScript</code>的应用场景。它特别适用于处理高并发场景，如实时通信应用。</p>
+<ul>
+<li>Web服务器：Node.js 可以高效地处理大量并发请求，适合搭建 Web 服务器。</li>
+<li>API服务：用于创建 RESTful API 或 GraphQL API，能够快速处理请求。</li>
+<li>实时应用：如即时聊天应用、在线多人游戏等，Node.js 在实时处理方面表现出色。</li>
+</ul>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p>版本需 ≥12.0（推荐最新 LTS 版本）。</p>
+</li>
+<li><p>推荐官网下载并安装：<a href="https://nodejs.org/zh-cn/download">Node.js — Download Node.js®</a>。</p>
+</li>
+<li><p>验证安装：可以用以下命令输出 Node.js 的版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">node --version</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="NMP"><a href="#NMP" class="headerlink" title="NMP"></a>NMP</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><p>NPM（Node Package Manager）是基于 Node.js 环境的包管理器。当你安装 Node.js 时，NPM 也会被自动安装，因为它作为Node.js 的一部分存在。NPM 的主要作用是下载和管理<code>JavaScript</code>相关的第三方包和模块。通过 NPM，开发者可以方便地安装、更新和卸载各种库和框架，极大地丰富了 Node.js 的应用开发能力。</p>
+<p>Node.js 是底层引擎，提供<code>JavaScript</code>在服务器端的执行能力；npm 是生态扩展工具为 Node.js 提供代码模块的安装、更新、依赖管理等功能。两者的协同构建了<code>JavaScript</code>全栈开发的基础设施，类似于：</p>
+<ul>
+<li>Python（语言） ↔ pip（包管理）</li>
+<li>Java（语言） ↔ Maven（依赖管理）</li>
+</ul>
+<p>掌握两者的协作逻辑，是高效开发 Node.js 应用的关键。</p>
+<h4 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm &lt;command&gt;</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">npm install        install all the dependencies in your project</span><br><span class="line">npm install &lt;foo&gt;  add the &lt;foo&gt; dependency to your project</span><br><span class="line">npm test           run this project&#x27;s tests</span><br><span class="line">npm run &lt;foo&gt;      run the script named &lt;foo&gt;</span><br><span class="line">npm &lt;command&gt; -h   quick help on &lt;command&gt;</span><br><span class="line">npm -l             display usage info for all commands</span><br><span class="line">npm help &lt;term&gt;    search for help on &lt;term&gt; (in a browser)</span><br><span class="line">npm help npm       more involved overview (in a browser)</span><br><span class="line"></span><br><span class="line">All commands:</span><br><span class="line"></span><br><span class="line">    access, adduser, audit, bugs, cache, ci, completion,</span><br><span class="line">    config, dedupe, deprecate, diff, dist-tag, docs, doctor,</span><br><span class="line">    edit, exec, explain, explore, find-dupes, fund, get, help,</span><br><span class="line">    hook, init, install, install-ci-test, install-test, link,</span><br><span class="line">    ll, login, logout, ls, org, outdated, owner, pack, ping,</span><br><span class="line">    pkg, prefix, profile, prune, publish, query, rebuild, repo,</span><br><span class="line">    restart, root, run-script, search, set, shrinkwrap, star,</span><br><span class="line">    stars, start, stop, team, test, token, uninstall, unpublish,</span><br><span class="line">    unstar, update, version, view, whoami</span><br></pre></td></tr></table></figure>
+
+<h5 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h5><ul>
+<li><p>可以用以下命令输出 npm 的版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm -v</span><br><span class="line">npm --version</span><br><span class="line">npm version</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h5><ul>
+<li><p>创建<code>package.json</code>文件，记录项目元数据和依赖信息。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h5><ul>
+<li><p>根据<code>package.json</code>安装所有依赖。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装指定包到 dependencies 中。</p>
+<p>通过<code>npm install 包名</code>或<code>npm i 包名</code>命令安装第三方包。安装后，NPM 会在<code>node_modules</code>目录下创建包的文件夹，并在<code>package.json</code>中记录依赖信息。还可以通过<code>npm install 包名@版本号</code>命令安装指定版本的包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install &lt;package&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局安装包（适用于命令行工具）。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g &lt;package&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装包到 devDependencies（开发工具依赖）。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install &lt;package&gt; --save-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>卸载指定包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall &lt;package&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>全局卸载包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall -g &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新指定包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm update &lt;package&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="信息查看"><a href="#信息查看" class="headerlink" title="信息查看"></a>信息查看</h5><ul>
+<li><p>列出当前项目已安装的所有包，包括直接依赖和所有子依赖。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出当前项目已安装的所有包，使用–depth&#x3D;0参数可以只查看顶级依赖。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list --depth=0</span><br><span class="line">npm ls --depth=0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看全局安装的包（即那些可以通过命令行直接访问的包）。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list -g</span><br><span class="line">npm ls -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看全局安装的包（仅顶层）。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list -g --depth=0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询包的最新版本。</p>
+<p>使用<code>npm view 包名 versions</code>命令可以查看某个包的所有可下载版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm view &lt;package&gt; version</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取详细信息，包括版本、依赖等。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm info &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看指定包的官方文档首页。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm doc &lt;package-name&gt;</span><br><span class="line">npm home &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看指定包的bug列表和issue跟踪器。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm bugs &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看哪些包有可用的更新版本，列出项目中已经过时的依赖包，以及它们的最新版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm outdated</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前 npm 配置信息（如镜像源地址）。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config list</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h5><ul>
+<li><p>设置npm的配置选项。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set &lt;key&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例如，设置npm的仓库地址为淘宝镜像源：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<p>常见的npm的仓库镜像源：</p>
+<ul>
+<li><p>官方：<a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p>
+</li>
+<li><p>淘宝：<a href="https://registry.npmmirror.com/">https://registry.npmmirror.com/</a></p>
+</li>
+<li><p>腾讯云：<a href="https://mirrors.cloud.tencent.com/npm/">https://mirrors.cloud.tencent.com/npm/</a></p>
+</li>
+<li><p>CNPM：<a href="https://r.cnpmjs.org/">https://r.cnpmjs.org/</a></p>
+</li>
+</ul>
+</li>
+<li><p>获取指定配置选项的值。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config get &lt;key&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除指定的配置选项。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config delete &lt;key&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h5><ul>
+<li><p>运行<code>package.json</code>中定义的脚本命令（如 npm start）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm run &lt;script&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h5><ul>
+<li><p>在npm仓库中搜索包含指定关键字的包。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm search &lt;keyword&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h5><ul>
+<li><p>清理npm的缓存。</p>
+<p>这有助于解决一些由缓存引起的安装问题。但请注意，使用–force选项会强制清理缓存，可能导致数据丢失，因此请谨慎使用。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="自动修复安全漏洞"><a href="#自动修复安全漏洞" class="headerlink" title="自动修复安全漏洞"></a>自动修复安全漏洞</h5><ul>
+<li><p>扫描项目，查找所有依赖项中存在的漏洞。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm audit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自动安装所有易受攻击包的补丁版本，以修复已知的安全漏洞。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm audit fix</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="登录-退出npm"><a href="#登录-退出npm" class="headerlink" title="登录&#x2F;退出npm"></a>登录&#x2F;退出npm</h5><ul>
+<li><p>登录npm账户。这通常用于发布包到npm仓库时，需要输入用户名、密码和邮箱进行身份验证。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm login</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>退出npm账户。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm logout</span><br></pre></td></tr></table></figure></li>
+</ul>
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>通过这些基本操作，开发者可以有效地管理和使用NPM中的各种包和模块，从而构建强大的服务器端应用程序。更多操作细节，请参考<a href="https://nodejs.org/zh-cn/learn/getting-started/an-introduction-to-the-npm-package-manager">Node.js — An introduction to the npm package manager</a>。</p>
+</div>
+
+
+
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="基本概念-2"><a href="#基本概念-2" class="headerlink" title="基本概念"></a>基本概念</h3><p><a href="https://git-scm.com/">Git</a> 是一款免费、开源的分布式版本控制系统，由 Linux 内核的开发者 Linus Torvalds（林纳斯·托瓦兹）在2005年创建，最初用于管理 Linux 内核的开发。由于其高效和分布式的工作方式，Git迅速成为最流行的版本控制系统之一。现在，Git 是目前世界上最流行的版本控制系统之一，广泛应用于软件开发和其他版本控制任务中，可以敏捷高效地处理任何或小或大项目的版本管理。</p>
+<p>Git 是用于 Linux 内核开发的版本控制工具。与 CVS、Subversion 一类的集中式版本控制工具不同，它采用了分布式版本库的作法，不需要服务器端软件，就可以运作版本控制，使得源代码的发布和交流极其方便。Git的速度很快，这对于诸如Linux内核这样的大项目来说自然很重要。Git最为出色的是它的合并追踪（merge tracing）能力。 </p>
+<ul>
+<li>仓库（Repository）：存储项目代码及其历史记录的地方，包括工作目录和<code>.git</code>目录。后者存储配置文件、日志和版本历史等信息。</li>
+<li>工作区：包含.git文件夹的目录，用于存放需要版本控制的文件。</li>
+<li>暂存区：临时保存修改文件的地方，允许开发者选择性地决定哪些修改后的文件应该被包括在下一次提交中。</li>
+<li>本地库：存储和管理文件及其历史版本的地方，在用户自己的电脑上。</li>
+<li>远程仓库：存储在网络上的仓库，通常用于多人协作开发。</li>
+</ul>
+<h3 id="特点和优势"><a href="#特点和优势" class="headerlink" title="特点和优势"></a>特点和优势</h3><ul>
+<li>分布式控制：每个开发者都有自己的完整项目历史记录，可以在没有网络连接的情况下工作，并在准备好时与其他人同步更改。</li>
+<li>分支和合并：Git提供了强大的分支和合并功能，使得开发者可以轻松创建新的开发路径，并在完成工作后将其合并回主分支。</li>
+<li>提交和快照：通过提交来记录项目的更改，每次提交都会创建一个项目的快照，方便回滚到之前的版本或比较不同版本之间的差异。</li>
+<li>协作和共享：支持通过远程仓库进行协作，开发者可以克隆远程仓库、在本地进行更改，然后将更改推送到远程仓库以与其他人共享。</li>
+<li>冲突解决：提供工具帮助解决多个开发者对同一文件进行更改时产生的冲突，确保即使在没有直接沟通的情况下也能有效协作。</li>
+</ul>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>推荐官网下载并安装：<a href="https://git-scm.com/downloads">Git - Downloads</a>。</li>
+</ul>
+<h3 id="基本使用方法-1"><a href="#基本使用方法-1" class="headerlink" title="基本使用方法"></a>基本使用方法</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">usage: git [-v | --version] [-h | --help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]</span><br><span class="line">           [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]</span><br><span class="line">           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]</span><br><span class="line">           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=&lt;path&gt;]</span><br><span class="line">           [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;] [--config-env=&lt;name&gt;=&lt;envvar&gt;]</span><br><span class="line">           &lt;command&gt; [&lt;args&gt;]</span><br><span class="line"></span><br><span class="line">These are common Git commands used in various situations:</span><br><span class="line"></span><br><span class="line">start a working area (see also: git help tutorial)</span><br><span class="line">   clone      Clone a repository into a new directory</span><br><span class="line">   init       Create an empty Git repository or reinitialize an existing one</span><br><span class="line"></span><br><span class="line">work on the current change (see also: git help everyday)</span><br><span class="line">   add        Add file contents to the index</span><br><span class="line">   mv         Move or rename a file, a directory, or a symlink</span><br><span class="line">   restore    Restore working tree files</span><br><span class="line">   rm         Remove files from the working tree and from the index</span><br><span class="line"></span><br><span class="line">examine the history and state (see also: git help revisions)</span><br><span class="line">   bisect     Use binary search to find the commit that introduced a bug</span><br><span class="line">   diff       Show changes between commits, commit and working tree, etc</span><br><span class="line">   grep       Print lines matching a pattern</span><br><span class="line">   log        Show commit logs</span><br><span class="line">   show       Show various types of objects</span><br><span class="line">   status     Show the working tree status</span><br><span class="line"></span><br><span class="line">grow, mark and tweak your common history</span><br><span class="line">   backfill   Download missing objects in a partial clone</span><br><span class="line">   branch     List, create, or delete branches</span><br><span class="line">   commit     Record changes to the repository</span><br><span class="line">   merge      Join two or more development histories together</span><br><span class="line">   rebase     Reapply commits on top of another base tip</span><br><span class="line">   reset      Reset current HEAD to the specified state</span><br><span class="line">   switch     Switch branches</span><br><span class="line">   tag        Create, list, delete or verify a tag object signed with GPG</span><br><span class="line"></span><br><span class="line">collaborate (see also: git help workflows)</span><br><span class="line">   fetch      Download objects and refs from another repository</span><br><span class="line">   pull       Fetch from and integrate with another repository or a local branch</span><br><span class="line">   push       Update remote refs along with associated objects</span><br><span class="line"></span><br><span class="line">&#x27;git help -a&#x27; and &#x27;git help -g&#x27; list available subcommands and some</span><br><span class="line">concept guides. See &#x27;git help &lt;command&gt;&#x27; or &#x27;git help &lt;concept&gt;&#x27;</span><br><span class="line">to read about a specific subcommand or concept.</span><br><span class="line">See &#x27;git help git&#x27; for an overview of the system.</span><br></pre></td></tr></table></figure>
+
+<h4 id="验证安装-1"><a href="#验证安装-1" class="headerlink" title="验证安装"></a>验证安装</h4><ul>
+<li><p>可以用以下命令输出 git 的版本。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h4><ul>
+<li><p>设置全局用户名。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置全局邮箱。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看所有配置项。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --list        </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="仓库操作"><a href="#仓库操作" class="headerlink" title="仓库操作"></a>仓库操作</h4><ul>
+<li><p>初始化新仓库。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>克隆远程仓库。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/user/repo.git</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="文件操作与提交"><a href="#文件操作与提交" class="headerlink" title="文件操作与提交"></a>文件操作与提交</h4><ul>
+<li><p>添加文件到暂存区。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add file.txt</span><br><span class="line">git add . # 全部添加</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提交暂存区文件。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;提交说明&quot;    </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看工作区&#x2F;暂存区状态。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h4><ul>
+<li><p>查看分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch # 显示本地分支</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建新分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建并切换到新分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout -b &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt; #将 &lt;branch&gt; 合并到当前分支</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除分支。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d &lt;branch&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h4><ul>
+<li><p>关联远程仓库。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add &lt;repo&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送本地提交到远程。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push &lt;repo&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>拉取远程更新到本地。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull &lt;repo&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>仅获取远程更新（不自动合并）。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch &lt;repo&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="撤销与回退"><a href="#撤销与回退" class="headerlink" title="撤销与回退"></a>撤销与回退</h4><ul>
+<li><p>撤销工作区未暂存的修改。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git restore &lt;file&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>回退提交记录。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --soft HEAD~1 # 回退到上一提交，保留修改</span><br><span class="line">git reset --hard HEAD~1 # 彻底删除上一提交</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤销指定提交（生成新提交）。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git revert &lt;commit&gt;    </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="查看历史与差异"><a href="#查看历史与差异" class="headerlink" title="查看历史与差异"></a>查看历史与差异</h4><ul>
+<li><p>查看提交历史。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log --oneline # 简洁模式</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看文件差异。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git diff # 工作区与暂存区差异</span><br><span class="line">git diff HEAD # 工作区与最新提交差异</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看某次提交的修改内容。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git show &lt;commit&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h4><ul>
+<li><p>查看标签。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建标签。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git tag &lt;tag&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送标签到远程。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push &lt;repo&gt; --tags</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h4><ul>
+<li><p>手动修改冲突文件（标记为 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 和 &gt;&gt;&gt;&gt;&gt;&gt;&gt; 的部分）。</p>
+</li>
+<li><p>标记冲突已解决：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add resolved_file.txt</span><br><span class="line">git commit -m &quot;解决冲突&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="常用场景示例"><a href="#常用场景示例" class="headerlink" title="常用场景示例"></a>常用场景示例</h4><ul>
+<li><p>首次推送本地项目到 GitHub：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Initial commit&quot;</span><br><span class="line">git remote add origin https://github.com/user/repo.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>协作开发流程：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout -b feature  # 创建开发分支</span><br><span class="line">git add . &amp;&amp; git commit -m &quot;完成功能开发&quot;</span><br><span class="line">git push origin feature   # 推送到远程分支</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在 GitHub 提交 Pull Request 请求合并</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<div class="note info flat"><p>注意事项</p>
+<ul>
+<li><code>.gitignore</code>文件：定义需忽略的文件（如<code>node_modules/</code>、<code>.env</code>）</li>
+<li>分支策略：推荐使用<code>main</code>作为稳定分支，开发在<code>dev</code>或<code>feature</code>分支进行</li>
+<li>提交规范：建议用清晰的消息（如 fix：修复登录错误，feat：添加用户模块）</li>
+</ul>
+</div>
+
+]]></content>
       <categories>
         <category>工程师</category>
         <category>运维</category>
@@ -40,17 +331,17 @@
 <li>核心方案：<ul>
 <li><a href="https://jekyllrb.com/">Jekyll</a>：集成于 GitHub Pages ，原生支持，适合<code>Ruby</code>开发者。</li>
 <li><a href="https://gohugo.io/">Hugo</a>：自称“世界上最快的网站构建框架”。它编译速度极快，无依赖，适合追求高效的用户。</li>
-<li><a href="https://hexo.io/zh-cn/index.html">Hexo</a>：自称“快速、简洁且高效的博客框架”。它基于<code>Node.js</code>，主题丰富，支持<code>Markdown</code>快速生成静态页面。</li>
+<li><a href="https://hexo.io/zh-cn/index.html">Hexo</a>：自称“快速、简洁且高效的博客框架”。它基于 Node.js，主题丰富，支持<code>Markdown</code>快速生成静态页面。</li>
 </ul>
 </li>
 <li>优点：<ul>
 <li>零成本：依托 GitHub Pages、Vercel 等免费托管服务，无需服务器费用。</li>
-<li>高度可定制：支持自定义主题、插件（如评论系统、<code>SEO</code>优化）。</li>
-<li>技术可控性：数据本地存储，版本管理通过<code>Git</code>实现。</li>
+<li>高度可定制：支持自定义主题、插件（如评论系统、SEO 优化）。</li>
+<li>技术可控性：数据本地存储，版本管理通过 Git 实现。</li>
 </ul>
 </li>
 <li>缺点：<ul>
-<li>学习成本较高：需掌握命令行、<code>Git</code>和静态生成器配置。</li>
+<li>学习成本较高：需掌握命令行、Git 和静态生成器配置。</li>
 <li>动态功能缺失：无法直接支持登录、数据库交互等复杂功能。</li>
 </ul>
 </li>
@@ -147,12 +438,12 @@
 </li>
 <li><p><strong>Hugo</strong>：Hugo 是一个使用<code>Go</code>语言编写的静态网站生成器，以其极快的生成速度和简洁的界面著称。Hugo 的安装和使用都非常简单，只需要一个二进制文件即可进行本地调试和生成静态页面。Hugo 支持<code>Markdown</code>格式的文章自动转换为静态网页，并且内置了web服务器，方便在修改后即时预览效果。</p>
 </li>
-<li><p><strong>Hexo</strong>：Hexo 是一个基于<code>Node.js</code>的静态博客网站生成器，适合熟悉<code>JavaScript</code>的用户。Hexo提供了丰富的插件和主题，能够快速生成个性化的博客网站。使用 Hexo 之前需要安装<code>Git</code>和<code>Node.js</code>，但一旦安装完成，配置和使用都非常简单。</p>
+<li><p><strong>Hexo</strong>：Hexo 是一个基于 Node.js 的静态博客网站生成器，适合熟悉<code>JavaScript</code>的用户。Hexo提供了丰富的插件和主题，能够快速生成个性化的博客网站。使用 Hexo 之前需要安装 Git 和 Node.js，但一旦安装完成，配置和使用都非常简单。</p>
 </li>
 </ul>
-<p>总之，GitHub Pages 通过静态托管+自动化构建，为开发者提供了零成本、高效率的网站发布方案，尤其适合个人技术展示与开源项目管理。其与<code>Git</code>的深度集成和扩展性（如 Jekyll 支持），进一步降低了技术门槛与维护成本。</p>
+<p>总之，GitHub Pages 通过静态托管+自动化构建，为开发者提供了零成本、高效率的网站发布方案，尤其适合个人技术展示与开源项目管理。其与 Git 的深度集成和扩展性（如 Jekyll 支持），进一步降低了技术门槛与维护成本。</p>
 <h2 id="什么是-Hexo"><a href="#什么是-Hexo" class="headerlink" title="什么是 Hexo"></a>什么是 Hexo</h2><p>前文陆陆续续地有提及 Hexo，想必大家对其也有所了解，这里再详细介绍一下。</p>
-<p>Hexo 是一个基于<code>Node.js</code>的静态网站生成器，主要用于快速、简单地生成静态网页。Hexo 使用<code>Markdown</code>语法编写文章，能够在几秒钟内生成静态页面并部署到服务器上。与传统的动态博客系统（如 WordPress）相比，Hexo 具有以下优势：</p>
+<p>Hexo 是一个基于 Node.js 的静态网站生成器，主要用于快速、简单地生成静态网页。Hexo 使用<code>Markdown</code>语法编写文章，能够在几秒钟内生成静态页面并部署到服务器上。与传统的动态博客系统（如 WordPress）相比，Hexo 具有以下优势：</p>
 <ul>
 <li>快速：Hexo 生成网页的速度非常快，全站仅需几秒钟就可以完成。</li>
 <li>简单：Hexo 的安装和配置都非常简单，即使是初学者也可以很快上手。</li>
