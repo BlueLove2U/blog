@@ -2,8 +2,11 @@
 <search>
   <entry>
     <title>搭建一个自己的博客（二）：环境准备</title>
-    <url>/blog/2025/03/12/a99972b70000/</url>
-    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p>系列 · 搭建一个自己的博客<br>摘要：本文主要介绍了本地博客环境准备工作。</p>
+    <url>/blog/2025/03/12/a99972b7/</url>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
+<li>系列 · 搭建一个自己的博客</li>
+<li>摘要：本文主要介绍了本地博客环境准备工作。</li>
+</ul>
 </div>
 
 <div class="note info flat"><p>由于 Hexo 是基于 Node.js 开发的，因此首先需要安装 Node.js 和 Git。可以在官方网站下载并安装它们。</p>
@@ -305,11 +308,17 @@
   </entry>
   <entry>
     <title>搭建一个自己的博客（一）：前言</title>
-    <url>/blog/2025/03/12/e34678730000/</url>
-    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p>系列 · 搭建一个自己的博客<br>摘要：本文主要介绍了作者搭建博客的背景和一些相关的技术知识。</p>
+    <url>/blog/2025/03/12/e3467873/</url>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
+<li>系列 · 搭建一个自己的博客</li>
+<li>摘要：本文主要介绍了作者搭建博客的背景和一些相关的技术知识。</li>
+</ul>
 </div>
 
-<div class="note blue icon-padding flat"><i class="note-icon fa-solid fa-seedling"></i><p>一直也想有自己的博客，可以写一些自己的所思所想。但是，常见的博客大都是第三方平台提供的，如CSDN、知乎、简书、博客园、掘金等。因为这些第三方提供的博客可能会有一些广告，我并不喜欢这样，所以才久久未使用它们来搭建自己的博客，只是在电脑本地写一些文章。<br>最近在查找资料的时候，经常会见到一些博主搭建的网站，正是自己想搭建的博客的样子。它们的网址常常以<code>github.io</code>结尾。探索之下才了解到了 GitHub Pages ，也才知道原来还可以有静态博客。<br>于是，我便着手开始了搭建一个自己的博客的工作。陆陆续续地忙碌了三、四天，才基本将博客搭建起来。<br>为了记录这段自己搭建博客的经历，也为了后续更方便地维护博客，便写下了这个系列《搭建一个自己的博客》。<br>本文是这个系列的第一篇文章。</p>
+<div class="note blue icon-padding flat"><i class="note-icon fa-solid fa-seedling"></i><p>一直也想有自己的博客，可以写一些自己的所思所想。但是，常见的博客大都是第三方平台提供的，如CSDN、知乎、简书、博客园、掘金等。因为这些第三方提供的博客可能会有一些广告，我并不喜欢这样，所以才久久未使用它们来搭建自己的博客，只是在电脑本地写一些文章。</p>
+<p>最近在查找资料的时候，经常会见到一些博主搭建的网站，正是自己想搭建的博客的样子。它们的网址常常以<code>github.io</code>结尾。探索之下才了解到了 GitHub Pages ，也才知道原来还可以有静态博客。<br>于是，我便着手开始了搭建一个自己的博客的工作。陆陆续续地忙碌了三、四天，才基本将博客搭建起来。</p>
+<p>为了记录这段自己搭建博客的经历，也为了后续更方便地维护博客，便写下了这个系列《搭建一个自己的博客》。</p>
+<p>本文是这个系列的第一篇文章。</p>
 </div>
 
 
