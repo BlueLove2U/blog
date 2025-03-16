@@ -23,7 +23,7 @@
 
 ```
 
-Welcome to my blog: [LOVE YOURSELF - 愿世间美好与你环环相扣 💙](https://blueboy2020.github.io/blog/)
+Welcome to my blog: [LOVE YOURSELF - 愿世间美好与你环环相扣 💙](https://bluelove2u.github.io/blog/)
 
 Wish me to become your **Blue Lover**. 💙
 
