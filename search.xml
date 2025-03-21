@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>英语单词记忆 · 解码英语单词的DNA 01：前言</title>
+    <title>英语单词记忆 · 解码英语单词的 DNA 01：前言</title>
     <url>/blog/2025/03/19/3f15dd73/</url>
     <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
-<li>英语单词记忆系列 · 解码英语单词的DNA</li>
-<li>摘要：本文主要介绍了“英语单词的DNA”。</li>
+<li>英语单词记忆系列 · 解码英语单词的 DNA</li>
+<li>摘要：本文主要介绍了“英语单词的 DNA”。</li>
 </ul>
 </div>
 
 
 
-<h2 id="什么是英语单词的DNA"><a href="#什么是英语单词的DNA" class="headerlink" title="什么是英语单词的DNA"></a>什么是英语单词的DNA</h2><p>语言如同生命体，英语单词则是其基因单元。当生物学家通过DNA追溯生命起源时，语言学家也在用同样的方式破解单词的基因图谱——每个单词的“遗传密码”，正是它的词根（root）与词缀（affix）。就像一段DNA链由碱基对编码构成，英语单词的“语义基因”也深藏于词根与词缀的精密组合中。词根词缀，正是英语词汇得以传承与演化的“碱基序列”。</p>
+<h2 id="什么是英语单词的-DNA"><a href="#什么是英语单词的-DNA" class="headerlink" title="什么是英语单词的  DNA"></a>什么是英语单词的  DNA</h2><p>语言如同生命体，英语单词则是其基因单元。当生物学家通过 DNA 追溯生命起源时，语言学家也在用同样的方式破解单词的基因图谱——每个单词的“遗传密码”，正是它的词根（root）与词缀（affix）。就像一段 DNA 链由碱基对编码构成，英语单词的“语义基因”也深藏于词根与词缀的精密组合中。词根词缀，正是英语词汇得以传承与演化的“碱基序列”。</p>
 <ul>
 <li><strong>词根</strong>是承载原始意义的染色体，是语义核心，具有跨语种稳定性，例如 <code>-scribe-</code>（写）、<code>-bio-</code>（生命）。</li>
 <li><strong>前缀</strong>决定单词的“行为方向”，限定语义方向、程度和范畴，例如 <code>pre-</code>（前）、<code>anti-</code>（反）。</li>
 <li><strong>后缀</strong>赋予单词“生理特征”，决定词性、状态和语法功能，例如 <code>-tion</code>（名词）、<code>-able</code>（可……的）。</li>
 </ul>
-<h2 id="为什么解码英语单词的DNA"><a href="#为什么解码英语单词的DNA" class="headerlink" title="为什么解码英语单词的DNA"></a>为什么解码英语单词的DNA</h2><p>解码英语单词的DNA，可以帮助我们<u>高效记忆</u>，例如：</p>
+<h2 id="为什么解码英语单词的-DNA"><a href="#为什么解码英语单词的-DNA" class="headerlink" title="为什么解码英语单词的  DNA"></a>为什么解码英语单词的  DNA</h2><p>解码英语单词的 DNA，可以帮助我们<u>高效记忆</u>，例如：</p>
 <ul>
 <li>当你知道“<em>astronaut</em>（宇航员）&#x3D; <code>astro</code>（星辰）+ <code>naut</code>（航行）”，就不再需要背诵字母组合；</li>
 <li>当你掌握一个词根 <code>bio-</code>（生命），就可以解锁数十个相关单词，例如<em>biology</em>（生物学）、<em>biography</em>（传记）、<em>symbiosis</em>（共生）等。</li>
 </ul>
-<p>解码英语单词的DNA，可以帮助我们<u>应对复杂、未知的词汇</u>，例如：</p>
+<p>解码英语单词的 DNA，可以帮助我们<u>应对复杂、未知的词汇</u>，例如：</p>
 <ul>
 <li>当你看透“<em>photography</em>（摄影）&#x3D; <code>photo</code>（光） + <code>graph</code>（记录） + <code>-y</code>（行为）”，复杂术语瞬间透明；</li>
 <li>当你遇到“<em>anthropology</em>”，可以通过词根词缀推测词义，拆解为 <code>anthropo-</code>（人类）与 <code>-logy</code>（学科），即可知其意为“人类学”。</li>
 </ul>
-<p>解码英语单词的DNA，可以帮助我们<u>理解深层逻辑</u>，例如：</p>
+<p>解码英语单词的 DNA，可以帮助我们<u>理解深层逻辑</u>，例如：</p>
 <ul>
 <li>当你发现“<em>respect</em>（尊重）本意是 <code>re-</code>（反复） + <code>spect</code>（看）→ 反复注视以示敬意”，语言便有了温度；</li>
 <li>当你发现“<em>democracy</em>（民主）”由 <code>demo-</code>（人民）与 <code>-cracy</code>（统治）构成，直指“人民统治”的本质，单词就不再是孤立符号，而是意义网络的一部分。</li>
@@ -100,17 +100,17 @@
 </div>
 
 <p>在<code>Markdown</code>文件顶部添加<code>YAML</code>配置块，例如：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 博客搭建05 · 搭建一个自己的博客（五）：写作</span><br><span class="line">date: 2025-03-14 16:33:15</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> 技术宅</span><br><span class="line"><span class="bullet">  -</span> 技术笔记</span><br><span class="line">description: Hexo主题的选择、配置。</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> [&#x27;工程师&#x27;, &#x27;运维&#x27;]</span><br><span class="line">cover: https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span><br><span class="line"><span class="section">series: 博客搭建</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">&#x27;工程师&#x27;</span>, <span class="string">&#x27;运维&#x27;</span>]</span><br><span class="line"><span class="attr">cover:</span> <span class="string">https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 
 <p>其中，只有文章支持分类（categories）和标签（tags）。Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>中有关“分类”和“标签”的描述是：“<em>分类按顺序应用于文章，从而形成分类和子分类的层次结构。标签是在相同的层次结构上定义的，因此它们的出现顺序不重要</em>”。这也就是说，分类有严格的层次结构，而标签没有，我们无需关心标签的层次结构。例如 Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>给出的举例：</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> Sports</span><br><span class="line"><span class="bullet">  -</span> Baseball</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> Injury</span><br><span class="line"><span class="bullet">  -</span> Fight</span><br><span class="line"><span class="bullet">  -</span> Shocking</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Sports</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Baseball</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Injury</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Fight</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Shocking</span></span><br></pre></td></tr></table></figure>
 
 <p>“<em>如果想应用多个分类层次结构，可以使用一个名称列表而不是一个单个名称</em>”。例如：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line">  - [Sports, Baseball]</span><br><span class="line">  - [MLB, American League, Boston Red Sox]</span><br><span class="line">  - [MLB, American League, New York Yankees]</span><br><span class="line">  - Rivalries</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">Sports</span>, <span class="string">Baseball</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">Boston</span> <span class="string">Red</span> <span class="string">Sox</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">New</span> <span class="string">York</span> <span class="string">Yankees</span>]</span><br><span class="line">  <span class="bullet">-</span> <span class="string">Rivalries</span></span><br></pre></td></tr></table></figure>
 
 <p>“<em>如果 Hexo 在帖子上看到像这种方式定义的分类，它会将该帖子的每个分类视为其自己的独立层次结构。</em>”</p>
 <p>使用<code>hexo publish &lt;title&gt;&quot;</code>发布文章后的 Front-matter 如下。</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 博客搭建05 · 搭建一个自己的博客（五）：写作</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> 技术宅</span><br><span class="line"><span class="bullet">  -</span> 技术笔记</span><br><span class="line">description: Hexo主题的选择、配置。</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> - 工程师</span><br><span class="line"><span class="bullet">    -</span> 运维</span><br><span class="line">cover: &gt;-</span><br><span class="line">  https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span><br><span class="line">series: 博客搭建</span><br><span class="line"><span class="section">date: 2025-03-14 16:33:15</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="bullet">-</span> <span class="string">工程师</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">运维</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">&gt;-</span></span><br><span class="line"><span class="string">  https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="string"></span><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 
 <p>不难发现，确实与之前样例中的 Front-matter 不一样，但实现的效果是一样的。这也是为什么个人建议使用<code>hexo publish &lt;title&gt;&quot;</code>发布文章，这样更规范。</p>
 <h3 id="编辑正文"><a href="#编辑正文" class="headerlink" title="编辑正文"></a>编辑正文</h3><p>接下来就可以编写自己的文章正文啦~下面主要介绍一些常用的写作技巧。</p>
@@ -150,10 +150,10 @@
 <h2 id="选择主题"><a href="#选择主题" class="headerlink" title="选择主题"></a>选择主题</h2><h4 id="主题选择核心考量因素"><a href="#主题选择核心考量因素" class="headerlink" title="主题选择核心考量因素"></a>主题选择核心考量因素</h4><ul>
 <li>设计美学与布局适配：优先选择界面美观、支持响应式设计的主题，确保不同设备浏览体验一致。</li>
 <li>配置友好度：新手建议选择配置逻辑清晰、文档完善的主题，避免因复杂配置浪费精力。</li>
-<li>功能扩展性：关注内置功能（如评论系统、SEO优化）和插件兼容性，减少后续二次开发成本。</li>
+<li>功能扩展性：关注内置功能（如评论系统、SEO 优化）和插件兼容性，减少后续二次开发成本。</li>
 <li>维护更新频率：优先选择社区活跃、长期维护的主题，避免因版本迭代导致功能失效。</li>
 </ul>
-<h4 id="Next与Butterfly主题对比"><a href="#Next与Butterfly主题对比" class="headerlink" title="Next与Butterfly主题对比"></a>Next与Butterfly主题对比</h4><p>Hexo支持很多主题，我比较欣赏的两款主题分别是<a href="https://github.com/next-theme/hexo-theme-next">NexT</a>和<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a>，这里主要介绍这两款主题的对比。</p>
+<h4 id="Next-与-Butterfly-主题对比"><a href="#Next-与-Butterfly-主题对比" class="headerlink" title="Next 与 Butterfly 主题对比"></a>Next 与 Butterfly 主题对比</h4><p>Hexo 支持很多主题，我比较欣赏的两款主题分别是<a href="https://github.com/next-theme/hexo-theme-next">NexT</a>和<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a>，这里主要介绍这两款主题的对比。</p>
 <table>
 <thead>
 <tr>
@@ -174,13 +174,13 @@
 </tr>
 <tr>
 <td align="center"><strong>视觉体验</strong></td>
-<td align="center">经典简洁风格，但默认UI较基础</td>
+<td align="center">经典简洁风格，但默认 UI 较基础</td>
 <td align="center">现代化设计风格，支持多种配色方案与动态特效</td>
 </tr>
 <tr>
 <td align="center"><strong>功能特性</strong></td>
 <td align="center">需通过插件扩展功能，默认功能较少</td>
-<td align="center">内置标签云&#x2F;相册&#x2F;音乐播放等模块，集成Valine&#x2F;Gitalk等评论系统，减少插件依赖</td>
+<td align="center">内置标签云&#x2F;相册&#x2F;音乐播放等模块，集成 Valine&#x2F;Gitalk 等评论系统，减少插件依赖</td>
 </tr>
 <tr>
 <td align="center"><strong>维护状态</strong></td>
@@ -198,12 +198,12 @@
 <td align="center">适合追求功能丰富性、视觉表现力、偏好动态效果，且希望快速搭建完整博客系统的用户</td>
 </tr>
 </tbody></table>
-<p>对于这两个主题，个人主要推荐Butterfly，理由如下：</p>
+<p>对于这两个主题，个人主要推荐 Butterfly，理由如下：</p>
 <ul>
 <li>开箱即用的中文生态：官方文档全中文编写且持续更新，繁简切换功能对中文用户更友好。</li>
 <li>低门槛高自由度：主题配置文件与核心配置分离，支持模块化自定义。</li>
 <li>功能集成度高：内置图库&#x2F;友链&#x2F;特效等功能模块，减少插件依赖（如无需单独安装搜索插件）。</li>
-<li>持续技术迭代：仍有持续更新，详见<a href="https://butterfly.js.org/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E8%AA%8C/">Butterfly更新日志</a>。</li>
+<li>持续技术迭代：仍有持续更新，详见<a href="https://butterfly.js.org/categories/%E6%9B%B4%E6%96%B0%E6%97%A5%E8%AA%8C/">Butterfly 更新日志</a>。</li>
 <li>迁移成本可控：官方文档提供明确的安装指引和问题排查建议。</li>
 </ul>
 <h2 id="配置主题"><a href="#配置主题" class="headerlink" title="配置主题"></a>配置主题</h2><p>关于<a href="https://butterfly.js.org/">Butterfly</a>主题的配置，<a href="https://butterfly.js.org/posts/21cfbf15/">官方文档</a>里给得非常详细，此处就不再赘述。这里给出我的配置文件，供大家参考。</p>
@@ -324,8 +324,8 @@
 </ul>
 </div>
 
-<div class="note blue icon-padding flat"><i class="note-icon fa-solid fa-seedling"></i><p>一直也想有自己的博客，可以写一些自己的所思所想。但是，常见的博客大都是第三方平台提供的，如CSDN、知乎、简书、博客园、掘金等。因为这些第三方提供的博客可能会有一些广告，我并不喜欢这样，所以才久久未使用它们来搭建自己的博客，只是在电脑本地写一些文章。</p>
-<p>最近在查找资料的时候，经常会见到一些博主搭建的网站，正是自己想搭建的博客的样子。它们的网址常常以<code>github.io</code>结尾。探索之下才了解到了 GitHub Pages ，也才知道原来还可以有静态博客。<br>于是，我便着手开始了搭建一个自己的博客的工作。陆陆续续地忙碌了三、四天，才基本将博客搭建起来。</p>
+<div class="note blue icon-padding flat"><i class="note-icon fa-solid fa-seedling"></i><p>一直也想有自己的博客，可以写一些自己的所思所想。但是，常见的博客大都是第三方平台提供的，如 CSDN、知乎、简书、博客园、掘金等。因为这些第三方提供的博客可能会有一些广告，我并不喜欢这样，所以才久久未使用它们来搭建自己的博客，只是在电脑本地写一些文章。</p>
+<p>最近在查找资料的时候，经常会见到一些博主搭建的网站，正是自己想搭建的博客的样子。它们的网址常常以<code>github.io</code>结尾。探索之下才了解到了 GitHub Pages，也才知道原来还可以有静态博客。<br>于是，我便着手开始了搭建一个自己的博客的工作。陆陆续续地忙碌了三、四天，才基本将博客搭建起来。</p>
 <p>为了记录这段自己搭建博客的经历，也为了后续更方便地维护博客，便写下了这个系列《搭建一个自己的博客》。</p>
 <p>本文是这个系列的第一篇文章。</p>
 </div>
@@ -333,7 +333,7 @@
 
 
 <h2 id="什么是博客"><a href="#什么是博客" class="headerlink" title="什么是博客"></a>什么是博客</h2><p>“博客”其实是 Blog 的音译，为 Web Log 的混成词。其正式名称为网络日记；又音译为“部落格”“部落阁”等。写博客的人被称为 Blogger，也称为“博客”“博主”“部落客”等。有时也用“Blogger”指博客平台。这里的“Blog”，也是“Blue + Log”的合成词，是我的“蓝色日志”。</p>
-<h2 id="搭建博客的方案"><a href="#搭建博客的方案" class="headerlink" title="搭建博客的方案"></a>搭建博客的方案</h2><h3 id="方案一：第三方平台（CSDN等）"><a href="#方案一：第三方平台（CSDN等）" class="headerlink" title="方案一：第三方平台（CSDN等）"></a>方案一：第三方平台（CSDN等）</h3><ul>
+<h2 id="搭建博客的方案"><a href="#搭建博客的方案" class="headerlink" title="搭建博客的方案"></a>搭建博客的方案</h2><h3 id="方案一：第三方平台（CSDN-等）"><a href="#方案一：第三方平台（CSDN-等）" class="headerlink" title="方案一：第三方平台（CSDN 等）"></a>方案一：第三方平台（CSDN 等）</h3><ul>
 <li>优点：<ul>
 <li>零技术门槛：无需编程或服务器知识，注册即可使用，适合非技术用户。</li>
 <li>专注内容创作：内置编辑器支持直接发布，无需关注技术细节。</li>
@@ -347,7 +347,7 @@
 </ul>
 <h3 id="方案二：静态网站生成器（Hexo、Jekyll、Hugo）-免费托管（GitHub-Pages、Vercel）"><a href="#方案二：静态网站生成器（Hexo、Jekyll、Hugo）-免费托管（GitHub-Pages、Vercel）" class="headerlink" title="方案二：静态网站生成器（Hexo、Jekyll、Hugo）+ 免费托管（GitHub Pages、Vercel）"></a>方案二：静态网站生成器（Hexo、Jekyll、Hugo）+ 免费托管（GitHub Pages、Vercel）</h3><ul>
 <li>核心方案：<ul>
-<li><a href="https://jekyllrb.com/">Jekyll</a>：集成于 GitHub Pages ，原生支持，适合<code>Ruby</code>开发者。</li>
+<li><a href="https://jekyllrb.com/">Jekyll</a>：集成于 GitHub Pages，原生支持，适合<code>Ruby</code>开发者。</li>
 <li><a href="https://gohugo.io/">Hugo</a>：自称“世界上最快的网站构建框架”。它编译速度极快，无依赖，适合追求高效的用户。</li>
 <li><a href="https://hexo.io/zh-cn/index.html">Hexo</a>：自称“快速、简洁且高效的博客框架”。它基于 Node.js，主题丰富，支持<code>Markdown</code>快速生成静态页面。</li>
 </ul>
@@ -448,15 +448,15 @@
 
 
 
-<h2 id="什么是GitHub-Pages？"><a href="#什么是GitHub-Pages？" class="headerlink" title="什么是GitHub Pages？"></a>什么是GitHub Pages？</h2><p>GitHub Pages 是 GitHub 提供的静态站点托管服务，可直接从仓库获取<code>HTML</code>、<code>CSS</code>、<code>JavaScript</code> 等文件，并自动构建发布为可访问的网页，无需后端服务；专为个人、组织或项目提供免费、轻量级的网站托管能力，适用于博客、文档、作品集等场景。</p>
+<h2 id="什么是-GitHub-Pages？"><a href="#什么是-GitHub-Pages？" class="headerlink" title="什么是 GitHub Pages？"></a>什么是 GitHub Pages？</h2><p>GitHub Pages 是 GitHub 提供的静态站点托管服务，可直接从仓库获取<code>HTML</code>、<code>CSS</code>、<code>JavaScript</code> 等文件，并自动构建发布为可访问的网页，无需后端服务；专为个人、组织或项目提供免费、轻量级的网站托管能力，适用于博客、文档、作品集等场景。</p>
 <p>GitHub Pages 的核心功能特性是免费托管与自动部署。它支持公开仓库（GitHub Free）及部分私有仓库（需 GitHub Pro&#x2F;Team 等订阅），每次代码提交后自动触发站点更新；支持自定义域名，可将独立域名（如 example.com）绑定至 GitHub Pages，增强品牌标识。</p>
-<p>GitHub Pages 兼容很多优秀的静态网站生成器框架，包括Jekyll、Hugo、Hexo等。</p>
+<p>GitHub Pages 兼容很多优秀的静态网站生成器框架，包括 Jekyll、Hugo、Hexo 等。</p>
 <ul>
 <li><p><strong>Jekyl</strong>：Jekyll 是一个基于<code>Ruby</code>的静态站点生成器，它通过<code>Markdown</code>文件和模板来生成静态网站。Jekyll 的社区非常庞大，提供了丰富的插件和主题支持。尽管使用起来需要一定的<code>Ruby</code>语言基础，但其强大的功能和丰富的资源使其成为许多开发者的首选。</p>
 </li>
-<li><p><strong>Hugo</strong>：Hugo 是一个使用<code>Go</code>语言编写的静态网站生成器，以其极快的生成速度和简洁的界面著称。Hugo 的安装和使用都非常简单，只需要一个二进制文件即可进行本地调试和生成静态页面。Hugo 支持<code>Markdown</code>格式的文章自动转换为静态网页，并且内置了web服务器，方便在修改后即时预览效果。</p>
+<li><p><strong>Hugo</strong>：Hugo 是一个使用<code>Go</code>语言编写的静态网站生成器，以其极快的生成速度和简洁的界面著称。Hugo 的安装和使用都非常简单，只需要一个二进制文件即可进行本地调试和生成静态页面。Hugo 支持<code>Markdown</code>格式的文章自动转换为静态网页，并且内置了 web 服务器，方便在修改后即时预览效果。</p>
 </li>
-<li><p><strong>Hexo</strong>：Hexo 是一个基于 Node.js 的静态博客网站生成器，适合熟悉<code>JavaScript</code>的用户。Hexo提供了丰富的插件和主题，能够快速生成个性化的博客网站。使用 Hexo 之前需要安装 Git 和 Node.js，但一旦安装完成，配置和使用都非常简单。</p>
+<li><p><strong>Hexo</strong>：Hexo 是一个基于 Node.js 的静态博客网站生成器，适合熟悉<code>JavaScript</code>的用户。Hexo 提供了丰富的插件和主题，能够快速生成个性化的博客网站。使用 Hexo 之前需要安装 Git 和 Node.js，但一旦安装完成，配置和使用都非常简单。</p>
 </li>
 </ul>
 <p>总之，GitHub Pages 通过静态托管+自动化构建，为开发者提供了零成本、高效率的网站发布方案，尤其适合个人技术展示与开源项目管理。其与 Git 的深度集成和扩展性（如 Jekyll 支持），进一步降低了技术门槛与维护成本。</p>
@@ -494,16 +494,16 @@
 
 
 <h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p><a href="https://nodejs.org/">Node.js</a> 是一个基于 Chrome V8 引擎的开源、跨平台的<code>JavaScript</code>运行时环境，主要用于服务器端编程。它通过事件驱动和非阻塞 I&#x2F;O 模型，实现了轻量级和高并发处理能力。</p>
-<p>Node.js 允许开发者使用<code>JavaScript</code>来编写服务器端应用程序，扩展了<code>JavaScript</code>在服务器端的能力。它使用 V8 引擎，这使得 Node.js 中的<code>JavaScript</code>代码与浏览器中的<code>JavaScript</code>代码语法基本相同，但提供了更多的API支持服务器端开发。</p>
-<p>Node.js 由 Ryan Dahl 于2009年创建，旨在解决传统服务器架构中的痛点，如阻塞式 I&#x2F;O 导致的低效性能。Node.js 的发布标志着<code>JavaScript</code>在服务器端的广泛应用，成为与<code>PHP</code>、<code>Python</code>、<code>Perl</code>、<code>Ruby</code>等服务端语言平起平坐的脚本语言。</p>
+<p>Node.js 允许开发者使用<code>JavaScript</code>来编写服务器端应用程序，扩展了<code>JavaScript</code>在服务器端的能力。它使用 V8 引擎，这使得 Node.js 中的<code>JavaScript</code>代码与浏览器中的<code>JavaScript</code>代码语法基本相同，但提供了更多的 API 支持服务器端开发。</p>
+<p>Node.js 由 Ryan Dahl 于 2009 年创建，旨在解决传统服务器架构中的痛点，如阻塞式 I&#x2F;O 导致的低效性能。Node.js 的发布标志着<code>JavaScript</code>在服务器端的广泛应用，成为与<code>PHP</code>、<code>Python</code>、<code>Perl</code>、<code>Ruby</code>等服务端语言平起平坐的脚本语言。</p>
 <div class="note info flat"><p>运行时环境（Runtime Environment）是指在程序执行期间所需的软件和硬件环境的总和，为程序的执行提供了必要的基础设施和资源。它包括操作系统、虚拟机或解释器、运行时库、框架和组件、动态链接器、垃圾收集器、性能监控和分析工具、安全机制以及国际化支持等组成部分。</p>
 </div>
 
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>Node.js使用事件驱动、非阻塞式I&#x2F;O模型，使得其轻量且高效。Node.js 的核心在于其事件循环和非阻塞的 I&#x2F;O 操作。它使用单线程模型，通过事件循环来处理异步任务。当新的请求进来时，Node.js会将请求放入队列中，并继续执行后续代码。当请求的结果准备好后，通过回调函数进行处理。</p>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>Node.js 使用事件驱动、非阻塞式 I&#x2F;O 模型，使得其轻量且高效。Node.js 的核心在于其事件循环和非阻塞的 I&#x2F;O 操作。它使用单线程模型，通过事件循环来处理异步任务。当新的请求进来时，Node.js 会将请求放入队列中，并继续执行后续代码。当请求的结果准备好后，通过回调函数进行处理。</p>
 <h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>Node.js 允许<code>JavaScript</code>代码在服务器端运行，扩展了<code>JavaScript</code>的应用场景。它特别适用于处理高并发场景，如实时通信应用。</p>
 <ul>
-<li>Web服务器：Node.js 可以高效地处理大量并发请求，适合搭建 Web 服务器。</li>
-<li>API服务：用于创建 RESTful API 或 GraphQL API，能够快速处理请求。</li>
+<li>Web 服务器：Node.js 可以高效地处理大量并发请求，适合搭建 Web 服务器。</li>
+<li>API 服务：用于创建 RESTful API 或 GraphQL API，能够快速处理请求。</li>
 <li>实时应用：如即时聊天应用、在线多人游戏等，Node.js 在实时处理方面表现出色。</li>
 </ul>
 <h3 id="下载、安装"><a href="#下载、安装" class="headerlink" title="下载、安装"></a>下载、安装</h3><ul>
@@ -514,7 +514,7 @@
 <li><p>验证安装：可以用以下命令输出 Node.js 的版本。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">node --version</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="NMP"><a href="#NMP" class="headerlink" title="NMP"></a>NMP</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><p>NPM（Node Package Manager）是基于 Node.js 环境的包管理器。当你安装 Node.js 时，NPM 也会被自动安装，因为它作为Node.js 的一部分存在。NPM 的主要作用是下载和管理<code>JavaScript</code>相关的第三方包和模块。通过 NPM，开发者可以方便地安装、更新和卸载各种库和框架，极大地丰富了 Node.js 的应用开发能力。</p>
+<h3 id="NMP"><a href="#NMP" class="headerlink" title="NMP"></a>NMP</h3><h4 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h4><p>NPM（Node Package Manager）是基于 Node.js 环境的包管理器。当你安装 Node.js 时，NPM 也会被自动安装，因为它作为 Node.js 的一部分存在。NPM 的主要作用是下载和管理<code>JavaScript</code>相关的第三方包和模块。通过 NPM，开发者可以方便地安装、更新和卸载各种库和框架，极大地丰富了 Node.js 的应用开发能力。</p>
 <p>Node.js 是底层引擎，提供<code>JavaScript</code>在服务器端的执行能力；npm 是生态扩展工具为 Node.js 提供代码模块的安装、更新、依赖管理等功能。两者的协同构建了<code>JavaScript</code>全栈开发的基础设施，类似于：</p>
 <ul>
 <li>Python（语言） ↔ pip（包管理）</li>
@@ -558,7 +558,7 @@
 <li><p>列出当前项目已安装的所有包，包括直接依赖和所有子依赖。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>列出当前项目已安装的所有包，使用–depth&#x3D;0参数可以只查看顶级依赖。</p>
+<li><p>列出当前项目已安装的所有包，使用–depth&#x3D;0 参数可以只查看顶级依赖。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm list --depth=0</span><br><span class="line">npm ls --depth=0</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看全局安装的包（即那些可以通过命令行直接访问的包）。</p>
@@ -577,7 +577,7 @@
 <li><p>查看指定包的官方文档首页。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm doc &lt;package-name&gt;</span><br><span class="line">npm home &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看指定包的bug列表和issue跟踪器。</p>
+<li><p>查看指定包的 bug 列表和 issue 跟踪器。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm bugs &lt;package-name&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看哪些包有可用的更新版本，列出项目中已经过时的依赖包，以及它们的最新版本。</p>
@@ -587,13 +587,13 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config list</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h5><ul>
-<li><p>设置npm的配置选项。</p>
+<li><p>设置 npm 的配置选项。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set &lt;key&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure>
 
-<p>例如，设置npm的仓库地址为淘宝镜像源：</p>
+<p>例如，设置 npm 的仓库地址为淘宝镜像源：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
 
-<p>常见的npm的仓库镜像源：</p>
+<p>常见的 npm 的仓库镜像源：</p>
 <ul>
 <li><p>官方：<a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p>
 </li>
@@ -616,12 +616,12 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm run &lt;script&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h5><ul>
-<li><p>在npm仓库中搜索包含指定关键字的包。</p>
+<li><p>在 npm 仓库中搜索包含指定关键字的包。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm search &lt;keyword&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h5><ul>
-<li><p>清理npm的缓存。</p>
-<p>这有助于解决一些由缓存引起的安装问题。但请注意，使用–force选项会强制清理缓存，可能导致数据丢失，因此请谨慎使用。</p>
+<li><p>清理 npm 的缓存。</p>
+<p>这有助于解决一些由缓存引起的安装问题。但请注意，使用–force 选项会强制清理缓存，可能导致数据丢失，因此请谨慎使用。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="自动修复安全漏洞"><a href="#自动修复安全漏洞" class="headerlink" title="自动修复安全漏洞"></a>自动修复安全漏洞</h5><ul>
@@ -631,30 +631,30 @@
 <li><p>自动安装所有易受攻击包的补丁版本，以修复已知的安全漏洞。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm audit fix</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h5 id="登录-退出npm"><a href="#登录-退出npm" class="headerlink" title="登录&#x2F;退出npm"></a>登录&#x2F;退出npm</h5><ul>
-<li><p>登录npm账户。这通常用于发布包到npm仓库时，需要输入用户名、密码和邮箱进行身份验证。</p>
+<h5 id="登录-退出-npm"><a href="#登录-退出-npm" class="headerlink" title="登录&#x2F;退出 npm"></a>登录&#x2F;退出 npm</h5><ul>
+<li><p>登录 npm 账户。这通常用于发布包到 npm 仓库时，需要输入用户名、密码和邮箱进行身份验证。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm login</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>退出npm账户。</p>
+<li><p>退出 npm 账户。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm logout</span><br></pre></td></tr></table></figure></li>
 </ul>
-<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>通过这些基本操作，开发者可以有效地管理和使用NPM中的各种包和模块，从而构建强大的服务器端应用程序。更多操作细节，请参考<a href="https://nodejs.org/zh-cn/learn/getting-started/an-introduction-to-the-npm-package-manager">Node.js — An introduction to the npm package manager</a>。</p>
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>通过这些基本操作，开发者可以有效地管理和使用 NPM 中的各种包和模块，从而构建强大的服务器端应用程序。更多操作细节，请参考<a href="https://nodejs.org/zh-cn/learn/getting-started/an-introduction-to-the-npm-package-manager">Node.js — An introduction to the npm package manager</a>。</p>
 </div>
 
 
 
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="基本概念-2"><a href="#基本概念-2" class="headerlink" title="基本概念"></a>基本概念</h3><p><a href="https://git-scm.com/">Git</a> 是一款免费、开源的分布式版本控制系统，由 Linux 内核的开发者 Linus Torvalds（林纳斯·托瓦兹）在2005年创建，最初用于管理 Linux 内核的开发。由于其高效和分布式的工作方式，Git迅速成为最流行的版本控制系统之一。现在，Git 是目前世界上最流行的版本控制系统之一，广泛应用于软件开发和其他版本控制任务中，可以敏捷高效地处理任何或小或大项目的版本管理。</p>
-<p>Git 是用于 Linux 内核开发的版本控制工具。与 CVS、Subversion 一类的集中式版本控制工具不同，它采用了分布式版本库的作法，不需要服务器端软件，就可以运作版本控制，使得源代码的发布和交流极其方便。Git的速度很快，这对于诸如Linux内核这样的大项目来说自然很重要。Git最为出色的是它的合并追踪（merge tracing）能力。 </p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="基本概念-2"><a href="#基本概念-2" class="headerlink" title="基本概念"></a>基本概念</h3><p><a href="https://git-scm.com/">Git</a> 是一款免费、开源的分布式版本控制系统，由 Linux 内核的开发者 Linus Torvalds（林纳斯·托瓦兹）在 2005 年创建，最初用于管理 Linux 内核的开发。由于其高效和分布式的工作方式，Git 迅速成为最流行的版本控制系统之一。现在，Git 是目前世界上最流行的版本控制系统之一，广泛应用于软件开发和其他版本控制任务中，可以敏捷高效地处理任何或小或大项目的版本管理。</p>
+<p>Git 是用于 Linux 内核开发的版本控制工具。与 CVS、Subversion 一类的集中式版本控制工具不同，它采用了分布式版本库的作法，不需要服务器端软件，就可以运作版本控制，使得源代码的发布和交流极其方便。Git 的速度很快，这对于诸如 Linux 内核这样的大项目来说自然很重要。Git 最为出色的是它的合并追踪（merge tracing）能力。</p>
 <ul>
 <li>仓库（Repository）：存储项目代码及其历史记录的地方，包括工作目录和<code>.git</code>目录。后者存储配置文件、日志和版本历史等信息。</li>
-<li>工作区：包含.git文件夹的目录，用于存放需要版本控制的文件。</li>
+<li>工作区：包含.git 文件夹的目录，用于存放需要版本控制的文件。</li>
 <li>暂存区：临时保存修改文件的地方，允许开发者选择性地决定哪些修改后的文件应该被包括在下一次提交中。</li>
 <li>本地库：存储和管理文件及其历史版本的地方，在用户自己的电脑上。</li>
 <li>远程仓库：存储在网络上的仓库，通常用于多人协作开发。</li>
 </ul>
 <h3 id="特点和优势"><a href="#特点和优势" class="headerlink" title="特点和优势"></a>特点和优势</h3><ul>
 <li>分布式控制：每个开发者都有自己的完整项目历史记录，可以在没有网络连接的情况下工作，并在准备好时与其他人同步更改。</li>
-<li>分支和合并：Git提供了强大的分支和合并功能，使得开发者可以轻松创建新的开发路径，并在完成工作后将其合并回主分支。</li>
+<li>分支和合并：Git 提供了强大的分支和合并功能，使得开发者可以轻松创建新的开发路径，并在完成工作后将其合并回主分支。</li>
 <li>提交和快照：通过提交来记录项目的更改，每次提交都会创建一个项目的快照，方便回滚到之前的版本或比较不同版本之间的差异。</li>
 <li>协作和共享：支持通过远程仓库进行协作，开发者可以克隆远程仓库、在本地进行更改，然后将更改推送到远程仓库以与其他人共享。</li>
 <li>冲突解决：提供工具帮助解决多个开发者对同一文件进行更改时产生的冲突，确保即使在没有直接沟通的情况下也能有效协作。</li>
