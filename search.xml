@@ -524,7 +524,7 @@
 <h4 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm &lt;command&gt;</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line"></span><br><span class="line">npm install        install all the dependencies in your project</span><br><span class="line">npm install &lt;foo&gt;  add the &lt;foo&gt; dependency to your project</span><br><span class="line">npm test           run this project&#x27;s tests</span><br><span class="line">npm run &lt;foo&gt;      run the script named &lt;foo&gt;</span><br><span class="line">npm &lt;command&gt; -h   quick help on &lt;command&gt;</span><br><span class="line">npm -l             display usage info for all commands</span><br><span class="line">npm help &lt;term&gt;    search for help on &lt;term&gt; (in a browser)</span><br><span class="line">npm help npm       more involved overview (in a browser)</span><br><span class="line"></span><br><span class="line">All commands:</span><br><span class="line"></span><br><span class="line">    access, adduser, audit, bugs, cache, ci, completion,</span><br><span class="line">    config, dedupe, deprecate, diff, dist-tag, docs, doctor,</span><br><span class="line">    edit, exec, explain, explore, find-dupes, fund, get, help,</span><br><span class="line">    hook, init, install, install-ci-test, install-test, link,</span><br><span class="line">    ll, login, logout, ls, org, outdated, owner, pack, ping,</span><br><span class="line">    pkg, prefix, profile, prune, publish, query, rebuild, repo,</span><br><span class="line">    restart, root, run-script, search, set, shrinkwrap, star,</span><br><span class="line">    stars, start, stop, team, test, token, uninstall, unpublish,</span><br><span class="line">    unstar, update, version, view, whoami</span><br></pre></td></tr></table></figure>
 
 <h5 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h5><ul>
-<li><p>可以用以下命令输出 npm 的版本。</p>
+<li><p>可以用以下命令输出 NPM 的版本。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm -v</span><br><span class="line">npm --version</span><br><span class="line">npm version</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h5><ul>
@@ -583,17 +583,17 @@
 <li><p>查看哪些包有可用的更新版本，列出项目中已经过时的依赖包，以及它们的最新版本。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm outdated</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>查看当前 npm 配置信息（如镜像源地址）。</p>
+<li><p>查看当前 NPM 配置信息（如镜像源地址）。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config list</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h5><ul>
 <li><p>设置 NPM 的配置选项。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set &lt;key&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure>
 
-<p>例如，设置 npm 的仓库地址为淘宝镜像源：</p>
+<p>例如，设置 NPM 的仓库地址为淘宝镜像源：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
 
-<p>常见的 npm 的仓库镜像源：</p>
+<p>常见的 NPM 的仓库镜像源：</p>
 <ul>
 <li><p>官方：<a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p>
 </li>
@@ -612,7 +612,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config delete &lt;key&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h5><ul>
-<li><p>运行 <code>package.json</code> 中定义的脚本命令（如 npm start）</p>
+<li><p>运行 <code>package.json</code> 中定义的脚本命令（如 <code>npm start</code>）</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm run &lt;script&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="搜索包"><a href="#搜索包" class="headerlink" title="搜索包"></a>搜索包</h5><ul>
@@ -632,7 +632,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm audit fix</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h5 id="登录-退出-NPM"><a href="#登录-退出-NPM" class="headerlink" title="登录&#x2F;退出 NPM"></a>登录&#x2F;退出 NPM</h5><ul>
-<li><p>登录 NPM 账户。这通常用于发布包到 npm 仓库时，需要输入用户名、密码和邮箱进行身份验证。</p>
+<li><p>登录 NPM 账户。这通常用于发布包到 NPM 仓库时，需要输入用户名、密码和邮箱进行身份验证。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm login</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>退出 NPM 账户。</p>
