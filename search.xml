@@ -48,6 +48,95 @@
       </tags>
   </entry>
   <entry>
+    <title>博客搭建 · 搭建一个自己的博客 05：写作</title>
+    <url>/blog/2025/03/14/531ad9e1/</url>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
+<li>博客搭建系列 · 搭建一个自己的博客</li>
+<li>摘要：本文主要介绍如何使用 Hexo 进行写作。</li>
+</ul>
+</div>
+
+
+
+<h2 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h2><p>Hexo 有三种默认布局（Layout）：<code>post</code>、<code>page</code> 和 <code>draft</code>。 每个布局创建的文件会被保存到不同的路径。</p>
+<table>
+<thead>
+<tr>
+<th align="center">布局</th>
+<th align="center">路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>post</code></td>
+<td align="center"><code>source/_posts</code></td>
+</tr>
+<tr>
+<td align="center"><code>page</code></td>
+<td align="center"><code>source</code></td>
+</tr>
+<tr>
+<td align="center"><code>draft</code></td>
+<td align="center"><code>source/_drafts</code></td>
+</tr>
+</tbody></table>
+<p>可以执行下列命令来创建一篇新文章或者新的页面。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果不标识布局（Layout），则新创建的文章会会被保存到默认布局的路径下。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>post</code> 是默认的布局，文件自动生成在 <code>source/_posts/&lt;title&gt;.md</code>。也可以通过编辑 <code>_config.yml</code> 中的 <code>default_layout</code> 设置来更改默认布局。</p>
+<p>使用以下命令，可以创建草稿。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新创建的文章草稿会被保存到 <code>source/_drafts</code> 文件夹。</p>
+<div class="note info flat"><p><strong>个人建议</strong>：先生成草稿再发布到 <code>source/_posts</code>，而不是直接生成文章到 <code>source/_posts</code>。</p>
+<p>因为在使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章时，Hexo 会自动帮助我们调整文章的 Front-matter 元数据，从而可以帮助我们在文章发布时检查文章内容的格式，而不是要等到在浏览器预览时才发现问题。</p>
+</div>
+
+
+
+<h2 id="编辑草稿"><a href="#编辑草稿" class="headerlink" title="编辑草稿"></a>编辑草稿</h2><h3 id="编辑-Front-matter"><a href="#编辑-Front-matter" class="headerlink" title="编辑 Front-matter"></a>编辑 Front-matter</h3><div class="note info flat"><p>Front-matter 是文件开头的 <code>YAML</code> 或 <code>JSON</code> 代码块，用于配置写作设置。 以 <code>YAML</code> 格式书写时，Front-matter 以三个破折号结束；以<code>JSON</code>格式书写时，Front-matter 以三个分号结束。</p>
+</div>
+
+<p>在 <code>Markdown</code> 文件顶部添加 <code>YAML</code> 配置块，例如：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">&#x27;工程师&#x27;</span>, <span class="string">&#x27;运维&#x27;</span>]</span><br><span class="line"><span class="attr">cover:</span> <span class="string">https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，只有文章支持分类（categories）和标签（tags）。Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>中有关“分类”和“标签”的描述是：“<em>分类按顺序应用于文章，从而形成分类和子分类的层次结构。标签是在相同的层次结构上定义的，因此它们的出现顺序不重要</em>”。这也就是说，分类有严格的层次结构，而标签没有，我们无需关心标签的层次结构。例如 Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>给出的举例：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Sports</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Baseball</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Injury</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Fight</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Shocking</span></span><br></pre></td></tr></table></figure>
+
+<p>“<em>如果想应用多个分类层次结构，可以使用一个名称列表而不是一个单个名称</em>”。例如：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">Sports</span>, <span class="string">Baseball</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">Boston</span> <span class="string">Red</span> <span class="string">Sox</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">New</span> <span class="string">York</span> <span class="string">Yankees</span>]</span><br><span class="line">  <span class="bullet">-</span> <span class="string">Rivalries</span></span><br></pre></td></tr></table></figure>
+
+<p>“<em>如果 Hexo 在帖子上看到像这种方式定义的分类，它会将该帖子的每个分类视为其自己的独立层次结构。</em>”</p>
+<p>使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章后的 Front-matter 如下。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="bullet">-</span> <span class="string">工程师</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">运维</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">&gt;-</span></span><br><span class="line"><span class="string">  https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="string"></span><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>不难发现，确实与之前样例中的 Front-matter 不一样，但实现的效果是一样的。这也是为什么个人建议使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章，这样更规范。</p>
+<h3 id="编辑正文"><a href="#编辑正文" class="headerlink" title="编辑正文"></a>编辑正文</h3><p>接下来就可以编写自己的文章正文啦~下面主要介绍一些常用的写作技巧。</p>
+<h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="bullet">-</span> 列表项</span><br><span class="line"><span class="strong">**加粗文本**</span></span><br><span class="line">[<span class="string">链接文字</span>](<span class="link">https://example.com</span>)</span><br><span class="line">![<span class="string">图片描述</span>](<span class="link">/images/example.jpg</span>)</span><br><span class="line"><span class="code">`单行代码`</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="扩展语法（需主题支持）"><a href="#扩展语法（需主题支持）" class="headerlink" title="扩展语法（需主题支持）"></a>扩展语法（需主题支持）</h4><h5 id="引用块（quote）"><a href="#引用块（quote）" class="headerlink" title="引用块（quote）"></a>引用块（quote）</h5><p>参考<a href="https://hexo.io/zh-cn/docs/tag-plugins">标签插件（Tag Plugins） | Hexo</a>和<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文档(四) 标签外挂 | Butterfly</a></p>
+<p><del>（后续完善）</del></p>
+<h2 id="预览、发布"><a href="#预览、发布" class="headerlink" title="预览、发布"></a>预览、发布</h2><h3 id="启动实时渲染服务器预览草稿"><a href="#启动实时渲染服务器预览草稿" class="headerlink" title="启动实时渲染服务器预览草稿"></a>启动实时渲染服务器预览草稿</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s --draft # 默认访问 http://localhost:4000</span><br></pre></td></tr></table></figure>
+
+<h3 id="发布草稿到正式文章"><a href="#发布草稿到正式文章" class="headerlink" title="发布草稿到正式文章"></a>发布草稿到正式文章</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo publish &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>有关 Hexo 写作的更多细节，可参考 Hexo 的<a href="https://hexo.io/zh-cn/docs/">文档</a>之<a href="https://hexo.io/zh-cn/docs/writing">写作</a>和主题 Butterfly 的<a href="https://butterfly.js.org/posts/ceeb73f/">文档</a>。</p>
+</div>
+]]></content>
+      <categories>
+        <category>工程师</category>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>技术宅</tag>
+        <tag>技术笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>英语单词记忆 · 解码英语单词的 DNA 02：后缀篇</title>
     <url>/blog/2025/03/22/47bf9e0d/</url>
     <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
@@ -552,95 +641,6 @@
         <tag>学习笔记</tag>
         <tag>英语</tag>
         <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建 · 搭建一个自己的博客 05：写作</title>
-    <url>/blog/2025/03/14/531ad9e1/</url>
-    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
-<li>博客搭建系列 · 搭建一个自己的博客</li>
-<li>摘要：本文主要介绍如何使用 Hexo 进行写作。</li>
-</ul>
-</div>
-
-
-
-<h2 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h2><p>Hexo 有三种默认布局（Layout）：<code>post</code>、<code>page</code> 和 <code>draft</code>。 每个布局创建的文件会被保存到不同的路径。</p>
-<table>
-<thead>
-<tr>
-<th align="center">布局</th>
-<th align="center">路径</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>post</code></td>
-<td align="center"><code>source/_posts</code></td>
-</tr>
-<tr>
-<td align="center"><code>page</code></td>
-<td align="center"><code>source</code></td>
-</tr>
-<tr>
-<td align="center"><code>draft</code></td>
-<td align="center"><code>source/_drafts</code></td>
-</tr>
-</tbody></table>
-<p>可以执行下列命令来创建一篇新文章或者新的页面。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>如果不标识布局（Layout），则新创建的文章会会被保存到默认布局的路径下。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>post</code> 是默认的布局，文件自动生成在 <code>source/_posts/&lt;title&gt;.md</code>。也可以通过编辑 <code>_config.yml</code> 中的 <code>default_layout</code> 设置来更改默认布局。</p>
-<p>使用以下命令，可以创建草稿。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>新创建的文章草稿会被保存到 <code>source/_drafts</code> 文件夹。</p>
-<div class="note info flat"><p><strong>个人建议</strong>：先生成草稿再发布到 <code>source/_posts</code>，而不是直接生成文章到 <code>source/_posts</code>。</p>
-<p>因为在使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章时，Hexo 会自动帮助我们调整文章的 Front-matter 元数据，从而可以帮助我们在文章发布时检查文章内容的格式，而不是要等到在浏览器预览时才发现问题。</p>
-</div>
-
-
-
-<h2 id="编辑草稿"><a href="#编辑草稿" class="headerlink" title="编辑草稿"></a>编辑草稿</h2><h3 id="编辑-Front-matter"><a href="#编辑-Front-matter" class="headerlink" title="编辑 Front-matter"></a>编辑 Front-matter</h3><div class="note info flat"><p>Front-matter 是文件开头的 <code>YAML</code> 或 <code>JSON</code> 代码块，用于配置写作设置。 以 <code>YAML</code> 格式书写时，Front-matter 以三个破折号结束；以<code>JSON</code>格式书写时，Front-matter 以三个分号结束。</p>
-</div>
-
-<p>在 <code>Markdown</code> 文件顶部添加 <code>YAML</code> 配置块，例如：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">&#x27;工程师&#x27;</span>, <span class="string">&#x27;运维&#x27;</span>]</span><br><span class="line"><span class="attr">cover:</span> <span class="string">https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-
-<p>其中，只有文章支持分类（categories）和标签（tags）。Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>中有关“分类”和“标签”的描述是：“<em>分类按顺序应用于文章，从而形成分类和子分类的层次结构。标签是在相同的层次结构上定义的，因此它们的出现顺序不重要</em>”。这也就是说，分类有严格的层次结构，而标签没有，我们无需关心标签的层次结构。例如 Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>给出的举例：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Sports</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Baseball</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Injury</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Fight</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Shocking</span></span><br></pre></td></tr></table></figure>
-
-<p>“<em>如果想应用多个分类层次结构，可以使用一个名称列表而不是一个单个名称</em>”。例如：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">Sports</span>, <span class="string">Baseball</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">Boston</span> <span class="string">Red</span> <span class="string">Sox</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">New</span> <span class="string">York</span> <span class="string">Yankees</span>]</span><br><span class="line">  <span class="bullet">-</span> <span class="string">Rivalries</span></span><br></pre></td></tr></table></figure>
-
-<p>“<em>如果 Hexo 在帖子上看到像这种方式定义的分类，它会将该帖子的每个分类视为其自己的独立层次结构。</em>”</p>
-<p>使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章后的 Front-matter 如下。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="bullet">-</span> <span class="string">工程师</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">运维</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">&gt;-</span></span><br><span class="line"><span class="string">  https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="string"></span><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-
-<p>不难发现，确实与之前样例中的 Front-matter 不一样，但实现的效果是一样的。这也是为什么个人建议使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章，这样更规范。</p>
-<h3 id="编辑正文"><a href="#编辑正文" class="headerlink" title="编辑正文"></a>编辑正文</h3><p>接下来就可以编写自己的文章正文啦~下面主要介绍一些常用的写作技巧。</p>
-<h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="bullet">-</span> 列表项</span><br><span class="line"><span class="strong">**加粗文本**</span></span><br><span class="line">[<span class="string">链接文字</span>](<span class="link">https://example.com</span>)</span><br><span class="line">![<span class="string">图片描述</span>](<span class="link">/images/example.jpg</span>)</span><br><span class="line"><span class="code">`单行代码`</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="扩展语法（需主题支持）"><a href="#扩展语法（需主题支持）" class="headerlink" title="扩展语法（需主题支持）"></a>扩展语法（需主题支持）</h4><h5 id="引用块（quote）"><a href="#引用块（quote）" class="headerlink" title="引用块（quote）"></a>引用块（quote）</h5><p>参考<a href="https://hexo.io/zh-cn/docs/tag-plugins">标签插件（Tag Plugins） | Hexo</a>和<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文档(四) 标签外挂 | Butterfly</a></p>
-<p><del>（后续完善）</del></p>
-<h2 id="预览、发布"><a href="#预览、发布" class="headerlink" title="预览、发布"></a>预览、发布</h2><h3 id="启动实时渲染服务器预览草稿"><a href="#启动实时渲染服务器预览草稿" class="headerlink" title="启动实时渲染服务器预览草稿"></a>启动实时渲染服务器预览草稿</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s --draft # 默认访问 http://localhost:4000</span><br></pre></td></tr></table></figure>
-
-<h3 id="发布草稿到正式文章"><a href="#发布草稿到正式文章" class="headerlink" title="发布草稿到正式文章"></a>发布草稿到正式文章</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo publish &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>有关 Hexo 写作的更多细节，可参考 Hexo 的<a href="https://hexo.io/zh-cn/docs/">文档</a>之<a href="https://hexo.io/zh-cn/docs/writing">写作</a>和主题 Butterfly 的<a href="https://butterfly.js.org/posts/ceeb73f/">文档</a>。</p>
-</div>
-]]></content>
-      <categories>
-        <category>工程师</category>
-        <category>运维</category>
-      </categories>
-      <tags>
-        <tag>技术宅</tag>
-        <tag>技术笔记</tag>
       </tags>
   </entry>
   <entry>
