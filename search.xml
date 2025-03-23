@@ -52,7 +52,7 @@
     <url>/blog/2025/03/22/47bf9e0d/</url>
     <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
 <li>英语单词记忆系列 · 解码英语单词的 DNA</li>
-<li>摘要：本文主要介绍了“英语单词的‘基因尾迹’——后缀”。</li>
+<li>摘要：本文主要介绍了英语单词的“基因尾迹”——后缀。</li>
 </ul>
 </div>
 
@@ -71,9 +71,9 @@
 <li><strong>搭建语法框架</strong>：后缀定义的词性（名&#x2F;形&#x2F;动）是造句的基石，先掌握它们，才能在实践中“定位”词汇；</li>
 <li><strong>阶梯式信心累积</strong>：从后缀突破短词（如 <em>kindness</em>），再逐步关联词根（<code>kind-</code>）与前缀（如 <em>unkindness</em>），如同先拼合拼图的边角，再填充中心。</li>
 </ul>
-<p>更重要的是，后缀的规则性极强，<strong>跨语言、跨文化的干扰极少</strong>。无论是拉丁源的 <code>-ment</code>（development）还是希腊源的 <code>-logy</code>（biology），它们的功能高度统一，如同全球通行的符号。先掌握这些“词尾密码”，相当于获得一把解剖单词的标准化手术刀，为后续理解词根的复杂演变、前缀的微妙转向，打下清晰的地基。</p>
+<p>更重要的是，后缀的规则性极强，<strong>跨语言、跨文化的干扰极少</strong>。无论是拉丁源的 <code>-ment</code>（<em>development</em>）还是希腊源的 <code>-logy</code>（<em>biology</em>），它们的功能高度统一，如同全球通行的符号。先掌握这些“词尾密码”，相当于获得一把解剖单词的标准化手术刀，为后续理解词根的复杂演变、前缀的微妙转向，打下清晰的地基。</p>
 <p>让我们从后缀出发，揭开英语单词的底层逻辑，重构你对语言的认知。</p>
-<h2 id="常见词性后缀"><a href="#常见词性后缀" class="headerlink" title="常见词性后缀"></a>常见词性后缀</h2><blockquote>
+<h2 id="四类词性的常见后缀"><a href="#四类词性的常见后缀" class="headerlink" title="四类词性的常见后缀"></a>四类词性的常见后缀</h2><blockquote>
 <p>让我们从常见词性后缀入手，揭开它们如何像“基因编辑工具”般重塑单词的 DNA。</p>
 </blockquote>
 <h3 id="名词后缀"><a href="#名词后缀" class="headerlink" title="名词后缀"></a>名词后缀</h3><table>
@@ -226,7 +226,7 @@
 <tr>
 <td><code>-aceous</code></td>
 <td>具有某种特性</td>
-<td><em>herbaceous</em>（草本的）, <em>carbonaceous</em>（含碳的）</td>
+<td><em>herbaceous</em>（草本的）、<em>carbonaceous</em>（含碳的）</td>
 </tr>
 <tr>
 <td><code>-ish</code></td>
@@ -345,7 +345,7 @@
 | `-where`   | 在/到…地方                               | *everywhere*（到处）、*nowhere*（无处）                      | 与疑问代词结合，表地点范围                                   |
 | `-ling`    | 古英语残留，表方式或状态                 | *darkling*（在黑暗中）、*headlong*（头向前地）               | 极少见，多用于文学                                           |
 | 不规则形式 | 无固定后缀                               | *well*（好地）、*fast*（快地）、*hard*（努力地）             | 与形容词同形（如 “*fast* *car* → *drive* *fast*”），需单独记忆 |
-| 复合形式   | 短语固化                                 | *anyway*（无论如何）、*sometimes*（有时）                    | 由短语演变而来（“*any* + *way* → *anyway*”, “*some* + *times* → *sometimes*”） |
+| 复合形式   | 短语固化                                 | *anyway*（无论如何）、*sometimes*（有时）                    | 由短语演变而来（“*any* + *way* → *anyway*”“*some* + *times* → *sometimes*”） |
 
 -->
 
@@ -440,12 +440,13 @@
 <td>复合形式</td>
 <td>短语固化</td>
 <td><em>anyway</em>（无论如何）、<em>sometimes</em>（有时）</td>
-<td>由短语演变而来（“<em>any</em> + <em>way</em> → <em>anyway</em>”, “<em>some</em> + <em>times</em> → <em>sometimes</em>”）</td>
+<td>由短语演变而来（“<em>any</em> + <em>way</em> → <em>anyway</em>”“<em>some</em> + <em>times</em> → <em>sometimes</em>”）</td>
 </tr>
 </tbody></table>
 
 
-<h3 id="四类词性后缀的逻辑对比"><a href="#四类词性后缀的逻辑对比" class="headerlink" title="四类词性后缀的逻辑对比"></a>四类词性后缀的逻辑对比</h3><blockquote>
+
+<h2 id="四类词性后缀的逻辑对比"><a href="#四类词性后缀的逻辑对比" class="headerlink" title="四类词性后缀的逻辑对比"></a>四类词性后缀的逻辑对比</h2><blockquote>
 <p>“名静动，动催变，形容染性质，副词修细节。”</p>
 </blockquote>
 <table>
@@ -463,72 +464,446 @@
 <td align="left">标记实体或结果</td>
 <td align="left">将动态概念静态化</td>
 <td align="left">动词&#x2F;形容词 → 名词</td>
-<td align="left">act → <strong>action</strong></td>
+<td align="left"><em>act</em> → <em><strong>action</strong></em></td>
 </tr>
 <tr>
 <td align="left"><strong>动词</strong></td>
 <td align="left">触发动作或状态变化</td>
 <td align="left">将静态概念动态化</td>
 <td align="left">名词&#x2F;形容词 → 动词</td>
-<td align="left">modern → <strong>modernize</strong></td>
+<td align="left"><em>modern</em> → <em><strong>modernize</strong></em></td>
 </tr>
 <tr>
 <td align="left"><strong>形容词</strong></td>
 <td align="left">定义性质或关联</td>
 <td align="left">赋予事物属性或可能性</td>
 <td align="left">名词&#x2F;动词 → 形容词</td>
-<td align="left">danger → <strong>dangerous</strong></td>
+<td align="left"><em>danger</em> → <em><strong>dangerous</strong></em></td>
 </tr>
 <tr>
 <td align="left"><strong>副词</strong></td>
 <td align="left">修饰动作或状态的性质</td>
 <td align="left">添加方式、程度或方向</td>
 <td align="left">形容词 → 副词</td>
-<td align="left">quick → <strong>quickly</strong></td>
+<td align="left"><em>quick</em> → <em><strong>quickly</strong></em></td>
 </tr>
 </tbody></table>
-<ul>
-<li><p>名词后缀：</p>
-<ul>
+<h3 id="名词后缀-1"><a href="#名词后缀-1" class="headerlink" title="名词后缀"></a>名词后缀</h3><ul>
 <li>核心：“事物化”或“实体化”，即“将动态概念静态化”，赋予其可被指称的实体性。例如，将动作或状态固化为实体，或标记行为的执行者&#x2F;工具。</li>
 <li>主要强调：事物实体化，如行为结果、执行者、抽象概念。</li>
 <li>常见意义：抽象概念、行为、动作、状态、过程、结果、人或职业、物品等。</li>
 </ul>
-</li>
-<li><p>形容词后缀：</p>
-<ul>
+<h3 id="形容词后缀-1"><a href="#形容词后缀-1" class="headerlink" title="形容词后缀"></a>形容词后缀</h3><ul>
 <li>核心：“属性化”或“特征化”，即“从客观到主观”，将事物转化为可感知、可评价的属性。例如，描述事物的性质、能力或与某事物的关联。</li>
 <li>主要强调：属性定义，如性质、特征、能力、可能性、倾向性。</li>
 <li>常见意义：“与……有关”“具有……性质、特征或能力的”。</li>
 </ul>
-</li>
-<li><p>动词后缀：</p>
-<ul>
+<h3 id="动词后缀-1"><a href="#动词后缀-1" class="headerlink" title="动词后缀"></a>动词后缀</h3><ul>
 <li>核心：“动态化”，即“从静态到动态”，赋予词汇行动力与变化性。例如，触发动作或状态转变，将静态概念动态化。</li>
 <li>主要强调：动作触发，如使动、转化、强化。</li>
 <li>常见意义：“使……发生”“变成某种状态”“使成为”。</li>
 </ul>
-</li>
-<li><p>副词后缀：</p>
-<ul>
+<h3 id="副词后缀-1"><a href="#副词后缀-1" class="headerlink" title="副词后缀"></a>副词后缀</h3><ul>
 <li>核心：“方式化”或“修饰化”，即“从修饰到具体化”，为动作或状态添加精确的附加信息。例如，修饰动作或状态的性质，描述其发生的方式、程度或方向。</li>
 <li>主要强调：方式修饰，如动作修饰（如何发生）、时间（何时发生）、方向（向哪发生）、程度（强度如何）。</li>
 <li>常见意义：“以……方式&#x2F;程度”。</li>
 </ul>
-</li>
-<li><p>例外情况：</p>
+<h3 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h3><h4 id="跨词性后缀"><a href="#跨词性后缀" class="headerlink" title="跨词性后缀"></a>跨词性后缀</h4><p>部分后缀可能存在多义性，如 <code>-ate</code>（可作名词、动词、形容词后缀）、 <code>-ary</code>（可作名词、形容词后缀）和 <code>-ish</code> （可作形容词或动词后缀），需结合语境判断。</p>
+<!-- 注释：Markdown 表格
+
+| 词根   | 词性   | 核心意义                                     | 典型示例                                                     | 语境判断技巧                                                 |
+| ------ | :----- | :------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `-ate` | 动词   | 使……发生；执行动作；进行某种行为             | *activate*（激活）、*celebrate*（庆祝）、*educate*（教育）   | 常见于及物动词，后接宾语或动作对象，描述动态过程；多含“主动行为” |
+|        | 名词   | 身份、职位、结果或化学物质                   | *candidate*（候选人）、*doctorate*（博士学位）、*advocate*（倡导者）、*chlorate*（氯酸盐）、*sulfate*（硫酸盐） | 多表示人或物；职位类名词常与职业相关；化学名词常与科学术语相关；常为“结果或实体”。 |
+|        | 形容词 | 具有……性质或状态；重构满……的                 | *passionate*（热情的）、*accurate*（精确的）、*delicate*（精致的）、*fortunate*（幸运的） | 多描述状态或特征，修饰名词，常见于描述人或事物的特性。       |
+| `-ary` | 名词   | 与……相关的人或事物                           | *library*（图书馆）、*adversary*（对手）、*secretary*（秘书）、*dictionary*（字典）、*glossary*（术语表） | 多表示工具、场所、机构、人（角色）、物（工具）；多与具体事物或职业相关，常出现在拉丁语借词中。 |
+|        | 形容词 | 与……相关的；属于……的                         | *ordinary*（普通的）、*customary*（惯例的）、*elementary*（基本的）、*voluntary*（自愿的）、*planetary*（行星的） | 多源自拉丁语，修饰名词，描述事物的属性或关联性，常用于学术或正式语境。 |
+| `-ish` | 形容词 | 带有……特征的，具有……特征；近似……的，类似……的 | *childish*（孩子气的）、*selfish*（自私的）、*greenish*（偏绿的）、*reddish*（微红的）、*tallish*（略高的）、*swedish*（瑞典的） | 多表主观判断，描述不精确的、模糊的属性，近似或轻微状态；民族/语言类形容词。 |
+|        | 动词   | 使……化；执行动作；进行某种行为               | *publish*（出版）、*finish*（完成）、*diminish*（减少）、*abolish*（废除）、*cherish*（珍爱）、*vanish*（消失） | 多源自古英语动词演变，需接宾语或独立使用。                   |
+
+-->
+
+
+
+<table>
+<thead>
+<tr>
+<th>词根</th>
+<th align="left">词性</th>
+<th align="left">核心意义</th>
+<th align="left">典型示例</th>
+<th align="left">语境判断技巧</th>
+</tr>
+</thead>
+<tbody><tr>
+<td rowspan="3"><code>-ate</code></td>
+<td align="left">动词</td>
+<td align="left">使……发生；执行动作；进行某种行为</td>
+<td align="left"><em>activate</em>（激活）、<em>celebrate</em>（庆祝）、<em>educate</em>（教育）</td>
+<td align="left">常见于及物动词，后接宾语或动作对象，描述动态过程；多含“主动行为”</td>
+</tr>
+<tr>
+<td align="left">名词</td>
+<td align="left">身份、职位、结果或化学物质</td>
+<td align="left"><em>candidate</em>（候选人）、<em>doctorate</em>（博士学位）、<em>advocate</em>（倡导者）、<em>chlorate</em>（氯酸盐）、<em>sulfate</em>（硫酸盐）</td>
+<td align="left">多表示人或物；职位类名词常与职业相关；化学名词常与科学术语相关；常为“结果或实体”。</td>
+</tr>
+<tr>
+<td align="left">形容词</td>
+<td align="left">具有……性质或状态；重构满……的</td>
+<td align="left"><em>passionate</em>（热情的）、<em>accurate</em>（精确的）、<em>delicate</em>（精致的）、<em>fortunate</em>（幸运的）</td>
+<td align="left">多描述状态或特征，修饰名词，常见于描述人或事物的特性。</td>
+</tr>
+<tr>
+<td rowspan="2"><code>-ary</code></td>
+<td align="left">名词</td>
+<td align="left">与……相关的人或事物</td>
+<td align="left"><em>library</em>（图书馆）、<em>adversary</em>（对手）、<em>secretary</em>（秘书）、<em>dictionary</em>（字典）、<em>glossary</em>（术语表）</td>
+<td align="left">多表示工具、场所、机构、人（角色）、物（工具）；多与具体事物或职业相关，常出现在拉丁语借词中。</td>
+</tr>
+<tr>
+<td align="left">形容词</td>
+<td align="left">与……相关的；属于……的</td>
+<td align="left"><em>ordinary</em>（普通的）、<em>customary</em>（惯例的）、<em>elementary</em>（基本的）、<em>voluntary</em>（自愿的）、<em>planetary</em>（行星的）</td>
+<td align="left">多源自拉丁语，修饰名词，描述事物的属性或关联性，常用于学术或正式语境。</td>
+</tr>
+<tr>
+<td rowspan="2"><code>-ish</code></td>
+<td align="left">形容词</td>
+<td align="left">带有……特征的，具有……特征；近似……的，类似……的</td>
+<td align="left"><em>childish</em>（孩子气的）、<em>selfish</em>（自私的）、<em>greenish</em>（偏绿的）、<em>reddish</em>（微红的）、<em>tallish</em>（略高的）、<em>swedish</em>（瑞典的）</td>
+<td align="left">多表主观判断，描述不精确的、模糊的属性，近似或轻微状态；民族/语言类形容词。</td>
+</tr>
+<tr>
+<td align="left">动词</td>
+<td align="left">使……化；执行动作；进行某种行为</td>
+<td align="left"><em>publish</em>（出版）、<em>finish</em>（完成）、<em>diminish</em>（减少）、<em>abolish</em>（废除）、<em>cherish</em>（珍爱）、<em>vanish</em>（消失）</td>
+<td align="left">多源自古英语动词演变，需接宾语或独立使用。</td>
+</tr>
+</tbody></table>
+
+
+
+<div class="note info flat"><p>词根的多义性，也使得有的词有多种词性，如“<em>contemporary</em>”，作形容词时表示“当代的”，作名词时表示“同代人”，也需结合单词在句子中的成分来判断。</p>
+</div>
+
+
+
+<p><strong>注</strong>：如何结合语境判断？</p>
 <ul>
-<li>跨词性后缀：部分后缀可能存在多义性，如 <code>-ate</code>（可作名词、动词、形容词后缀）、 <code>-ary</code>（可作名词、形容词后缀）和 <code>-ish</code> （可作形容词或动词后缀），需结合语境判断</li>
-<li>地域差异：如动词后缀 <code>-ize</code>（美式）与 <code>-ise</code>（英式）拼写差异。</li>
-<li>复合后缀：如 <code>-ability</code>（由 <code>-able</code> + <code>-ity</code> 组成）表示抽象能力，如 <em>capability</em>（能力）。</li>
+<li>先看词性：<ul>
+<li>若单词在句中作谓语（如 <em>She <strong>calculates</strong> the cost.</em>），<code>-ate</code> 多为动词；</li>
+<li>若作表语（如 <em>The result is <strong>accurate</strong>.</em>），<code>-ate</code> 多为形容词。</li>
+</ul>
+</li>
+<li>再析功能：<ul>
+<li><code>-ary</code> 作名词时，常与具体事物相关（如“<em>sanctuary</em>（避难所）”）；</li>
+<li><code>-ish</code> 作形容词时，多含模糊或贬义色彩（如“<em>foolish</em>（愚蠢的）”）。</li>
+</ul>
+</li>
+<li>结合词根：<ul>
+<li>如“<em>educate</em>”：词根 <code>educ-</code>（引导）+ <code>-ate</code>（动词后缀）→ “教育”；</li>
+<li>如“<em>missionary</em>”：词根 <code>mission</code>（使命）+ <code>-ary</code>（名词后缀）→ “传教士”。</li>
 </ul>
 </li>
 </ul>
+<h4 id="地域差异"><a href="#地域差异" class="headerlink" title="地域差异"></a>地域差异</h4><h5 id="动词后缀：-ize（美式）-vs-ise（英式）"><a href="#动词后缀：-ize（美式）-vs-ise（英式）" class="headerlink" title="动词后缀：-ize（美式） vs. -ise（英式）"></a><strong>动词后缀：<code>-ize</code>（美式） vs. <code>-ise</code>（英式）</strong></h5><p>美式英语统一使用 <code>-ize</code>（即使词源为希腊语 <code>-izo</code>）；英式英语倾向 <code>-ise</code>，但部分学术领域（如牛津风格）允许 <code>-ize</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">美式（<code>-ize</code>）</th>
+<th align="left">英式（<code>-ise</code>）</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>organize</em></td>
+<td align="left"><em>organise</em></td>
+<td align="left">组织</td>
+</tr>
+<tr>
+<td align="left"><em>recognize</em></td>
+<td align="left"><em>recognise</em></td>
+<td align="left">识别</td>
+</tr>
+<tr>
+<td align="left"><em>apologize</em></td>
+<td align="left"><em>apologise</em></td>
+<td align="left">道歉</td>
+</tr>
+<tr>
+<td align="left"><em>realize</em></td>
+<td align="left"><em>realise</em></td>
+<td align="left">意识到</td>
+</tr>
+<tr>
+<td align="left"><em>analyze</em></td>
+<td align="left"><em>analyse</em></td>
+<td align="left">分析</td>
+</tr>
+</tbody></table>
+<h5 id="动词后缀：-yze（美式）-vs-yse（英式）"><a href="#动词后缀：-yze（美式）-vs-yse（英式）" class="headerlink" title="动词后缀：-yze（美式） vs. -yse（英式）"></a>动词后缀：<code>-yze</code>（美式） vs. <code>-yse</code>（英式）</h5><p>美式英语使用 <code>-yze</code>，与 <code>-ize</code> 规则一致，统一采用 <code>-ze</code> 结尾；英式英语使用 <code>-yse</code>，保留希腊语源拼写。</p>
+<table>
+<thead>
+<tr>
+<th align="left">美式（<code>-yze</code>）</th>
+<th align="left">英式（<code>-yse</code>）</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>analyze</em></td>
+<td align="left"><em>analyse</em></td>
+<td align="left">分析</td>
+</tr>
+<tr>
+<td align="left"><em>paralyze</em></td>
+<td align="left"><em>paralyse</em></td>
+<td align="left">麻痹</td>
+</tr>
+<tr>
+<td align="left"><em>catalyze</em></td>
+<td align="left"><em>catalyse</em></td>
+<td align="left">催化</td>
+</tr>
+</tbody></table>
+<h5 id="名词后缀：-or（美式）-vs-our（英式）"><a href="#名词后缀：-or（美式）-vs-our（英式）" class="headerlink" title="名词后缀：-or（美式） vs. -our（英式）"></a>名词后缀：<code>-or</code>（美式） vs. <code>-our</code>（英式）</h5><p>美式英语简化词尾，使用 <code>-or</code>，去除 <code>-u</code>；英式英语保留 <code>-our</code>，源自法语拼写传统。</p>
+<table>
+<thead>
+<tr>
+<th align="left">美式（<code>-or</code>）</th>
+<th align="left">英式（<code>-our</code>）</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>color</em></td>
+<td align="left"><em>colour</em></td>
+<td align="left">颜色</td>
+</tr>
+<tr>
+<td align="left"><em>humor</em></td>
+<td align="left"><em>humour</em></td>
+<td align="left">幽默</td>
+</tr>
+<tr>
+<td align="left"><em>flavor</em></td>
+<td align="left"><em>flavour</em></td>
+<td align="left">风味</td>
+</tr>
+</tbody></table>
+<h5 id="名词后缀：-er（美式）-vs-re（英式）"><a href="#名词后缀：-er（美式）-vs-re（英式）" class="headerlink" title="名词后缀：-er（美式） vs. -re（英式）"></a>名词后缀：<code>-er</code>（美式） vs. <code>-re</code>（英式）</h5><p>美式英语以 <code>-er</code> 结尾，符合英语语音简化趋势；英式英语保留法语词源拼写 <code>-re</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">美式（<code>-er</code>）</th>
+<th align="left">英式（<code>-re</code>）</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>center</em></td>
+<td align="left"><em>centre</em></td>
+<td align="left">中心</td>
+</tr>
+<tr>
+<td align="left"><em>theater</em></td>
+<td align="left"><em>theatre</em></td>
+<td align="left">剧院</td>
+</tr>
+<tr>
+<td align="left"><em>meter</em></td>
+<td align="left"><em>metre</em></td>
+<td align="left">米（单位）</td>
+</tr>
+</tbody></table>
+<h5 id="单双写辅音差异"><a href="#单双写辅音差异" class="headerlink" title="单双写辅音差异"></a>单双写辅音差异</h5><p>美式英语单辅音结尾，简化拼写；英式英语双辅音结尾，符合古英语重读闭音节规则。</p>
+<table>
+<thead>
+<tr>
+<th align="left">美式（单辅音）</th>
+<th align="left">英式（双辅音）</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>traveled</em></td>
+<td align="left"><em>travelled</em></td>
+<td align="left">旅行（过去式）</td>
+</tr>
+<tr>
+<td align="left"><em>canceled</em></td>
+<td align="left"><em>cancelled</em></td>
+<td align="left">取消（过去式）</td>
+</tr>
+<tr>
+<td align="left"><em>labeled</em></td>
+<td align="left"><em>labelled</em></td>
+<td align="left">贴标签（过去式）</td>
+</tr>
+</tbody></table>
+<h5 id="特殊差异：名词与动词拼写"><a href="#特殊差异：名词与动词拼写" class="headerlink" title="特殊差异：名词与动词拼写"></a>特殊差异：名词与动词拼写</h5><p>美式英语名词与动词拼写统一。英式英语名词与动词拼写区分，动词多用 <code>-se</code>，名词用 <code>-ce</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">美式（统一）</th>
+<th align="left">英式（名词&#x2F;动词）</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><em>license</em> (名&#x2F;动)</td>
+<td align="left"><em>licence</em> (名) &#x2F; <em>license</em> (动)</td>
+<td align="left">许可证&#x2F;授权</td>
+</tr>
+<tr>
+<td align="left"><em>practice</em> (名&#x2F;动)</td>
+<td align="left"><em>practice</em> (名) &#x2F; <em>practise</em> (动)</td>
+<td align="left">练习&#x2F;实践</td>
+</tr>
+</tbody></table>
+<h5 id="总结规律"><a href="#总结规律" class="headerlink" title="总结规律"></a>总结规律</h5><ul>
+<li>简化趋势：美式英语倾向于简化拼写（如去 <code>-u</code>、单辅音）<ul>
+<li><code>-or</code>&#x2F;<code>-our</code>：美式简化去 <code>-u</code>，英式保留。</li>
+<li>单双辅音：美式英语单辅音结尾，英式双写辅音更常见（如 <em>traveller</em>）。</li>
+</ul>
+</li>
+<li>保留传统：英式英语保留更多拉丁&#x2F;法语词源特征（如 <code>-our</code>、<code>-re</code>）；<ul>
+<li><code>-er</code>&#x2F;<code>-re</code>：美式以 <code>-er</code> 结尾，英式保留法语词源 <code>-re</code>。</li>
+</ul>
+</li>
+<li>学术例外：部分英式学术领域接受美式拼写（如牛津风格允许 <code>-ize</code>）。<ul>
+<li><code>-ize</code>&#x2F;<code>-ise</code>：美式用 <code>-ize</code>，英式倾向 <code>-ise</code>（但接受 <code>-ize</code>）。</li>
+</ul>
+</li>
+</ul>
+<div class="note info flat"><p>地域差异（美式&#x2F;英式）多为拼写形式，发音相同。正式写作需保持拼写一致性，即在正式文本中严格遵循一种拼写体系（全篇美式或英式）。</p>
+</div>
+
+
+
+<h4 id="复合后缀"><a href="#复合后缀" class="headerlink" title="复合后缀"></a>复合后缀</h4><table>
+<thead>
+<tr>
+<th>‌复合后缀‌</th>
+<th>‌组成结构‌</th>
+<th>‌含义‌</th>
+<th>典型示例‌</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‌<code>-ability‌</code></td>
+<td><code>-able</code> + <code>-ity</code></td>
+<td>抽象能力、可能性</td>
+<td><em>capability</em>（能力）、<em>reliability</em>（可靠性）、<em>stability</em>（稳定性）、<em>flexibility</em>（灵活性）、<em>‌durability‌</em>（耐久性）</td>
+<td>由形容词转化为名词，用于以 <code>-able</code> 结尾的词</td>
+</tr>
+<tr>
+<td>‌<code>-ibility‌</code></td>
+<td><code>-ible</code> + <code>-ity</code></td>
+<td>抽象能力、可能性</td>
+<td><em>possibility</em>（可能性）、<em>flexibility</em>（灵活性）</td>
+<td>由形容词转化为名词，用于以 <code>-ible</code> 结尾的词</td>
+</tr>
+<tr>
+<td>‌<code>-ation‌</code></td>
+<td><code>-ate</code> + <code>-ion</code></td>
+<td>行为、过程或结果</td>
+<td><em>creation</em>（创造）、<em>determination</em>（决心）、<em>combination</em>（结合）、<em>explanation</em>（解释）、<em>celebration</em>（庆祝）</td>
+<td>由动词转化为名词</td>
+</tr>
+<tr>
+<td><code>‌-ational‌</code></td>
+<td><code>-ation</code> + <code>-al</code></td>
+<td>与……过程相关的</td>
+<td><em>organizational</em>（组织的）、<em>educational</em>（教育的）、<em>operational</em>（运营的）</td>
+<td>由“动词 → 名词 → 形容词”的三阶转化</td>
+</tr>
+<tr>
+<td><code>-tional</code></td>
+<td><code>-tion</code> + <code>-al</code></td>
+<td>与……相关的</td>
+<td><em>educational</em>（教育的）、<em>functional</em>（功能的）、<em>national</em>（国家的）</td>
+<td>由名词转化为形容词</td>
+</tr>
+<tr>
+<td><code>-ical</code></td>
+<td><code>-ic</code> + <code>al</code></td>
+<td>与……相关的</td>
+<td><em>historical</em>（历史的）、<em>economical</em>（经济的）、<em>musical</em>（音乐的）</td>
+<td>强化形容词属性，常与学科或特征相关</td>
+</tr>
+<tr>
+<td>‌<code>-fulness‌</code></td>
+<td><code>-ful</code> + <code>-ness</code></td>
+<td>充满……的状态或性质</td>
+<td><em>happiness</em>（幸福）、<em>mindfulness</em>（正念）、<em>thankfulness</em>（感恩）、<em>playfulness</em>（嬉戏）</td>
+<td>由形容词转化为抽象名词</td>
+</tr>
+<tr>
+<td><code>‌-lessness‌</code></td>
+<td><code>-less</code> + <code>-ness</code></td>
+<td>缺乏……的状态</td>
+<td><em>hopelessness</em>（绝望）、<em>carelessness</em>（粗心）、<em>fearlessness</em>（无畏）、<em>meaninglessness‌</em>（无意义）、<em>powerlessness‌</em>（无力感）</td>
+<td>由形容词转化为抽象名词</td>
+</tr>
+<tr>
+<td>‌<code>-istic‌</code></td>
+<td><code>-ist</code> + <code>-ic</code></td>
+<td>具有……特性或风格；与……主义相关的</td>
+<td><em>artistic</em>（艺术的）、<em>characteristic</em>（典型的）、<em>humanistic</em>（人文主义的）</td>
+<td>由名词转化为形容词</td>
+</tr>
+<tr>
+<td>‌<code>-ization‌</code></td>
+<td><code>-ize</code> + <code>-ation</code></td>
+<td>“使……化”的过程或结果</td>
+<td><em>modernization</em>（现代化）、<em>organization</em>（组织）、<em>standardization‌</em>（标准化）、<em>globalization</em>（全球化）</td>
+<td>由动词转化为名词</td>
+</tr>
+<tr>
+<td><code>-mentally</code></td>
+<td><code>-ment</code> + <code>-al</code> + <code>-ly</code></td>
+<td>以……方式</td>
+<td><em>fundamentally</em>（根本上）、<em>experimentally</em>（实验性地）、<em>accidentally</em>（意外地）</td>
+<td>由“名词 → 形容词 → 副词”的三阶转化</td>
+</tr>
+<tr>
+<td>‌<code>-lessly‌</code></td>
+<td><code>-less</code> + <code>-ly</code></td>
+<td>以……缺失的方式</td>
+<td><em>carelessly</em>（粗心地）、<em>hopelessly</em>（绝望地）、<em>recklessly</em>（鲁莽地）</td>
+<td>由形容词转化为副词</td>
+</tr>
+<tr>
+<td><code>-ologist</code></td>
+<td><code>-ology</code> + <code>-ist</code></td>
+<td>研究……的专家</td>
+<td><em>biologist</em>（生物学家）、<em>psychologist</em>（心理学家）、<em>geologist</em>（地质学家）</td>
+<td>由学科名词转化为职业名词</td>
+</tr>
+</tbody></table>
+<h5 id="总结规律-1"><a href="#总结规律-1" class="headerlink" title="总结规律"></a>总结规律</h5><ul>
+<li>层级叠加：后缀按词性转化顺序叠加（如“动词 → 名词 → 形容词”）。<ul>
+<li>例：<em>act</em>（动） → <em>action</em>（名） → <em>actional</em>（形）。</li>
+</ul>
+</li>
+<li>语义细化：复合后缀使词义更具体（如 <code>-ologist</code> 明确指向“专家”）。</li>
+<li>跨语言融合：部分复合后缀源自拉丁&#x2F;希腊语（如 <code>-ology</code> + <code>-ist</code> &#x3D; <code>-ologist</code>）。</li>
+</ul>
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>逆向拆分：遇到长词时，从词尾倒推复合后缀，例如 <em>sensational</em>（出众的） → <code>-al</code> + <code>-tion</code> + <code>-ate</code>。</p>
+<p>词性导航：复合后缀常标记词性，例如 <code>-ability</code> 必为名词；<code>-lessly</code> 结尾必为副词，修饰动词。</p>
+<p>关联词族：通过复合后缀串联同根词，例如 <em>flexible</em>（灵活的） → <em>flexibility</em>（灵活性） → <em>flexibly</em>（灵活地）。</p>
+</div>
+
+
+
 <h2 id="猜词技巧"><a href="#猜词技巧" class="headerlink" title="猜词技巧"></a>猜词技巧</h2><blockquote>
 <p>“正确地拆解构词逻辑”，是猜词的第一步，也猜词的关键。</p>
 </blockquote>
 <p>当遇到一个不确定的或陌生的英语单词时，首先要正确地拆解构词逻辑。其次，观察单词后缀，确定词性和后缀意义，从而把握单词意义的整体特征。最后，根据词根和前缀，结合上下文，确定单词的大概意思。</p>
-<p>例如，猜测“<em>legislation</em>”这个英语单词的意思。目前，我们已经学习了英语单词的后缀，尽管我们还没有学习词根和前缀，但至少可以将这个单词拆分为“<code>legisla-</code> + <code>-tion</code>”或者“<code>legislat-</code> + <code>-ion</code>”。无论哪一种拆分，其后缀的含义表示都是“动作、状态或结果”。再退一步讲，即便是我们不知道 <code>-tion</code>&#x2F;<code>-ion</code> 的含义，但是我们至少知道它们都是名词后缀，而名词后缀的常见意义有抽象概念、行为、动作、状态、过程、结果、人或职业、物品等。这个单词显然不是指人或职业、物品。“行为、动作、过程、结果”一般是动词名词化，“状态”一般是形容词名词化。相比之下，这个单词更可能的名词意义是“行为、动作、过程、结果”。后续我们会知道 <code>leg-</code>、<code>legis-</code> 都是常表示“法律”的前缀。大体可以这样猜测：“法律”的“行为、动作、过程、结果”是什么？“法律”的““行为、动作、过程”是颁布法律，“结果”是法规。没错，这个单词的主要意思就这两个，一个是“立法、法律的制定”，另一个就是“法律、法规”！</p>
+<p>例如，猜测“<em>legislation</em>”这个英语单词的意思。目前，我们已经学习了英语单词的后缀，尽管我们还没有学习词根和前缀，但至少可以将这个单词拆分为“<code>legisla-</code> + <code>-tion</code>”或者“<code>legislat-</code> + <code>-ion</code>”。无论哪一种拆分，其后缀的含义表示都是“动作、状态或结果”。再退一步讲，即便是我们不知道 <code>-tion</code>&#x2F;<code>-ion</code> 的含义，但是我们至少知道它们都是名词后缀，而名词后缀的常见意义有抽象概念、行为、动作、状态、过程、结果、人或职业、物品等。这个单词显然不是指人或职业、物品。“行为、动作、过程、结果”一般是动词名词化，“状态”一般是形容词名词化。相比之下，这个单词更可能的名词意义是“行为、动作、过程、结果”。后续我们会知道 <code>leg-</code>、<code>legis-</code> 都是常表示“法律”的前缀。大体可以这样猜测：“法律”的“行为、动作、过程、结果”是什么？“法律”的“行为、动作、过程”是颁布法律，“结果”是法规。没错，这个单词的主要意思就这两个，一个是“立法、法律的制定”，另一个就是“法律、法规”！</p>
 <p>“<em>legislation</em>”的构词逻辑是“<code>legis-</code>（法律） + <code>lat-</code>（拿出）+ <code>-ion</code>（行为、动作） → (国家)拿出、制定出一套法律 → 制定法律的行为 → 立法、法律的制定 → 引申为‘法律、法规’”</p>
 <p>虽然我们目前的猜测是模棱两可的，但是不要忘记，在实际语境中，可是有上下文的。结合上下文，也许我们就不难猜测，甚至可以十拿九稳地确定单词的意思。而且，如果上下文都是与法律、政府相关的段落，即便我们不知道 <code>leg-</code>、<code>legis-</code> 的含义，也大概能猜测“<em>legislation</em>”这个单词是与“法律”相关的事物。</p>
 <p>总结一下猜词的关键步骤：</p>
