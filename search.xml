@@ -48,95 +48,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博客搭建 · 搭建一个自己的博客 05：写作</title>
-    <url>/blog/2025/03/14/531ad9e1/</url>
-    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
-<li>博客搭建系列 · 搭建一个自己的博客</li>
-<li>摘要：本文主要介绍如何使用 Hexo 进行写作。</li>
-</ul>
-</div>
-
-
-
-<h2 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h2><p>Hexo 有三种默认布局（Layout）：<code>post</code>、<code>page</code> 和 <code>draft</code>。 每个布局创建的文件会被保存到不同的路径。</p>
-<table>
-<thead>
-<tr>
-<th align="center">布局</th>
-<th align="center">路径</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>post</code></td>
-<td align="center"><code>source/_posts</code></td>
-</tr>
-<tr>
-<td align="center"><code>page</code></td>
-<td align="center"><code>source</code></td>
-</tr>
-<tr>
-<td align="center"><code>draft</code></td>
-<td align="center"><code>source/_drafts</code></td>
-</tr>
-</tbody></table>
-<p>可以执行下列命令来创建一篇新文章或者新的页面。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>如果不标识布局（Layout），则新创建的文章会会被保存到默认布局的路径下。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>post</code> 是默认的布局，文件自动生成在 <code>source/_posts/&lt;title&gt;.md</code>。也可以通过编辑 <code>_config.yml</code> 中的 <code>default_layout</code> 设置来更改默认布局。</p>
-<p>使用以下命令，可以创建草稿。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-<p>新创建的文章草稿会被保存到 <code>source/_drafts</code> 文件夹。</p>
-<div class="note info flat"><p><strong>个人建议</strong>：先生成草稿再发布到 <code>source/_posts</code>，而不是直接生成文章到 <code>source/_posts</code>。</p>
-<p>因为在使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章时，Hexo 会自动帮助我们调整文章的 Front-matter 元数据，从而可以帮助我们在文章发布时检查文章内容的格式，而不是要等到在浏览器预览时才发现问题。</p>
-</div>
-
-
-
-<h2 id="编辑草稿"><a href="#编辑草稿" class="headerlink" title="编辑草稿"></a>编辑草稿</h2><h3 id="编辑-Front-matter"><a href="#编辑-Front-matter" class="headerlink" title="编辑 Front-matter"></a>编辑 Front-matter</h3><div class="note info flat"><p>Front-matter 是文件开头的 <code>YAML</code> 或 <code>JSON</code> 代码块，用于配置写作设置。 以 <code>YAML</code> 格式书写时，Front-matter 以三个破折号结束；以<code>JSON</code>格式书写时，Front-matter 以三个分号结束。</p>
-</div>
-
-<p>在 <code>Markdown</code> 文件顶部添加 <code>YAML</code> 配置块，例如：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">&#x27;工程师&#x27;</span>, <span class="string">&#x27;运维&#x27;</span>]</span><br><span class="line"><span class="attr">cover:</span> <span class="string">https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-
-<p>其中，只有文章支持分类（categories）和标签（tags）。Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>中有关“分类”和“标签”的描述是：“<em>分类按顺序应用于文章，从而形成分类和子分类的层次结构。标签是在相同的层次结构上定义的，因此它们的出现顺序不重要</em>”。这也就是说，分类有严格的层次结构，而标签没有，我们无需关心标签的层次结构。例如 Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>给出的举例：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Sports</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Baseball</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Injury</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Fight</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Shocking</span></span><br></pre></td></tr></table></figure>
-
-<p>“<em>如果想应用多个分类层次结构，可以使用一个名称列表而不是一个单个名称</em>”。例如：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">Sports</span>, <span class="string">Baseball</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">Boston</span> <span class="string">Red</span> <span class="string">Sox</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">New</span> <span class="string">York</span> <span class="string">Yankees</span>]</span><br><span class="line">  <span class="bullet">-</span> <span class="string">Rivalries</span></span><br></pre></td></tr></table></figure>
-
-<p>“<em>如果 Hexo 在帖子上看到像这种方式定义的分类，它会将该帖子的每个分类视为其自己的独立层次结构。</em>”</p>
-<p>使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章后的 Front-matter 如下。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="bullet">-</span> <span class="string">工程师</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">运维</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">&gt;-</span></span><br><span class="line"><span class="string">  https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="string"></span><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-
-<p>不难发现，确实与之前样例中的 Front-matter 不一样，但实现的效果是一样的。这也是为什么个人建议使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章，这样更规范。</p>
-<h3 id="编辑正文"><a href="#编辑正文" class="headerlink" title="编辑正文"></a>编辑正文</h3><p>接下来就可以编写自己的文章正文啦~下面主要介绍一些常用的写作技巧。</p>
-<h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="bullet">-</span> 列表项</span><br><span class="line"><span class="strong">**加粗文本**</span></span><br><span class="line">[<span class="string">链接文字</span>](<span class="link">https://example.com</span>)</span><br><span class="line">![<span class="string">图片描述</span>](<span class="link">/images/example.jpg</span>)</span><br><span class="line"><span class="code">`单行代码`</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="扩展语法（需主题支持）"><a href="#扩展语法（需主题支持）" class="headerlink" title="扩展语法（需主题支持）"></a>扩展语法（需主题支持）</h4><h5 id="引用块（quote）"><a href="#引用块（quote）" class="headerlink" title="引用块（quote）"></a>引用块（quote）</h5><p>参考<a href="https://hexo.io/zh-cn/docs/tag-plugins">标签插件（Tag Plugins） | Hexo</a>和<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文档(四) 标签外挂 | Butterfly</a></p>
-<p><del>（后续完善）</del></p>
-<h2 id="预览、发布"><a href="#预览、发布" class="headerlink" title="预览、发布"></a>预览、发布</h2><h3 id="启动实时渲染服务器预览草稿"><a href="#启动实时渲染服务器预览草稿" class="headerlink" title="启动实时渲染服务器预览草稿"></a>启动实时渲染服务器预览草稿</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s --draft # 默认访问 http://localhost:4000</span><br></pre></td></tr></table></figure>
-
-<h3 id="发布草稿到正式文章"><a href="#发布草稿到正式文章" class="headerlink" title="发布草稿到正式文章"></a>发布草稿到正式文章</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo publish &lt;title&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>有关 Hexo 写作的更多细节，可参考 Hexo 的<a href="https://hexo.io/zh-cn/docs/">文档</a>之<a href="https://hexo.io/zh-cn/docs/writing">写作</a>和主题 Butterfly 的<a href="https://butterfly.js.org/posts/ceeb73f/">文档</a>。</p>
-</div>
-]]></content>
-      <categories>
-        <category>工程师</category>
-        <category>运维</category>
-      </categories>
-      <tags>
-        <tag>技术宅</tag>
-        <tag>技术笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>英语单词记忆 · 解码英语单词的 DNA 02：后缀篇</title>
     <url>/blog/2025/03/22/47bf9e0d/</url>
     <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
@@ -168,109 +79,109 @@
 <h3 id="名词后缀"><a href="#名词后缀" class="headerlink" title="名词后缀"></a>名词后缀</h3><table>
 <thead>
 <tr>
-<th align="left">后缀</th>
-<th align="left">含义</th>
+<th>后缀</th>
+<th>含义</th>
 <th>示例单词</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><code>-tion</code>&#x2F;<code>-sion</code>&#x2F;<code>-ion</code></td>
-<td align="left">动作、状态或结果</td>
+<td><code>-tion</code>&#x2F;<code>-sion</code>&#x2F;<code>-ion</code></td>
+<td>动作、状态或结果</td>
 <td><em>action</em>（行动）、<em>decision</em>（决定）、<em>creation</em>（创造）、<em>expression</em>（表达）</td>
 </tr>
 <tr>
-<td align="left"><code>-ment</code></td>
-<td align="left">动作或过程的结果</td>
+<td><code>-ment</code></td>
+<td>动作或过程的结果</td>
 <td><em>development</em>（发展）、<em>agreement</em>（协议）、<em>movement</em>（运动）、<em>achievement</em>（成就）、<em>government</em>（政府）</td>
 </tr>
 <tr>
-<td align="left"><code>-er</code>&#x2F;<code>-or</code></td>
-<td align="left">执行动作的人或工具</td>
+<td><code>-er</code>&#x2F;<code>-or</code></td>
+<td>执行动作的人或工具</td>
 <td><em>teacher</em>（教师）、<em>actor</em>（演员）、<em>computer</em>（计算机）、<em>refrigerator</em>（冰箱）</td>
 </tr>
 <tr>
-<td align="left"><code>-ster</code>&#x2F;<code>-eer</code></td>
-<td align="left">职业或活动参与者</td>
+<td><code>-ster</code>&#x2F;<code>-eer</code></td>
+<td>职业或活动参与者</td>
 <td><em>engineer</em>（工程师）、<em>mountaineer</em>（登山者）、<em>gangster</em>（歹徒）</td>
 </tr>
 <tr>
-<td align="left"><code>-ee</code></td>
-<td align="left">动作承受者</td>
+<td><code>-ee</code></td>
+<td>动作承受者</td>
 <td><em>employee</em>（雇员）、<em>examinee</em>（考生）、<em>refugee</em>（难民）</td>
 </tr>
 <tr>
-<td align="left"><code>-ess</code></td>
-<td align="left">女性身份</td>
+<td><code>-ess</code></td>
+<td>女性身份</td>
 <td><em>actress</em>（女演员）、<em>hostess</em>（女主人）、<em>lioness</em>（母狮）</td>
 </tr>
 <tr>
-<td align="left"><code>-ness</code></td>
-<td align="left">性质或状态</td>
+<td><code>-ness</code></td>
+<td>性质或状态</td>
 <td><em>happiness</em>（幸福）、<em>kindness</em>（善良）、<em>darkness</em>（黑暗）</td>
 </tr>
 <tr>
-<td align="left"><code>-ity</code>&#x2F;<code>-ty</code></td>
-<td align="left">抽象概念、性质或状态</td>
+<td><code>-ity</code>&#x2F;<code>-ty</code></td>
+<td>抽象概念、性质或状态</td>
 <td><em>ability</em>（能力）、<em>safety</em>（安全）、<em>security</em>（安保）、<em>reality</em>（现实）、<em>curiosity</em>（好奇心）</td>
 </tr>
 <tr>
-<td align="left"><code>-ism</code></td>
-<td align="left">主义、理论、学说、信仰或特性</td>
+<td><code>-ism</code></td>
+<td>主义、理论、学说、信仰或特性</td>
 <td><em>socialism</em>（社会主义）、<em>capitalism</em>（资本主义）、<em>optimism</em>（乐观主义）、<em>realism</em>（现实主义）、<em>tourism</em>（旅游业）</td>
 </tr>
 <tr>
-<td align="left"><code>-ist</code></td>
-<td align="left">职业者或信仰者</td>
+<td><code>-ist</code></td>
+<td>职业者或信仰者</td>
 <td><em>scientist</em>（科学家）、<em>artist</em>（艺术家）、<em>cyclist</em>（骑行者）</td>
 </tr>
 <tr>
-<td align="left"><code>-ance/-ence</code></td>
-<td align="left">状态、行为或性质</td>
+<td><code>-ance/-ence</code></td>
+<td>状态、行为或性质</td>
 <td><em>importance</em>（重要性）、<em>difference</em>（差异）、<em>confidence</em>（自信）、<em>dependence</em>（依赖）、<em>independence</em>（独立）、<em>patience</em>（耐心）</td>
 </tr>
 <tr>
-<td align="left"><code>-ship</code></td>
-<td align="left">关系、技能、状态或身份</td>
+<td><code>-ship</code></td>
+<td>关系、技能、状态或身份</td>
 <td><em>friendship</em>（友谊）、<em>leadership</em>（领导力）、<em>citizenship</em>（公民身份）、<em>scholarship</em>（奖学金）、<em>membership</em>（会员资格）</td>
 </tr>
 <tr>
-<td align="left"><code>-hood</code></td>
-<td align="left">时期、状态或群体</td>
+<td><code>-hood</code></td>
+<td>时期、状态或群体</td>
 <td><em>childhood</em>（童年）、<em>brotherhood</em>（兄弟情谊）、<em>neighborhood</em>（社区）</td>
 </tr>
 <tr>
-<td align="left"><code>-dom</code></td>
-<td align="left">领域、状态或集体</td>
+<td><code>-dom</code></td>
+<td>领域、状态或集体</td>
 <td><em>freedom</em>（自由）、<em>kingdom</em>（王国）、<em>wisdom</em>（智慧）</td>
 </tr>
 <tr>
-<td align="left"><code>-ure</code></td>
-<td align="left">动作、过程或结果</td>
+<td><code>-ure</code></td>
+<td>动作、过程或结果</td>
 <td><em>failure</em>（失败）、<em>pressure</em>（压力）、<em>exposure</em>（暴露）、<em>adventure</em>（冒险）</td>
 </tr>
 <tr>
-<td align="left"><code>-acy</code></td>
-<td align="left">抽象状态或性质</td>
+<td><code>-acy</code></td>
+<td>抽象状态或性质</td>
 <td><em>democracy</em>（民主）、<em>privacy</em>（隐私）、<em>accuracy</em>（准确性）、<em>privacy</em>（隐私）</td>
 </tr>
 <tr>
-<td align="left"><code>-th</code></td>
-<td align="left">抽象概念、状态或过程</td>
+<td><code>-th</code></td>
+<td>抽象概念、状态或过程</td>
 <td><em>growth</em>（成长）、<em>strength</em>（力量）、<em>depth</em>（深度）、<em>warmth</em>（温暖）</td>
 </tr>
 <tr>
-<td align="left"><code>-let</code>&#x2F;<code>-ette</code></td>
-<td align="left">小或次要事物</td>
+<td><code>-let</code>&#x2F;<code>-ette</code></td>
+<td>小或次要事物</td>
 <td><em>booklet</em>（小册子）、<em>cigarette</em>（香烟）、<em>kitchenette</em>（小厨房）</td>
 </tr>
 <tr>
-<td align="left"><code>-age</code></td>
-<td align="left">集合、过程或结果</td>
+<td><code>-age</code></td>
+<td>集合、过程或结果</td>
 <td><em>marriage</em>（婚姻）、<em>storage</em>（存储）、<em>package</em>（包裹）</td>
 </tr>
 <tr>
-<td align="left"><code>-ian/-ese</code></td>
-<td align="left">国籍、职业或语言</td>
+<td><code>-ian/-ese</code></td>
+<td>国籍、职业或语言</td>
 <td><em>musician</em>（音乐家）、<em>Japanese</em>（日语）、<em>librarian</em>（图书管理员）</td>
 </tr>
 </tbody></table>
@@ -428,10 +339,10 @@
 | `-wise`    | 表方式、方向或领域：以……方式/在……方面    | *clockwise*（顺时针）、*lengthwise*（纵向）、*moneywise*（财务上）、*educationwise*（教育方面） | 常与名词结合，表方式或领域（如 weather-wise 关于天气），口语中常表示“关于……领域” |
 | `-style`   | 表风格或方式：以……风格/方式              | *cowboy-style*（牛仔风格）、*casual-style*（休闲风）、*modern-style*（现代风格地） | 口语化表达，多用于非正式语境                                 |
 | `-ways`    | 表方向或方式：以……方式/方向              | sideways（横向地）、*lengthways*（纵向地）、*crossways*（交叉地） | 与名词结合，表方向或路径，部分词可与 `-wise` 互换，语义不变（如 “*sideways* → *sidewise*（侧向地）”“*lengthways* → *lengthwise*（纵向地）”“*crossways* → *crosswise*（交叉地）”） |
-| `-time`    | 在…时间                                  | *daytime*（白天）、*nighttime*（夜晚）                       | 多与时间名词结合，作副词时需搭配介词（如“*at* *nighttime*”） |
+| `-time`    | 在……时间                                 | *daytime*（白天）、*nighttime*（夜晚）                       | 多与时间名词结合，作副词时需搭配介词（如“*at* *nighttime*”） |
 | `-fold`    | 表倍数或程度：……倍/……重                  | *twofold*（双重地）、*manifold*（多方面地）                  | 表倍数或程度增强，较正式，多用于书面语                       |
 | `-long`    | 表时间或空间延续：持续整个……时间         | *daylong*（整日）、*weeklong*（整周）、*lifelong*（终生地）、*nightlong*（整夜地） | 强调时间跨度，多与时间单位结合，表持续状态                   |
-| `-where`   | 在/到…地方                               | *everywhere*（到处）、*nowhere*（无处）                      | 与疑问代词结合，表地点范围                                   |
+| `-where`   | 在/到……地方                              | *everywhere*（到处）、*nowhere*（无处）                      | 与疑问代词结合，表地点范围                                   |
 | `-ling`    | 古英语残留，表方式或状态                 | *darkling*（在黑暗中）、*headlong*（头向前地）               | 极少见，多用于文学                                           |
 | 不规则形式 | 无固定后缀                               | *well*（好地）、*fast*（快地）、*hard*（努力地）             | 与形容词同形（如 “*fast* *car* → *drive* *fast*”），需单独记忆 |
 | 复合形式   | 短语固化                                 | *anyway*（无论如何）、*sometimes*（有时）                    | 由短语演变而来（“*any* + *way* → *anyway*”“*some* + *times* → *sometimes*”） |
@@ -491,7 +402,7 @@
 </tr>
 <tr>
 <td><code>-time</code></td>
-<td>在…时间</td>
+<td>在……时间</td>
 <td><em>daytime</em>（白天）、<em>nighttime</em>（夜晚）</td>
 <td>多与时间名词结合，作副词时需搭配介词（如“<em>at</em> <em>nighttime</em>”）</td>
 </tr>
@@ -509,7 +420,7 @@
 </tr>
 <tr>
 <td><code>-where</code></td>
-<td>在/到…地方</td>
+<td>在/到……地方</td>
 <td><em>everywhere</em>（到处）、<em>nowhere</em>（无处）</td>
 <td>与疑问代词结合，表地点范围</td>
 </tr>
@@ -535,46 +446,47 @@
 
 
 
+
 <h2 id="四类词性后缀的逻辑对比"><a href="#四类词性后缀的逻辑对比" class="headerlink" title="四类词性后缀的逻辑对比"></a>四类词性后缀的逻辑对比</h2><blockquote>
 <p>“名静动，动催变，形容染性质，副词修细节。”</p>
 </blockquote>
 <table>
 <thead>
 <tr>
-<th align="left">词性</th>
-<th align="left">核心功能</th>
-<th align="left">后缀作用</th>
-<th align="left">典型转化逻辑</th>
-<th align="left">示例</th>
+<th>词性</th>
+<th>核心功能</th>
+<th>后缀作用</th>
+<th>典型转化逻辑</th>
+<th>示例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><strong>名词</strong></td>
-<td align="left">标记实体或结果</td>
-<td align="left">将动态概念静态化</td>
-<td align="left">动词&#x2F;形容词 → 名词</td>
-<td align="left"><em>act</em> → <em><strong>action</strong></em></td>
+<td><strong>名词</strong></td>
+<td>标记实体或结果</td>
+<td>将动态概念静态化</td>
+<td>动词&#x2F;形容词 → 名词</td>
+<td><em>act</em> → <em><strong>action</strong></em></td>
 </tr>
 <tr>
-<td align="left"><strong>动词</strong></td>
-<td align="left">触发动作或状态变化</td>
-<td align="left">将静态概念动态化</td>
-<td align="left">名词&#x2F;形容词 → 动词</td>
-<td align="left"><em>modern</em> → <em><strong>modernize</strong></em></td>
+<td><strong>动词</strong></td>
+<td>触发动作或状态变化</td>
+<td>将静态概念动态化</td>
+<td>名词&#x2F;形容词 → 动词</td>
+<td><em>modern</em> → <em><strong>modernize</strong></em></td>
 </tr>
 <tr>
-<td align="left"><strong>形容词</strong></td>
-<td align="left">定义性质或关联</td>
-<td align="left">赋予事物属性或可能性</td>
-<td align="left">名词&#x2F;动词 → 形容词</td>
-<td align="left"><em>danger</em> → <em><strong>dangerous</strong></em></td>
+<td><strong>形容词</strong></td>
+<td>定义性质或关联</td>
+<td>赋予事物属性或可能性</td>
+<td>名词&#x2F;动词 → 形容词</td>
+<td><em>danger</em> → <em><strong>dangerous</strong></em></td>
 </tr>
 <tr>
-<td align="left"><strong>副词</strong></td>
-<td align="left">修饰动作或状态的性质</td>
-<td align="left">添加方式、程度或方向</td>
-<td align="left">形容词 → 副词</td>
-<td align="left"><em>quick</em> → <em><strong>quickly</strong></em></td>
+<td><strong>副词</strong></td>
+<td>修饰动作或状态的性质</td>
+<td>添加方式、程度或方向</td>
+<td>形容词 → 副词</td>
+<td><em>quick</em> → <em><strong>quickly</strong></em></td>
 </tr>
 </tbody></table>
 <h3 id="名词后缀-1"><a href="#名词后缀-1" class="headerlink" title="名词后缀"></a>名词后缀</h3><ul>
@@ -601,7 +513,7 @@
 <!-- 注释：Markdown 表格
 
 | 词根   | 词性   | 核心意义                                     | 典型示例                                                     | 语境判断技巧                                                 |
-| ------ | :----- | :------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| ------ | ------ | -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | `-ate` | 动词   | 使……发生；执行动作；进行某种行为             | *activate*（激活）、*celebrate*（庆祝）、*educate*（教育）   | 常见于及物动词，后接宾语或动作对象，描述动态过程；多含“主动行为” |
 |        | 名词   | 身份、职位、结果或化学物质                   | *candidate*（候选人）、*doctorate*（博士学位）、*advocate*（倡导者）、*chlorate*（氯酸盐）、*sulfate*（硫酸盐） | 多表示人或物；职位类名词常与职业相关；化学名词常与科学术语相关；常为“结果或实体”。 |
 |        | 形容词 | 具有……性质或状态；重构满……的                 | *passionate*（热情的）、*accurate*（精确的）、*delicate*（精致的）、*fortunate*（幸运的） | 多描述状态或特征，修饰名词，常见于描述人或事物的特性。       |
@@ -618,10 +530,10 @@
 <thead>
 <tr>
 <th>词根</th>
-<th align="left">词性</th>
-<th align="left">核心意义</th>
-<th align="left">典型示例</th>
-<th align="left">语境判断技巧</th>
+<th>词性</th>
+<th>核心意义</th>
+<th>典型示例</th>
+<th>语境判断技巧</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -673,6 +585,7 @@
 
 
 
+
 <div class="note info flat"><p>词根的多义性，也使得有的词有多种词性，如“<em>contemporary</em>”，作形容词时表示“当代的”，作名词时表示“同代人”，也需结合单词在句子中的成分来判断。</p>
 </div>
 
@@ -700,155 +613,155 @@
 <table>
 <thead>
 <tr>
-<th align="left">美式（<code>-ize</code>）</th>
-<th align="left">英式（<code>-ise</code>）</th>
-<th align="left">含义</th>
+<th align="center">美式（<code>-ize</code>）</th>
+<th align="center">英式（<code>-ise</code>）</th>
+<th align="center">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><em>organize</em></td>
-<td align="left"><em>organise</em></td>
-<td align="left">组织</td>
+<td align="center"><em>organize</em></td>
+<td align="center"><em>organise</em></td>
+<td align="center">组织</td>
 </tr>
 <tr>
-<td align="left"><em>recognize</em></td>
-<td align="left"><em>recognise</em></td>
-<td align="left">识别</td>
+<td align="center"><em>recognize</em></td>
+<td align="center"><em>recognise</em></td>
+<td align="center">识别</td>
 </tr>
 <tr>
-<td align="left"><em>apologize</em></td>
-<td align="left"><em>apologise</em></td>
-<td align="left">道歉</td>
+<td align="center"><em>apologize</em></td>
+<td align="center"><em>apologise</em></td>
+<td align="center">道歉</td>
 </tr>
 <tr>
-<td align="left"><em>realize</em></td>
-<td align="left"><em>realise</em></td>
-<td align="left">意识到</td>
+<td align="center"><em>realize</em></td>
+<td align="center"><em>realise</em></td>
+<td align="center">意识到</td>
 </tr>
 <tr>
-<td align="left"><em>analyze</em></td>
-<td align="left"><em>analyse</em></td>
-<td align="left">分析</td>
+<td align="center"><em>analyze</em></td>
+<td align="center"><em>analyse</em></td>
+<td align="center">分析</td>
 </tr>
 </tbody></table>
 <h5 id="动词后缀：-yze（美式）-vs-yse（英式）"><a href="#动词后缀：-yze（美式）-vs-yse（英式）" class="headerlink" title="动词后缀：-yze（美式） vs. -yse（英式）"></a>动词后缀：<code>-yze</code>（美式） vs. <code>-yse</code>（英式）</h5><p>美式英语使用 <code>-yze</code>，与 <code>-ize</code> 规则一致，统一采用 <code>-ze</code> 结尾；英式英语使用 <code>-yse</code>，保留希腊语源拼写。</p>
 <table>
 <thead>
 <tr>
-<th align="left">美式（<code>-yze</code>）</th>
-<th align="left">英式（<code>-yse</code>）</th>
-<th align="left">含义</th>
+<th align="center">美式（<code>-yze</code>）</th>
+<th align="center">英式（<code>-yse</code>）</th>
+<th align="center">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><em>analyze</em></td>
-<td align="left"><em>analyse</em></td>
-<td align="left">分析</td>
+<td align="center"><em>analyze</em></td>
+<td align="center"><em>analyse</em></td>
+<td align="center">分析</td>
 </tr>
 <tr>
-<td align="left"><em>paralyze</em></td>
-<td align="left"><em>paralyse</em></td>
-<td align="left">麻痹</td>
+<td align="center"><em>paralyze</em></td>
+<td align="center"><em>paralyse</em></td>
+<td align="center">麻痹</td>
 </tr>
 <tr>
-<td align="left"><em>catalyze</em></td>
-<td align="left"><em>catalyse</em></td>
-<td align="left">催化</td>
+<td align="center"><em>catalyze</em></td>
+<td align="center"><em>catalyse</em></td>
+<td align="center">催化</td>
 </tr>
 </tbody></table>
 <h5 id="名词后缀：-or（美式）-vs-our（英式）"><a href="#名词后缀：-or（美式）-vs-our（英式）" class="headerlink" title="名词后缀：-or（美式） vs. -our（英式）"></a>名词后缀：<code>-or</code>（美式） vs. <code>-our</code>（英式）</h5><p>美式英语简化词尾，使用 <code>-or</code>，去除 <code>-u</code>；英式英语保留 <code>-our</code>，源自法语拼写传统。</p>
 <table>
 <thead>
 <tr>
-<th align="left">美式（<code>-or</code>）</th>
-<th align="left">英式（<code>-our</code>）</th>
-<th align="left">含义</th>
+<th align="center">美式（<code>-or</code>）</th>
+<th align="center">英式（<code>-our</code>）</th>
+<th align="center">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><em>color</em></td>
-<td align="left"><em>colour</em></td>
-<td align="left">颜色</td>
+<td align="center"><em>color</em></td>
+<td align="center"><em>colour</em></td>
+<td align="center">颜色</td>
 </tr>
 <tr>
-<td align="left"><em>humor</em></td>
-<td align="left"><em>humour</em></td>
-<td align="left">幽默</td>
+<td align="center"><em>humor</em></td>
+<td align="center"><em>humour</em></td>
+<td align="center">幽默</td>
 </tr>
 <tr>
-<td align="left"><em>flavor</em></td>
-<td align="left"><em>flavour</em></td>
-<td align="left">风味</td>
+<td align="center"><em>flavor</em></td>
+<td align="center"><em>flavour</em></td>
+<td align="center">风味</td>
 </tr>
 </tbody></table>
 <h5 id="名词后缀：-er（美式）-vs-re（英式）"><a href="#名词后缀：-er（美式）-vs-re（英式）" class="headerlink" title="名词后缀：-er（美式） vs. -re（英式）"></a>名词后缀：<code>-er</code>（美式） vs. <code>-re</code>（英式）</h5><p>美式英语以 <code>-er</code> 结尾，符合英语语音简化趋势；英式英语保留法语词源拼写 <code>-re</code>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">美式（<code>-er</code>）</th>
-<th align="left">英式（<code>-re</code>）</th>
-<th align="left">含义</th>
+<th align="center">美式（<code>-er</code>）</th>
+<th align="center">英式（<code>-re</code>）</th>
+<th align="center">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><em>center</em></td>
-<td align="left"><em>centre</em></td>
-<td align="left">中心</td>
+<td align="center"><em>center</em></td>
+<td align="center"><em>centre</em></td>
+<td align="center">中心</td>
 </tr>
 <tr>
-<td align="left"><em>theater</em></td>
-<td align="left"><em>theatre</em></td>
-<td align="left">剧院</td>
+<td align="center"><em>theater</em></td>
+<td align="center"><em>theatre</em></td>
+<td align="center">剧院</td>
 </tr>
 <tr>
-<td align="left"><em>meter</em></td>
-<td align="left"><em>metre</em></td>
-<td align="left">米（单位）</td>
+<td align="center"><em>meter</em></td>
+<td align="center"><em>metre</em></td>
+<td align="center">米（单位）</td>
 </tr>
 </tbody></table>
 <h5 id="单双写辅音差异"><a href="#单双写辅音差异" class="headerlink" title="单双写辅音差异"></a>单双写辅音差异</h5><p>美式英语单辅音结尾，简化拼写；英式英语双辅音结尾，符合古英语重读闭音节规则。</p>
 <table>
 <thead>
 <tr>
-<th align="left">美式（单辅音）</th>
-<th align="left">英式（双辅音）</th>
-<th align="left">含义</th>
+<th align="center">美式（单辅音）</th>
+<th align="center">英式（双辅音）</th>
+<th align="center">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><em>traveled</em></td>
-<td align="left"><em>travelled</em></td>
-<td align="left">旅行（过去式）</td>
+<td align="center"><em>traveled</em></td>
+<td align="center"><em>travelled</em></td>
+<td align="center">旅行（过去式）</td>
 </tr>
 <tr>
-<td align="left"><em>canceled</em></td>
-<td align="left"><em>cancelled</em></td>
-<td align="left">取消（过去式）</td>
+<td align="center"><em>canceled</em></td>
+<td align="center"><em>cancelled</em></td>
+<td align="center">取消（过去式）</td>
 </tr>
 <tr>
-<td align="left"><em>labeled</em></td>
-<td align="left"><em>labelled</em></td>
-<td align="left">贴标签（过去式）</td>
+<td align="center"><em>labeled</em></td>
+<td align="center"><em>labelled</em></td>
+<td align="center">贴标签（过去式）</td>
 </tr>
 </tbody></table>
 <h5 id="特殊差异：名词与动词拼写"><a href="#特殊差异：名词与动词拼写" class="headerlink" title="特殊差异：名词与动词拼写"></a>特殊差异：名词与动词拼写</h5><p>美式英语名词与动词拼写统一。英式英语名词与动词拼写区分，动词多用 <code>-se</code>，名词用 <code>-ce</code>。</p>
 <table>
 <thead>
 <tr>
-<th align="left">美式（统一）</th>
-<th align="left">英式（名词&#x2F;动词）</th>
-<th align="left">含义</th>
+<th align="center">美式（统一）</th>
+<th align="center">英式（名词&#x2F;动词）</th>
+<th align="center">含义</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left"><em>license</em> (名&#x2F;动)</td>
-<td align="left"><em>licence</em> (名) &#x2F; <em>license</em> (动)</td>
-<td align="left">许可证&#x2F;授权</td>
+<td align="center"><em>license</em> (名&#x2F;动)</td>
+<td align="center"><em>licence</em> (名) &#x2F; <em>license</em> (动)</td>
+<td align="center">许可证&#x2F;授权</td>
 </tr>
 <tr>
-<td align="left"><em>practice</em> (名&#x2F;动)</td>
-<td align="left"><em>practice</em> (名) &#x2F; <em>practise</em> (动)</td>
-<td align="left">练习&#x2F;实践</td>
+<td align="center"><em>practice</em> (名&#x2F;动)</td>
+<td align="center"><em>practice</em> (名) &#x2F; <em>practise</em> (动)</td>
+<td align="center">练习&#x2F;实践</td>
 </tr>
 </tbody></table>
 <h5 id="总结规律"><a href="#总结规律" class="headerlink" title="总结规律"></a>总结规律</h5><ul>
@@ -1015,6 +928,95 @@
         <tag>学习笔记</tag>
         <tag>英语</tag>
         <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建 · 搭建一个自己的博客 05：写作</title>
+    <url>/blog/2025/03/14/531ad9e1/</url>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><ul>
+<li>博客搭建系列 · 搭建一个自己的博客</li>
+<li>摘要：本文主要介绍如何使用 Hexo 进行写作。</li>
+</ul>
+</div>
+
+
+
+<h2 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h2><p>Hexo 有三种默认布局（Layout）：<code>post</code>、<code>page</code> 和 <code>draft</code>。 每个布局创建的文件会被保存到不同的路径。</p>
+<table>
+<thead>
+<tr>
+<th align="center">布局</th>
+<th align="center">路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>post</code></td>
+<td align="center"><code>source/_posts</code></td>
+</tr>
+<tr>
+<td align="center"><code>page</code></td>
+<td align="center"><code>source</code></td>
+</tr>
+<tr>
+<td align="center"><code>draft</code></td>
+<td align="center"><code>source/_drafts</code></td>
+</tr>
+</tbody></table>
+<p>可以执行下列命令来创建一篇新文章或者新的页面。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果不标识布局（Layout），则新创建的文章会会被保存到默认布局的路径下。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>post</code> 是默认的布局，文件自动生成在 <code>source/_posts/&lt;title&gt;.md</code>。也可以通过编辑 <code>_config.yml</code> 中的 <code>default_layout</code> 设置来更改默认布局。</p>
+<p>使用以下命令，可以创建草稿。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新创建的文章草稿会被保存到 <code>source/_drafts</code> 文件夹。</p>
+<div class="note info flat"><p><strong>个人建议</strong>：先生成草稿再发布到 <code>source/_posts</code>，而不是直接生成文章到 <code>source/_posts</code>。</p>
+<p>因为在使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章时，Hexo 会自动帮助我们调整文章的 Front-matter 元数据，从而可以帮助我们在文章发布时检查文章内容的格式，而不是要等到在浏览器预览时才发现问题。</p>
+</div>
+
+
+
+<h2 id="编辑草稿"><a href="#编辑草稿" class="headerlink" title="编辑草稿"></a>编辑草稿</h2><h3 id="编辑-Front-matter"><a href="#编辑-Front-matter" class="headerlink" title="编辑 Front-matter"></a>编辑 Front-matter</h3><div class="note info flat"><p>Front-matter 是文件开头的 <code>YAML</code> 或 <code>JSON</code> 代码块，用于配置写作设置。 以 <code>YAML</code> 格式书写时，Front-matter 以三个破折号结束；以<code>JSON</code>格式书写时，Front-matter 以三个分号结束。</p>
+</div>
+
+<p>在 <code>Markdown</code> 文件顶部添加 <code>YAML</code> 配置块，例如：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">&#x27;工程师&#x27;</span>, <span class="string">&#x27;运维&#x27;</span>]</span><br><span class="line"><span class="attr">cover:</span> <span class="string">https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，只有文章支持分类（categories）和标签（tags）。Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>中有关“分类”和“标签”的描述是：“<em>分类按顺序应用于文章，从而形成分类和子分类的层次结构。标签是在相同的层次结构上定义的，因此它们的出现顺序不重要</em>”。这也就是说，分类有严格的层次结构，而标签没有，我们无需关心标签的层次结构。例如 Hexo <a href="https://hexo.io/zh-cn/docs/front-matter">文档</a>给出的举例：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Sports</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Baseball</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Injury</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Fight</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Shocking</span></span><br></pre></td></tr></table></figure>
+
+<p>“<em>如果想应用多个分类层次结构，可以使用一个名称列表而不是一个单个名称</em>”。例如：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> [<span class="string">Sports</span>, <span class="string">Baseball</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">Boston</span> <span class="string">Red</span> <span class="string">Sox</span>]</span><br><span class="line">  <span class="bullet">-</span> [<span class="string">MLB</span>, <span class="string">American</span> <span class="string">League</span>, <span class="string">New</span> <span class="string">York</span> <span class="string">Yankees</span>]</span><br><span class="line">  <span class="bullet">-</span> <span class="string">Rivalries</span></span><br></pre></td></tr></table></figure>
+
+<p>“<em>如果 Hexo 在帖子上看到像这种方式定义的分类，它会将该帖子的每个分类视为其自己的独立层次结构。</em>”</p>
+<p>使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章后的 Front-matter 如下。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客搭建05</span> <span class="string">·</span> <span class="string">搭建一个自己的博客（五）：写作</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术宅</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">技术笔记</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">Hexo主题的选择、配置。</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="bullet">-</span> <span class="string">工程师</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">运维</span></span><br><span class="line"><span class="attr">cover:</span> <span class="string">&gt;-</span></span><br><span class="line"><span class="string">  https://raw.githubusercontent.com/Blueboy2020/blog/refs/heads/main/2025/03/12/e3467873/cover.png</span></span><br><span class="line"><span class="string"></span><span class="attr">series:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-03-14 16:33:15</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>不难发现，确实与之前样例中的 Front-matter 不一样，但实现的效果是一样的。这也是为什么个人建议使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章，这样更规范。</p>
+<h3 id="编辑正文"><a href="#编辑正文" class="headerlink" title="编辑正文"></a>编辑正文</h3><p>接下来就可以编写自己的文章正文啦~下面主要介绍一些常用的写作技巧。</p>
+<h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"><span class="bullet">-</span> 列表项</span><br><span class="line"><span class="strong">**加粗文本**</span></span><br><span class="line">[<span class="string">链接文字</span>](<span class="link">https://example.com</span>)</span><br><span class="line">![<span class="string">图片描述</span>](<span class="link">/images/example.jpg</span>)</span><br><span class="line"><span class="code">`单行代码`</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="扩展语法（需主题支持）"><a href="#扩展语法（需主题支持）" class="headerlink" title="扩展语法（需主题支持）"></a>扩展语法（需主题支持）</h4><h5 id="引用块（quote）"><a href="#引用块（quote）" class="headerlink" title="引用块（quote）"></a>引用块（quote）</h5><p>参考<a href="https://hexo.io/zh-cn/docs/tag-plugins">标签插件（Tag Plugins） | Hexo</a>和<a href="https://butterfly.js.org/posts/ceeb73f/">Butterfly 文档(四) 标签外挂 | Butterfly</a></p>
+<p><del>（后续完善）</del></p>
+<h2 id="预览、发布"><a href="#预览、发布" class="headerlink" title="预览、发布"></a>预览、发布</h2><h3 id="启动实时渲染服务器预览草稿"><a href="#启动实时渲染服务器预览草稿" class="headerlink" title="启动实时渲染服务器预览草稿"></a>启动实时渲染服务器预览草稿</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s --draft # 默认访问 http://localhost:4000</span><br></pre></td></tr></table></figure>
+
+<h3 id="发布草稿到正式文章"><a href="#发布草稿到正式文章" class="headerlink" title="发布草稿到正式文章"></a>发布草稿到正式文章</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo publish &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>有关 Hexo 写作的更多细节，可参考 Hexo 的<a href="https://hexo.io/zh-cn/docs/">文档</a>之<a href="https://hexo.io/zh-cn/docs/writing">写作</a>和主题 Butterfly 的<a href="https://butterfly.js.org/posts/ceeb73f/">文档</a>。</p>
+</div>
+]]></content>
+      <categories>
+        <category>工程师</category>
+        <category>运维</category>
+      </categories>
+      <tags>
+        <tag>技术宅</tag>
+        <tag>技术笔记</tag>
       </tags>
   </entry>
   <entry>
