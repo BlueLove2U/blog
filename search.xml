@@ -609,7 +609,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="地域差异"><a href="#地域差异" class="headerlink" title="地域差异"></a>地域差异</h4><h5 id="动词后缀：-ize（美式）-vs-ise（英式）"><a href="#动词后缀：-ize（美式）-vs-ise（英式）" class="headerlink" title="动词后缀：-ize（美式） vs. -ise（英式）"></a><strong>动词后缀：<code>-ize</code>（美式） vs. <code>-ise</code>（英式）</strong></h5><p>美式英语统一使用 <code>-ize</code>（即使词源为希腊语 <code>-izo</code>）；英式英语倾向 <code>-ise</code>，但部分学术领域（如牛津风格）允许 <code>-ize</code>。</p>
+<h4 id="地域差异后缀"><a href="#地域差异后缀" class="headerlink" title="地域差异后缀"></a>地域差异后缀</h4><h5 id="动词后缀：-ize（美式）-vs-ise（英式）"><a href="#动词后缀：-ize（美式）-vs-ise（英式）" class="headerlink" title="动词后缀：-ize（美式） vs. -ise（英式）"></a><strong>动词后缀：<code>-ize</code>（美式） vs. <code>-ise</code>（英式）</strong></h5><p>美式英语统一使用 <code>-ize</code>（即使词源为希腊语 <code>-izo</code>）；英式英语倾向 <code>-ise</code>，但部分学术领域（如牛津风格）允许 <code>-ize</code>。</p>
 <table>
 <thead>
 <tr>
@@ -764,7 +764,7 @@
 <td align="center">练习&#x2F;实践</td>
 </tr>
 </tbody></table>
-<h5 id="总结规律"><a href="#总结规律" class="headerlink" title="总结规律"></a>总结规律</h5><ul>
+<h5 id="规律总结"><a href="#规律总结" class="headerlink" title="规律总结"></a>规律总结</h5><ul>
 <li>简化趋势：美式英语倾向于简化拼写（如去 <code>-u</code>、单辅音）<ul>
 <li><code>-or</code>&#x2F;<code>-our</code>：美式简化去 <code>-u</code>，英式保留。</li>
 <li>单双辅音：美式英语单辅音结尾，英式双写辅音更常见（如 <em>traveller</em>）。</li>
@@ -886,7 +886,7 @@
 <td>由学科名词转化为职业名词</td>
 </tr>
 </tbody></table>
-<h5 id="总结规律-1"><a href="#总结规律-1" class="headerlink" title="总结规律"></a>总结规律</h5><ul>
+<h5 id="规律总结-1"><a href="#规律总结-1" class="headerlink" title="规律总结"></a>规律总结</h5><ul>
 <li>层级叠加：后缀按词性转化顺序叠加（如“动词 → 名词 → 形容词”）。<ul>
 <li>例：<em>act</em>（动） → <em>action</em>（名） → <em>actional</em>（形）。</li>
 </ul>
@@ -897,6 +897,89 @@
 <div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>逆向拆分：遇到长词时，从词尾倒推复合后缀，例如 <em>sensational</em>（出众的） → <code>-al</code> + <code>-tion</code> + <code>-ate</code>。</p>
 <p>词性导航：复合后缀常标记词性，例如 <code>-ability</code> 必为名词；<code>-lessly</code> 结尾必为副词，修饰动词。</p>
 <p>关联词族：通过复合后缀串联同根词，例如 <em>flexible</em>（灵活的） → <em>flexibility</em>（灵活性） → <em>flexibly</em>（灵活地）。</p>
+</div>
+
+
+
+<h4 id="无实义后缀"><a href="#无实义后缀" class="headerlink" title="无实义后缀"></a>无实义后缀</h4><p>在英语词汇演变中，‌部分后缀只是词源残留或拼写调整‌，本身已无实际意义，但保留了历史上的书写习惯。这类后缀常出现在从法语、拉丁语借入的词汇中。</p>
+<!-- 注释：Markdown 表格
+
+| ‌类型‌               | ‌例词‌                | ‌核心词根及来源‌                     | ‌后缀残留说明‌                                                 |
+| ------------------ | ------------------- | ---------------------------------- | ------------------------------------------------------------ |
+| ‌法语 `-ue`         | *tissue*（组织）    | `tiss-`（编织，拉丁语 *texere*）   | 来自法语阴性名词拼写习惯（如法语 *tissu* → 英语 *tissue*），‌`-ue` 无实义。 |
+|                    | *value*（价值）     | ‌`val-`（价值，拉丁语 *valere*）    | 古法语名词化后缀 `-ue`（如 *value*），英语中仅保留拼写，无实义。 |
+|                    | *tongue*（舌头）    | ‌`tong-`（舌头，古英语 *tunge*）    | 受法语拼写影响添加 ‌`-ue`，原词无此后缀，仅书写残留。         |
+| ‌                   | *league*（联盟）    | `lig-`（绑定，拉丁语 *ligare*）    | 拉丁语 *ligare* → 法语 *ligue*，英语保留 ‌`-ue`，无实义。     |
+| ‌拉丁语/法语 `-que` | *antique*（古老的） | ‌`anti-`（古老，拉丁语 *antiquus*） | 拉丁语词尾 `-que`（表“和”）弱化，英语中仅拼写残留，无实义（如法语 *antique*）。 |
+|                    | *unique*（唯一的）  | ‌`uni-`（唯一，拉丁语 *unicus*）    | 拉丁语 `-cus` → 法语 `-que`，英语保留拼写 ‌`-que`，无实义。   |
+| ‌古英语/法语 `-le`  | *table*（桌子）     | ‌`tab-`（平板，拉丁语 *tabula*）    | 拉丁语 `-ula` → 法语 `-le`，英语保留为 ‌`-le`，无实义。       |
+|                    | *circle*（圆）      | ‌`circ-`（圆，拉丁语 *circulus*）   | 拉丁语 `-culus` → 法语 `-cle` → 英语 ‌`-le`，拼写弱化残留。   |
+
+-->
+
+
+
+<table>
+<thead>
+<tr>
+<th>‌类型‌</th>
+<th>‌例词‌</th>
+<th>‌核心词根及来源‌</th>
+<th>‌后缀残留说明‌</th>
+</tr>
+</thead>
+<tbody><tr>
+<td rowspan="4">‌法语 <code>-ue</code></td>
+<td><em>tissue</em>（组织）</td>
+<td><code>tiss-</code>（编织，拉丁语 <em>texere</em>）</td>
+<td>来自法语阴性名词拼写习惯（如法语 <em>tissu</em> → 英语 <em>tissue</em>），‌<code>-ue</code> 无实义。</td>
+</tr>
+<tr>
+<td><em>value</em>（价值）</td>
+<td>‌<code>val-</code>（价值，拉丁语 <em>valere</em>）</td>
+<td>古法语名词化后缀 <code>-ue</code>（如 <em>value</em>），英语中仅保留拼写，无实义。</td>
+</tr>
+<tr>
+<td><em>tongue</em>（舌头）</td>
+<td>‌<code>tong-</code>（舌头，古英语 <em>tunge</em>）</td>
+<td>受法语拼写影响添加 ‌<code>-ue</code>，原词无此后缀，仅书写残留。</td>
+</tr>
+<tr>
+<td><em>league</em>（联盟）</td>
+<td><code>lig-</code>（绑定，拉丁语 <em>ligare</em>）</td>
+<td>拉丁语 <em>ligare</em> → 法语 <em>ligue</em>，英语保留 ‌<code>-ue</code>，无实义。</td>
+</tr>
+<tr>
+<td rowspan="2">‌拉丁语/法语 <code>-que</code></td>
+<td><em>antique</em>（古老的）</td>
+<td>‌<code>anti-</code>（古老，拉丁语 <em>antiquus</em>）</td>
+<td>拉丁语词尾 <code>-que</code>（表“和”）弱化，英语中仅拼写残留，无实义（如法语 <em>antique</em>）。</td>
+</tr>
+<tr>
+<td><em>unique</em>（唯一的）</td>
+<td>‌<code>uni-</code>（唯一，拉丁语 <em>unicus</em>）</td>
+<td>拉丁语 <code>-cus</code> → 法语 <code>-que</code>，英语保留拼写 ‌<code>-que</code>，无实义。</td>
+</tr>
+<tr>
+<td rowspan="2">‌古英语/法语 <code>-le</code></td>
+<td><em>table</em>（桌子）</td>
+<td>‌<code>tab-</code>（平板，拉丁语 <em>tabula</em>）</td>
+<td>拉丁语 <code>-ula</code> → 法语 <code>-le</code>，英语保留为 ‌<code>-le</code>，无实义。</td>
+</tr>
+<tr>
+<td><em>circle</em>（圆）</td>
+<td>‌<code>circ-</code>（圆，拉丁语 <em>circulus</em>）</td>
+<td>拉丁语 <code>-culus</code> → 法语 <code>-cle</code> → 英语 ‌<code>-le</code>，拼写弱化残留。</td>
+</tr>
+</tbody></table>
+
+
+
+<h5 id="规律‌总结"><a href="#规律‌总结" class="headerlink" title="规律‌总结"></a>规律‌总结</h5><ul>
+<li>无实义后缀多为法语、拉丁语词尾的拼写遗留。</li>
+<li>无实义后缀在英语中不承担构词功能，仅保留历史书写形式。</li>
+</ul>
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>建议重点记忆核心词根‌；忽略无实义后缀‌，避免过度拆解；尽量对比同源词‌强化理解。</p>
 </div>
 
 
