@@ -1055,7 +1055,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new draft &lt;title&gt;</span><br></pre></td></tr></table></figure>
 
 <p>新创建的文章草稿会被保存到 <code>source/_drafts</code> 文件夹。</p>
-<div class="note orange icon-padding flat"><i class="note-icon fas fa-lightbulb"></i><p><strong>个人建议</strong>：先生成草稿再发布到 <code>source/_posts</code>，而不是直接生成文章到 <code>source/_posts</code>。</p>
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-lightbulb"></i><p><strong>个人建议</strong>：先新建草稿再发布到 <code>source/_posts</code>，而不是直接新建文章到 <code>source/_posts</code>。</p>
 <p>因为在使用 <code>hexo publish &lt;title&gt;&quot;</code> 发布文章时，Hexo 会自动帮助我们调整文章的 Front-matter 元数据，从而可以帮助我们在文章发布时检查文章内容的格式，而不是要等到在浏览器预览时才发现问题。</p>
 </div>
 
