@@ -1,0 +1,857 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构 | BLUE LOVE</title><meta name="author" content="Blueboy"><meta name="copyright" content="Blueboy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从手写算式的自然直觉，到机器执行的冷酷效率，本文用栈、树、图的结构之美，揭开计算机科学百年演进中最为优雅的“形式化魔术”。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构">
+<meta property="og:url" content="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/index.html">
+<meta property="og:site_name" content="BLUE LOVE">
+<meta property="og:description" content="从手写算式的自然直觉，到机器执行的冷酷效率，本文用栈、树、图的结构之美，揭开计算机科学百年演进中最为优雅的“形式化魔术”。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png">
+<meta property="article:published_time" content="2025-03-30T08:56:20.000Z">
+<meta property="article:modified_time" content="2025-03-30T08:56:25.787Z">
+<meta property="article:author" content="Blueboy">
+<meta property="article:tag" content="学生党">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="考研">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构",
+  "url": "https://bluelove2u.github.io/blog/2025/03/30/ff85d002/",
+  "image": "https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png",
+  "datePublished": "2025-03-30T08:56:20.000Z",
+  "dateModified": "2025-03-30T08:56:25.787Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Blueboy",
+      "url": "https://bluelove2u.github.io/blog/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/blog/img/logo.png"><link rel="canonical" href="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/blog/',
+  algolia: undefined,
+  localSearch: {"path":"/blog/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":350,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="gear-loader"><div class="gear-loader_overlay"></div><div class="gear-loader_cogs"><div class="gear-loader_cogs__top"><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_part"></div><div class="gear-top_hole"></div></div><div class="gear-loader_cogs__left"><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_part"></div><div class="gear-left_hole"></div></div><div class="gear-loader_cogs__bottom"><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_part"></div><div class="gear-bottom_hole"></div></div></div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+btf.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+
+</script><link rel="stylesheet" href="/blog/css/loading_pace.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg" style="background-image: url(/blog/img/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/blog/img/avatar.jpg" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 页面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/blog/talking/"><i class="fa-fw fas fa-comment-dots"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/blog/"><img class="site-icon" src="/blog/img/logo.png" alt="Logo"><span class="site-name">BLUE LOVE</span></a><a class="nav-page-title" href="/blog/"><span class="site-name">计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-compass"></i><span> 页面</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/blog/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/blog/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/blog/talking/"><i class="fa-fw fas fa-comment-dots"></i><span> 说说</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog/messageboard/"><i class="fa-fw fas fa-comment-dots"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/blog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/blog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-30T08:56:20.000Z" title="发表于 2025-03-30 16:56:20">2025-03-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-30T08:56:25.787Z" title="更新于 2025-03-30 16:56:25">2025-03-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E5%AD%A6%E7%94%9F/">学生</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E5%AD%A6%E7%94%9F/%E8%80%83%E7%A0%94/">考研</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/blog/categories/%E5%AD%A6%E7%94%9F/%E8%80%83%E7%A0%94/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div class="note green icon-padding flat"><i class="note-icon fas fa-clipboard-list"></i><ul>
+<li>计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到 DAG 结构</li>
+<li>摘要：从 1920 年代波兰数学家扬·武卡谢维奇提出消除括号的前缀表达式，到 1950 年代逆波兰式适配栈式计算机，再到现代编译器依赖的 DAG 优化，表达式表示法的演进史，本质是形式化逻辑与计算效率的百年博弈。本文以数据结构为核心视角，系统解析表达式处理技术的三大跃迁：<ul>
+<li>波兰式与逆波兰式的形式化奠基：通过运算符位置调整消除歧义，实现无括号运算。</li>
+<li>栈的双重使命：调度场算法中管理优先级，后缀计算中实现线性时间复杂度。</li>
+<li>从树到 DAG 的结构革命：通过合并公共子表达式，将时间复杂度从 O(n²) 降至 O(n)。<br>文章进一步探讨该技术在编译器优化、数据库查询、量子计算中的现实应用，并展望 AI 驱动的自动表达式简化未来。通过代码实例、历史案例与复杂度分析，揭示数据结构如何成为人机逻辑转换的终极桥梁。</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="note blue icon-padding flat"><i class="note-icon fas fa-door-open"></i><p>表达式的形式化逻辑与计算机的博弈：表达式是数学逻辑的载体，也是计算机执行运算的指令，是数学和计算机科学中描述运算逻辑的基本工具。人类的数学表达式依赖括号和优先级规则，但计算机需要一种无需歧义的形式来高效执行运算。从人类自然书写的中缀表达式，到计算机高效处理的后缀形式，再到优化计算的 DAG 结构，这一演进不仅是符号排列的调整，更是一场形式化逻辑与计算效率的深度博弈。</p>
+<p>本文从数据结构视角，解析表达式表示法的演进历程，揭示栈、树、图在表达式处理中的核心作用，并探讨其对现代编译器和计算系统的深远影响。</p>
+<p>核心问题：如何将人类易读的表达式转化为计算机高效处理的形式？<br>答案：通过前、中、后缀表达式和栈的配合，构建表达式树，实现逻辑与计算的统一。</p>
+</div>
+
+<hr>
+<h2 id="历史起点：波兰式的形式化革命"><a href="#历史起点：波兰式的形式化革命" class="headerlink" title="历史起点：波兰式的形式化革命"></a>历史起点：波兰式的形式化革命</h2><h3 id="中缀表达式的困境"><a href="#中缀表达式的困境" class="headerlink" title="中缀表达式的困境"></a>中缀表达式的困境</h3><p>背景：中缀表达式（Infix Notation）源于自然语言习惯（如拉丁语中的运算描述），是数学和日常交流的默认形式。</p>
+<p>定义：运算符在操作数之间</p>
+<p>特点：</p>
+<ul>
+<li>运算符位于操作数中间，符合人类的直觉逻辑，但需考虑优先级（如乘除高于加减）和括号。</li>
+<li>存在歧义可能（如 <code>A + B + C</code> 可解析为 <code>(A + B) + C</code> 或 <code>A + (B + C)</code>，但因结合性规则通常默认为左结合）。</li>
+</ul>
+<p>示例： <code>3 + 4 × 2 / (1 - 5)</code></p>
+<p>意义：中缀表达式符合人类阅读习惯，程序员编写代码、用户输入公式时，必然使用中缀表达式。 </p>
+<p>应用</p>
+<ul>
+<li>编程语言：代码中的 <code>a + b * c</code> 直接使用中缀形式，编译器内部会将其转换为适合处理的中间形式。</li>
+<li>数学教学：教科书、论文中的公式均以中缀形式呈现，便于理解。</li>
+</ul>
+<div class="note blue icon-padding flat"><i class="note-icon fas fa-info-circle"></i><p>人类自然书写的中缀表达式需处理优先级和括号嵌套，早期计算机难以直接解析优先级和括号，即便是当今的计算机直接解析，也是成本高昂。计算机需要先将中缀转为后缀&#x2F;前缀表达式，再执行计算，这一转换过程是人与机器交互的必经之路。 </p>
+</div>
+
+
+
+<h3 id="波兰式（前缀表达式）的诞生"><a href="#波兰式（前缀表达式）的诞生" class="headerlink" title="波兰式（前缀表达式）的诞生"></a>波兰式（前缀表达式）的诞生</h3><p>背景：1920 年代，波兰数学家扬·武卡谢维奇（Jan Łukasiewicz）为简化逻辑符号系统，提出将运算符置于操作数之前，消除括号依赖，即前缀表达式（Prefix Notation，波兰式）。 </p>
+<p>定义：运算符在操作数之前</p>
+<p>特点：</p>
+<ul>
+<li><p>运算符位于操作数之前，无需括号和优先级规则，运算符的排列顺序直接决定运算顺序。</p>
+</li>
+<li><p>计算方向为从右向左计算。</p>
+</li>
+</ul>
+<p>示例：<code>+ 3 / × 4 2 - 1 5</code> </p>
+<p>意义：</p>
+<ul>
+<li>通过固定运算符位置，明确运算顺序，避免中缀表达式的歧义性；</li>
+<li>前缀表达式天然契合函数式编程的语法结构（函数名在前，参数在后），简化代码解析；</li>
+<li>从右向左扫描前缀表达式时，栈可以直接按顺序处理操作数，适合计算机逆向处理；</li>
+</ul>
+<p>应用：</p>
+<ul>
+<li>Lisp 语言中的表达式 <code>(+ 3 (* 4 2))</code> 本质是前缀形式。</li>
+<li>某些编译器优化和数学符号系统（如微分算子）采用前缀形式减少歧义。</li>
+</ul>
+<h3 id="逆波兰式（后缀表达式）的工程适配"><a href="#逆波兰式（后缀表达式）的工程适配" class="headerlink" title="逆波兰式（后缀表达式）的工程适配"></a>逆波兰式（后缀表达式）的工程适配</h3><p>背景：1950 年代，计算机科学家查尔斯·汉布林（Charles Hamblin）为适配栈式计算机，提出后缀表达式（Postfix Notation，逆波兰式）。</p>
+<p>定义：运算符在操作数之后</p>
+<p>特点：</p>
+<ul>
+<li>运算符位于操作数之后，无需括号和优先级规则。</li>
+<li>计算方向为从左向右计算</li>
+</ul>
+<p>示例：<code>3 4 2 × 1 5 - / +</code> </p>
+<p>意义：</p>
+<ul>
+<li>后缀表达式是连接高级语言与底层执行的桥梁，无需括号和优先级判断，计算机可直接顺序处理；</li>
+<li>无需回溯或递归，只需一个栈即可顺序处理，可通过单次扫描和栈操作完成计算，时间复杂度 <em>O(n)</em>，适合嵌入式系统或低资源环境。</li>
+</ul>
+<p>应用：</p>
+<ul>
+<li>早期科学计算器（如 HP-35）使用逆波兰式减少按键操作和计算步骤。</li>
+<li>编译器将中缀表达式转为后缀形式，生成中间代码（如三地址码），再进一步优化或翻译为机器码。</li>
+</ul>
+<h3 id="三种表达式的对比总结"><a href="#三种表达式的对比总结" class="headerlink" title="三种表达式的对比总结"></a>三种表达式的对比总结</h3><blockquote>
+<p>人类用中缀输入，计算机用后缀执行，前缀则在特定领域高效辅助。三者关系是互补的而非对立的。三种表达式本质是同一逻辑的不同表示形式，选择哪种形式取决于使用场景（人机交互、计算效率、语法设计）。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">表达式类型</th>
+<th align="center">运算符位置</th>
+<th align="center">是否需要括号</th>
+<th align="center">计算方向</th>
+<th>核心意义</th>
+<th>典型场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">中缀</td>
+<td align="center">操作数中间</td>
+<td align="center">是</td>
+<td align="center">左 → 右</td>
+<td>人类输入与交流的自然形式</td>
+<td>编程代码、数学公式、用户界面输入</td>
+</tr>
+<tr>
+<td align="center">前缀</td>
+<td align="center">操作数前</td>
+<td align="center">否</td>
+<td align="center">右 → 左</td>
+<td>函数式编程与无歧义解析的理想形式</td>
+<td>Lisp&#x2F;Scheme、微分符号、编译器优化</td>
+</tr>
+<tr>
+<td align="center">后缀</td>
+<td align="center">操作数后</td>
+<td align="center">否</td>
+<td align="center">左 → 右</td>
+<td>计算机高效计算的底层表示</td>
+<td>计算器、编译器中间代码、栈虚拟机</td>
+</tr>
+</tbody></table>
+<h2 id="栈：表达式转换与计算的“隐形操盘手”"><a href="#栈：表达式转换与计算的“隐形操盘手”" class="headerlink" title="栈：表达式转换与计算的“隐形操盘手”"></a>栈：表达式转换与计算的“隐形操盘手”</h2><h3 id="中缀转后缀表达式：调度场算法"><a href="#中缀转后缀表达式：调度场算法" class="headerlink" title="中缀转后缀表达式：调度场算法"></a>中缀转后缀表达式：调度场算法</h3><blockquote>
+<p>中缀转后缀的过程（调度场算法）本质是将人类逻辑转化为机器逻辑，涉及栈管理、优先级判断和括号处理，是数据结构与算法的经典案例，也是开发计算器、公式解析器、编译器等的必要的工程需求。</p>
+</blockquote>
+<h4 id="什么是调度场算法？"><a href="#什么是调度场算法？" class="headerlink" title="什么是调度场算法？"></a>什么是调度场算法？</h4><blockquote>
+<p>调度场算法是表达式转换的核心，根据的是栈的优先级调度逻辑，通过栈管理运算符优先级和括号，实现中缀到后缀的高效转换，成为了人机逻辑转换的桥梁。</p>
+</blockquote>
+<p>调度场算法（Shunting Yard Algorithm）是由荷兰计算机科学家艾兹赫尔·迪杰斯特拉（Edsger Dijkstra）在 1961 年提出的一种算法，用于将中缀表达式转换为后缀表达式。</p>
+<p>它的核心思想是通过栈（Stack）管理运算符的优先级和括号，逐步生成无需括号且明确运算顺序的后缀表达式。其名称来源于火车调度场的类比：运算符像火车车厢一样被“调度”到栈中，再按规则输出。</p>
+<p>实际应用场景：</p>
+<ul>
+<li>编译器设计：将代码中的表达式转换为中间代码（如三地址码）。</li>
+<li>计算器开发：处理用户输入的中缀表达式（如 <code>(5 + 3) × 2</code>）。</li>
+<li>数学公式解析：数据库查询、Excel 公式计算等场景。</li>
+</ul>
+<h4 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h4><h5 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h5><ul>
+<li><p>步骤 1：初始化两个容器。</p>
+<ul>
+<li>输出队列：存放最终结果。</li>
+<li>运算符栈：临时管理运算符和括号。</li>
+</ul>
+</li>
+<li><p>步骤 2：从左到右扫描中缀表达式，按以下规则处理。</p>
+<ul>
+<li>遇到操作数：直接输出队列；</li>
+<li>遇到左括号 <code>(</code>：压入栈；</li>
+<li>遇到右括号 <code>)</code>：触发栈内弹出，弹出栈内元素到输出队列，直到遇到左括号 <code>(</code>（左括号弹出但不输出）。</li>
+<li>遇到运算符（<code>+</code>、<code>-</code>、<code>×</code>、<code>/</code>）：与栈顶运算符比较优先级，若栈顶运算符的优先级更高或相等（栈顶运算符优先级 ≥ 当前运算符优先级），则弹出到输出队列，重复此过程，最后将当前运算符压栈。</li>
+</ul>
+</li>
+<li><p>步骤 3：处理完表达式后：将栈中剩余运算符依次弹出到输出队列。</p>
+</li>
+</ul>
+<h5 id="算法关键"><a href="#算法关键" class="headerlink" title="算法关键"></a>算法关键</h5><p>优先级规则</p>
+<ul>
+<li><p>乘除（<code>×</code>、<code>/</code>）优先级高于加减（<code>+</code>、<code>-</code>）。</p>
+</li>
+<li><p>括号 <code>()</code> 强制改变优先级，栈中左括号 <code>(</code> 的优先级最低。</p>
+</li>
+</ul>
+<p>结合性处理</p>
+<ul>
+<li><p>左结合运算符（如加减乘除）：优先级相同时，从左到右计算。示例：<code>8 - 3 - 2</code> 转为 <code>8 3 - 2 -</code>，而非 <code>8 3 2 - -</code>。</p>
+</li>
+<li><p>右结合运算符（如指数 <code>^</code>）：优先级相同时从右到左计算。示例：<code>2 ^ 3 ^ 2</code> 转为 <code>2 3 2 ^ ^</code>，而非 <code>2 3 ^ 2 ^</code>。</p>
+</li>
+</ul>
+<p>括号的特殊性</p>
+<ul>
+<li><p>左括号 <code>(</code> 在栈中时，只有右括号 <code>)</code> 能触发其弹出，其他运算符无法覆盖它。</p>
+</li>
+<li><p>右括号 <code>)</code> 不进入栈，仅用于匹配左括号。</p>
+</li>
+</ul>
+<h5 id="算法示例"><a href="#算法示例" class="headerlink" title="算法示例"></a>算法示例</h5><p>中缀表达式 <code>3 + 4 × 2 / (1 - 5)</code> → 后缀表达式 <code>3 4 2 × 1 5 - / +</code>。 </p>
+<p>简要的转换过程：</p>
+<ul>
+<li>输出序列：<code>3 4 2 × 1 5 - / +</code></li>
+<li>栈操作：<code>+ → × → / → ( → - → ...</code></li>
+</ul>
+<p>详细的转换过程：</p>
+<table>
+<thead>
+<tr>
+<th align="center">当前字符</th>
+<th>操作</th>
+<th>输出队列</th>
+<th>栈内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>3</code></td>
+<td>直接输出</td>
+<td><code>3</code></td>
+<td>空</td>
+</tr>
+<tr>
+<td align="center"><code>+</code></td>
+<td>栈空，压栈</td>
+<td><code>3</code></td>
+<td><code>+</code></td>
+</tr>
+<tr>
+<td align="center"><code>4</code></td>
+<td>直接输出</td>
+<td><code>3 4</code></td>
+<td><code>+</code></td>
+</tr>
+<tr>
+<td align="center"><code>×</code></td>
+<td>优先级高于 <code>+</code>，压栈</td>
+<td><code>3 4</code></td>
+<td><code>+ ×</code></td>
+</tr>
+<tr>
+<td align="center"><code>2</code></td>
+<td>直接输出</td>
+<td><code>3 4 2</code></td>
+<td><code>+ ×</code></td>
+</tr>
+<tr>
+<td align="center"><code>/</code></td>
+<td>优先级等于 <code>×</code>，弹出 <code>×</code>，压入 <code>/</code></td>
+<td><code>3 4 2 ×</code></td>
+<td><code>+ /</code></td>
+</tr>
+<tr>
+<td align="center"><code>(</code></td>
+<td>直接压栈</td>
+<td><code>3 4 2 ×</code></td>
+<td><code>+ / (</code></td>
+</tr>
+<tr>
+<td align="center"><code>1</code></td>
+<td>直接输出</td>
+<td><code>3 4 2 × 1</code></td>
+<td><code>+ / (</code></td>
+</tr>
+<tr>
+<td align="center"><code>-</code></td>
+<td>栈顶是 <code>(</code>，直接压栈</td>
+<td><code>3 4 2 × 1</code></td>
+<td><code>+ / ( -</code></td>
+</tr>
+<tr>
+<td align="center"><code>5</code></td>
+<td>直接输出</td>
+<td><code>3 4 2 × 1 5</code></td>
+<td><code>+ / ( -</code></td>
+</tr>
+<tr>
+<td align="center"><code>)</code></td>
+<td>弹出 <code>-</code>，直到弹出 <code>(</code></td>
+<td><code>3 4 2 × 1 5 -</code></td>
+<td><code>+ /</code></td>
+</tr>
+<tr>
+<td align="center"><strong>结束</strong></td>
+<td>弹出栈中剩余运算符</td>
+<td><code>3 4 2 × 1 5 - / +</code></td>
+<td>空</td>
+</tr>
+</tbody></table>
+<p><strong>最终后缀表达式</strong>：<code>3 4 2 × 1 5 - / +</code>。</p>
+<div class="note blue icon-padding flat"><i class="note-icon fas fa-info-circle"></i><p>调度场算法高效的原因</p>
+<ul>
+<li>时间复杂度：<em>O(n)</em>，仅需一次扫描即可完成转换。</li>
+<li>空间复杂度：栈的深度由表达式嵌套层数决定，最坏情况为 <em>O(n)</em>。</li>
+<li>无需递归：完全依赖栈的线性操作，适合编程实现。</li>
+</ul>
+</div>
+
+
+
+<h3 id="后缀表达式计算的栈实现"><a href="#后缀表达式计算的栈实现" class="headerlink" title="后缀表达式计算的栈实现"></a>后缀表达式计算的栈实现</h3><h4 id="算法步骤-1"><a href="#算法步骤-1" class="headerlink" title="算法步骤"></a>算法步骤</h4><ul>
+<li>步骤 1：从左到右扫描，<ul>
+<li>遇到操作数：压入栈；</li>
+<li>遇到运算符：弹出栈顶两元素计算，结果压栈。</li>
+</ul>
+</li>
+<li>步骤 2：最终栈顶即结果。</li>
+</ul>
+<h4 id="算法示例-1"><a href="#算法示例-1" class="headerlink" title="算法示例"></a>算法示例</h4><p>计算后缀表达式 <code>3 4 2 × 1 5 - / +</code> 的值。</p>
+<p>计算过程演示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">当前字符</th>
+<th>操作</th>
+<th>栈内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>3</code></td>
+<td>压栈</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td align="center"><code>4</code></td>
+<td>压栈</td>
+<td><code>3 4</code></td>
+</tr>
+<tr>
+<td align="center"><code>2</code></td>
+<td>压栈</td>
+<td><code>3 4 2</code></td>
+</tr>
+<tr>
+<td align="center"><code>×</code></td>
+<td>弹出 <code>4</code> 和 <code>2</code>，计算 <code>4×2=8</code></td>
+<td><code>3 8</code></td>
+</tr>
+<tr>
+<td align="center"><code>1</code></td>
+<td>压栈</td>
+<td><code>3 8 1</code></td>
+</tr>
+<tr>
+<td align="center"><code>5</code></td>
+<td>压栈</td>
+<td><code>3 8 1 5</code></td>
+</tr>
+<tr>
+<td align="center"><code>-</code></td>
+<td>弹出 <code>1</code> 和 <code>5</code>，计算 <code>1-5=-4</code></td>
+<td><code>3 8 -4</code></td>
+</tr>
+<tr>
+<td align="center"><code>/</code></td>
+<td>弹出 <code>8</code> 和 <code>-4</code>，计算 <code>8/-4=-2</code></td>
+<td><code>3 -2</code></td>
+</tr>
+<tr>
+<td align="center"><code>+</code></td>
+<td>弹出 <code>3</code> 和 <code>-2</code>，计算 <code>3+(-2)=1</code></td>
+<td><code>1</code></td>
+</tr>
+</tbody></table>
+<p><strong>最终结果</strong>：<code>1</code>。</p>
+<h3 id="前缀表达式计算的栈实现"><a href="#前缀表达式计算的栈实现" class="headerlink" title="前缀表达式计算的栈实现"></a>前缀表达式计算的栈实现</h3><h4 id="算法步骤-2"><a href="#算法步骤-2" class="headerlink" title="算法步骤"></a>算法步骤</h4><p>前缀表达式的计算方向与后缀相反：</p>
+<ul>
+<li><p>步骤 1：从右到左扫描，</p>
+<ul>
+<li>遇到操作数：压入栈；</li>
+<li>遇到运算符：弹出栈顶两个数计算（注意顺序：右操作数先弹出）。</li>
+</ul>
+</li>
+<li><p>步骤 2：最终栈顶即结果。</p>
+</li>
+</ul>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><p>计算前缀表达式 <code>+ 3 / × 4 2 - 1 5</code> 的值。</p>
+<p>计算过程演示：</p>
+<p>（略）</p>
+<h2 id="从树到-DAG-结构：形式化逻辑的优化跃迁"><a href="#从树到-DAG-结构：形式化逻辑的优化跃迁" class="headerlink" title="从树到 DAG 结构：形式化逻辑的优化跃迁"></a>从树到 DAG 结构：形式化逻辑的优化跃迁</h2><h3 id="表达树"><a href="#表达树" class="headerlink" title="表达树"></a>表达树</h3><h4 id="表达式树的定义"><a href="#表达式树的定义" class="headerlink" title="表达式树的定义"></a>表达式树的定义</h4><blockquote>
+<p>表达式树是逻辑的直观表示。</p>
+</blockquote>
+<p>结构：二叉树形式表示表达式，其中：</p>
+<ul>
+<li>叶子结点为操作数（如数字、变量）。</li>
+<li>非叶子结点为二元运算符（如 <code>+</code>、<code>×</code>）。</li>
+</ul>
+<p>运算顺序：从叶子到根逐层计算，严格遵循优先级和结合性。</p>
+<p>特点</p>
+<ul>
+<li>严格层级关系：父子结点直接对应运算符与操作数的逻辑关系。</li>
+<li>无共享子表达式：每个子表达式独立表示，即使重复出现也会重复存储。</li>
+<li>唯一路径：从根到叶子的路径唯一，无环。</li>
+</ul>
+<p>应用场景</p>
+<ul>
+<li>表达式求值（如计算器）。</li>
+<li>编译器前端的语法分析（生成中间表示）。</li>
+<li>数学公式的可视化表示。</li>
+</ul>
+<p>示例：中缀表达式 <code>3 + 4 × 2 / (1 - 5)</code> 的表达式树：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  +</span><br><span class="line"> / \</span><br><span class="line">3   /</span><br><span class="line">   / \</span><br><span class="line">  ×   -</span><br><span class="line"> / \ / \</span><br><span class="line">4  2 1  5</span><br></pre></td></tr></table></figure>
+
+<h4 id="表达式树的构建"><a href="#表达式树的构建" class="headerlink" title="表达式树的构建"></a>表达式树的构建</h4><blockquote>
+<p>栈在表达式树构建中的角色。</p>
+</blockquote>
+<p>从中缀表达式构建：</p>
+<ul>
+<li>将中缀表达式转换为后缀表达式（调度场算法）。</li>
+<li>使用栈构建树：<ul>
+<li>操作数创建叶子结点并入栈。</li>
+<li>遇到运算符时，弹出栈顶两个结点作为右子树和左子树，合并后入栈为新结点。</li>
+</ul>
+</li>
+</ul>
+<h4 id="表达式树与前、后缀表达式的关系"><a href="#表达式树与前、后缀表达式的关系" class="headerlink" title="表达式树与前、后缀表达式的关系"></a>表达式树与前、后缀表达式的关系</h4><ul>
+<li>前序遍历：得到前缀表达式（波兰式）。</li>
+<li>中序遍历：得到中缀表达式（需添加括号）。</li>
+<li>后序遍历：得到后缀表达式（逆波兰式）。</li>
+<li>意义：表达式树是表达式的结构化表示，连接了不同形式的表达式。</li>
+</ul>
+<h4 id="表达式树的局限性"><a href="#表达式树的局限性" class="headerlink" title="表达式树的局限性"></a>表达式树的局限性</h4><ul>
+<li>冗余存储：重复子表达式独立存在（如 <code>(a + b) × (a + b)</code> 中两次存储 <code>a + b</code>）。</li>
+<li>计算浪费：相同子结构重复计算。</li>
+</ul>
+<h3 id="DAG-结构"><a href="#DAG-结构" class="headerlink" title="DAG 结构"></a>DAG 结构</h3><h4 id="DAG-的定义"><a href="#DAG-的定义" class="headerlink" title="DAG 的定义"></a>DAG 的定义</h4><p>有向无环图（Directed Acyclic Graph, DAG），允许结点共享。 </p>
+<p>结构：一种图结构，满足：</p>
+<ul>
+<li><strong>有向边</strong>：边具有方向（如父结点指向子结点）。</li>
+<li><strong>无环</strong>：不存在循环路径。</li>
+<li><strong>结点共享</strong>：允许不同父结点指向同一子结点。</li>
+</ul>
+<p>特点</p>
+<ul>
+<li>共享子表达式：重复的子表达式（如 <code>a + b</code>）仅存储一次，多个父结点可指向同一子结点。</li>
+<li>节省空间：减少重复结点的存储开销。</li>
+<li>隐含优化：子表达式结果复用，即公共子表达式只需计算一次，提升执行效率。</li>
+</ul>
+<p>应用场景</p>
+<ul>
+<li>编译器优化（公共子表达式消除）。</li>
+<li>复杂公式的简化表示（如多次重复的子项）。</li>
+<li>逻辑电路设计（共享相同逻辑单元）。</li>
+</ul>
+<p>示例 1：中缀表达式 <code>3 + 4 × 2 / (1 - 5)</code> 的 DAG 结构： </p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  +</span><br><span class="line"> / \</span><br><span class="line">3   /</span><br><span class="line">   / \</span><br><span class="line">  ×   -</span><br><span class="line"> / \ / \</span><br><span class="line">4  2 1  5</span><br></pre></td></tr></table></figure>
+
+<p>对于表达式 <code>3 + 4 × 2 / (1 - 5)</code>，由于无重复子表达式，其 DAG 结构与表达式树一致。</p>
+<p>示例 2：表达式 <code>(a + b) × (a + b) + c</code> 的 DAG 结构：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  +</span><br><span class="line"> / \</span><br><span class="line">×   c</span><br><span class="line"> \</span><br><span class="line">  +</span><br><span class="line"> / \</span><br><span class="line">a   b</span><br></pre></td></tr></table></figure>
+
+<h4 id="DAG-的结构的构建"><a href="#DAG-的结构的构建" class="headerlink" title="DAG 的结构的构建"></a>DAG 的结构的构建</h4><ul>
+<li>检测公共子表达式：通过哈希表标记重复子树。</li>
+<li>合并结点：相同子表达式指向同一结点。</li>
+</ul>
+<h4 id="DAG-的形式化验证与编译器应用"><a href="#DAG-的形式化验证与编译器应用" class="headerlink" title="DAG 的形式化验证与编译器应用"></a>DAG 的形式化验证与编译器应用</h4><ul>
+<li>编译器优化：公共子表达式消除（CSE）通过 DAG 合并重复计算。</li>
+<li>形式化验证：确保 DAG 无环性，保留运算顺序等价性。</li>
+</ul>
+<h3 id="表达树与-DAG-结构的联系和区别"><a href="#表达树与-DAG-结构的联系和区别" class="headerlink" title="表达树与 DAG 结构的联系和区别"></a>表达树与 DAG 结构的联系和区别</h3><h4 id="二者的联系"><a href="#二者的联系" class="headerlink" title="二者的联系"></a>二者的联系</h4><ul>
+<li>表达式树是 DAG 的特例<ul>
+<li>当 DAG 中所有子表达式均为唯一且无共享时，DAG 退化为表达式树。</li>
+<li><strong>示例</strong>：表达式 <code>a + b</code> 的表达式树与 DAG 结构相同。</li>
+</ul>
+</li>
+<li>共同目标<ul>
+<li>表示表达式的逻辑结构。</li>
+<li>支持遍历操作（如前序、后序遍历）。</li>
+</ul>
+</li>
+<li>互相转换<ul>
+<li><strong>表达式树 → DAG</strong>：通过合并相同的子树，将重复子表达式共享。</li>
+<li><strong>DAG → 表达式树</strong>：展开所有共享结点，恢复独立子树结构。</li>
+</ul>
+</li>
+</ul>
+<h4 id="二者的区别"><a href="#二者的区别" class="headerlink" title="二者的区别"></a>二者的区别</h4><table>
+<thead>
+<tr>
+<th align="left">特性</th>
+<th>表达式树</th>
+<th>有向无环图（DAG）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>结点共享</strong></td>
+<td>不允许共享子结点</td>
+<td>允许共享子结点（公共子表达式优化）</td>
+</tr>
+<tr>
+<td align="left"><strong>存储效率</strong></td>
+<td>可能存在重复存储（如重复子表达式）</td>
+<td>更高效（共享重复部分）</td>
+</tr>
+<tr>
+<td align="left"><strong>结构复杂度</strong></td>
+<td>严格二叉树，层级清晰</td>
+<td>图结构，可能包含多父结点</td>
+</tr>
+<tr>
+<td align="left"><strong>构建复杂度</strong></td>
+<td>简单（直接按优先级和结合性构建）</td>
+<td>复杂（需检测并合并相同子表达式）</td>
+</tr>
+<tr>
+<td align="left"><strong>应用场景</strong></td>
+<td>基础表达式解析、简单计算</td>
+<td>编译器优化、复杂公式简化</td>
+</tr>
+<tr>
+<td align="left"><strong>示例表达式</strong></td>
+<td><code>(a + b) × (c - d)</code></td>
+<td><code>(a + b) × (a + b) + c</code></td>
+</tr>
+</tbody></table>
+<h2 id="现实应用：从理论到工程的跨越"><a href="#现实应用：从理论到工程的跨越" class="headerlink" title="现实应用：从理论到工程的跨越"></a>现实应用：从理论到工程的跨越</h2><h3 id="编译器设计"><a href="#编译器设计" class="headerlink" title="编译器设计"></a>编译器设计</h3><ul>
+<li><strong>前端</strong>：中缀转后缀生成中间代码（如三地址码）。</li>
+<li><strong>后端</strong>：DAG 优化生成高效机器码（如 LLVM 优化器）。</li>
+</ul>
+<h3 id="高性能计算"><a href="#高性能计算" class="headerlink" title="高性能计算"></a>高性能计算</h3><ul>
+<li><strong>科学计算</strong>：有限元分析中矩阵运算的 DAG 加速。</li>
+<li><strong>金融模型</strong>：期权定价公式的公共子表达式消除。</li>
+</ul>
+<h3 id="数据库引擎"><a href="#数据库引擎" class="headerlink" title="数据库引擎"></a>数据库引擎</h3><ul>
+<li><strong>查询优化</strong>：SQL 条件表达式转为 DAG 生成最优执行计划。</li>
+</ul>
+<h2 id="未来方向：形式化逻辑的边界探索"><a href="#未来方向：形式化逻辑的边界探索" class="headerlink" title="未来方向：形式化逻辑的边界探索"></a>未来方向：形式化逻辑的边界探索</h2><h3 id="量子计算表达式"><a href="#量子计算表达式" class="headerlink" title="量子计算表达式"></a>量子计算表达式</h3><ul>
+<li><strong>挑战</strong>：量子比特叠加态下的运算符表示需适配不可克隆性。</li>
+<li><strong>可能形式</strong>：量子门操作的前缀表达式（如 <code>HADAMARD q0; CNOT q0 q1</code>）。</li>
+</ul>
+<h3 id="AI-驱动的自动优化"><a href="#AI-驱动的自动优化" class="headerlink" title="AI 驱动的自动优化"></a>AI 驱动的自动优化</h3><ul>
+<li><strong>目标</strong>：机器学习自动检测并合并公共子表达式。</li>
+</ul>
+<h3 id="跨领域形式化迁移"><a href="#跨领域形式化迁移" class="headerlink" title="跨领域形式化迁移"></a>跨领域形式化迁移</h3><ul>
+<li><strong>生物信息学</strong>：基因序列比对中的 DAG 路径优化。</li>
+<li><strong>社交网络</strong>：关系链分析中的图结构建模。</li>
+</ul>
+<hr>
+<div class="note purple icon-padding flat"><i class="note-icon fas fa-graduation-cap"></i><p>形式化演进中的计算机哲学：从波兰式的逻辑革新，到栈的工程实现，再到 DAG 的结构优化，表达式表示法的演进揭示了计算机科学的两大核心原则，即</p>
+<ul>
+<li><strong>分层抽象</strong>：通过数据结构（栈、树、图）逐层解决效率问题。</li>
+<li><strong>人机协同</strong>：中缀服务人类直觉，后缀服务机器效率，DAG 服务系统优化。</li>
+</ul>
+<p>这一历程不仅是技术的迭代，更是人类理性追求“<strong>形式化简洁性</strong>”与“<strong>计算高效性</strong>”的永恒印证。</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://bluelove2u.github.io/blog">Blueboy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/">https://bluelove2u.github.io/blog/2025/03/30/ff85d002/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://bluelove2u.github.io/blog" target="_blank">BLUE LOVE</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog/tags/%E5%AD%A6%E7%94%9F%E5%85%9A/">学生党</a><a class="post-meta__tags" href="/blog/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/blog/tags/%E8%80%83%E7%A0%94/">考研</a><a class="post-meta__tags" href="/blog/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div><div class="post-share"><div class="social-share" data-image="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/blog/2025/03/22/47bf9e0d/" title="英语单词记忆 · 解码英语单词的 DNA 02：后缀篇"><img class="cover" src="https://bluelove2u.github.io/blog/2025/03/19/2e8eb92a/cover.png" onerror="onerror=null;src='/blog/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">英语单词记忆 · 解码英语单词的 DNA 02：后缀篇</div></div><div class="info-2"><div class="info-item-1">解码英语单词的“基因尾迹”——后缀。</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/blog/2025/03/19/2e8eb92a/" title="英语单词记忆 · 解码英语单词的 DNA 01：前言"><img class="cover" src="https://bluelove2u.github.io/blog/2025/03/19/2e8eb92a/cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-19</div><div class="info-item-2">英语单词记忆 · 解码英语单词的 DNA 01：前言</div></div><div class="info-2"><div class="info-item-1">英语单词的 DNA？</div></div></div></a><a class="pagination-related" href="/blog/2025/03/22/47bf9e0d/" title="英语单词记忆 · 解码英语单词的 DNA 02：后缀篇"><img class="cover" src="https://bluelove2u.github.io/blog/2025/03/19/2e8eb92a/cover.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-22</div><div class="info-item-2">英语单词记忆 · 解码英语单词的 DNA 02：后缀篇</div></div><div class="info-2"><div class="info-item-1">解码英语单词的“基因尾迹”——后缀。</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="utterances-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/blog/img/avatar.jpg" onerror="this.onerror=null;this.src='/blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Blueboy</div><div class="author-info-description">Wish me to become your Blue Lover.<br>💙</div><div class="site-data"><a href="/blog/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/blog/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/blog/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/BlueLove2U"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/BlueLove2U" target="_blank" title="Github"><i class="fab fa-github" style="color: #hdhfbb;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E8%B5%B7%E7%82%B9%EF%BC%9A%E6%B3%A2%E5%85%B0%E5%BC%8F%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%9D%A9%E5%91%BD"><span class="toc-number">1.</span> <span class="toc-text">历史起点：波兰式的形式化革命</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%9B%B0%E5%A2%83"><span class="toc-number">1.1.</span> <span class="toc-text">中缀表达式的困境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%85%B0%E5%BC%8F%EF%BC%88%E5%89%8D%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.2.</span> <span class="toc-text">波兰式（前缀表达式）的诞生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%86%E6%B3%A2%E5%85%B0%E5%BC%8F%EF%BC%88%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89%E7%9A%84%E5%B7%A5%E7%A8%8B%E9%80%82%E9%85%8D"><span class="toc-number">1.3.</span> <span class="toc-text">逆波兰式（后缀表达式）的工程适配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="toc-number">1.4.</span> <span class="toc-text">三种表达式的对比总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%EF%BC%9A%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2%E4%B8%8E%E8%AE%A1%E7%AE%97%E7%9A%84%E2%80%9C%E9%9A%90%E5%BD%A2%E6%93%8D%E7%9B%98%E6%89%8B%E2%80%9D"><span class="toc-number">2.</span> <span class="toc-text">栈：表达式转换与计算的“隐形操盘手”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%BC%80%E8%BD%AC%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9A%E8%B0%83%E5%BA%A6%E5%9C%BA%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">中缀转后缀表达式：调度场算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B0%83%E5%BA%A6%E5%9C%BA%E7%AE%97%E6%B3%95%EF%BC%9F"><span class="toc-number">2.1.1.</span> <span class="toc-text">什么是调度场算法？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">2.1.2.</span> <span class="toc-text">算法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%85%B3%E9%94%AE"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">算法关键</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.1.2.3.</span> <span class="toc-text">算法示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E7%9A%84%E6%A0%88%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.2.</span> <span class="toc-text">后缀表达式计算的栈实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%A4%BA%E4%BE%8B-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">算法示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%A1%E7%AE%97%E7%9A%84%E6%A0%88%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.3.</span> <span class="toc-text">前缀表达式计算的栈实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4-2"><span class="toc-number">2.3.1.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text">示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%A0%91%E5%88%B0-DAG-%E7%BB%93%E6%9E%84%EF%BC%9A%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%80%BB%E8%BE%91%E7%9A%84%E4%BC%98%E5%8C%96%E8%B7%83%E8%BF%81"><span class="toc-number">3.</span> <span class="toc-text">从树到 DAG 结构：形式化逻辑的优化跃迁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E6%A0%91"><span class="toc-number">3.1.</span> <span class="toc-text">表达树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.1.</span> <span class="toc-text">表达式树的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.1.2.</span> <span class="toc-text">表达式树的构建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E4%B8%8E%E5%89%8D%E3%80%81%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.1.3.</span> <span class="toc-text">表达式树与前、后缀表达式的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A0%91%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">3.1.4.</span> <span class="toc-text">表达式树的局限性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DAG-%E7%BB%93%E6%9E%84"><span class="toc-number">3.2.</span> <span class="toc-text">DAG 结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DAG-%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">3.2.1.</span> <span class="toc-text">DAG 的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DAG-%E7%9A%84%E7%BB%93%E6%9E%84%E7%9A%84%E6%9E%84%E5%BB%BA"><span class="toc-number">3.2.2.</span> <span class="toc-text">DAG 的结构的构建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DAG-%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%AA%8C%E8%AF%81%E4%B8%8E%E7%BC%96%E8%AF%91%E5%99%A8%E5%BA%94%E7%94%A8"><span class="toc-number">3.2.3.</span> <span class="toc-text">DAG 的形式化验证与编译器应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E6%A0%91%E4%B8%8E-DAG-%E7%BB%93%E6%9E%84%E7%9A%84%E8%81%94%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB"><span class="toc-number">3.3.</span> <span class="toc-text">表达树与 DAG 结构的联系和区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%80%85%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-number">3.3.1.</span> <span class="toc-text">二者的联系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.3.2.</span> <span class="toc-text">二者的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%B0%E5%AE%9E%E5%BA%94%E7%94%A8%EF%BC%9A%E4%BB%8E%E7%90%86%E8%AE%BA%E5%88%B0%E5%B7%A5%E7%A8%8B%E7%9A%84%E8%B7%A8%E8%B6%8A"><span class="toc-number">4.</span> <span class="toc-text">现实应用：从理论到工程的跨越</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.1.</span> <span class="toc-text">编译器设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97"><span class="toc-number">4.2.</span> <span class="toc-text">高性能计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%BC%95%E6%93%8E"><span class="toc-number">4.3.</span> <span class="toc-text">数据库引擎</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E6%9D%A5%E6%96%B9%E5%90%91%EF%BC%9A%E5%BD%A2%E5%BC%8F%E5%8C%96%E9%80%BB%E8%BE%91%E7%9A%84%E8%BE%B9%E7%95%8C%E6%8E%A2%E7%B4%A2"><span class="toc-number">5.</span> <span class="toc-text">未来方向：形式化逻辑的边界探索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">5.1.</span> <span class="toc-text">量子计算表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AI-%E9%A9%B1%E5%8A%A8%E7%9A%84%E8%87%AA%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="toc-number">5.2.</span> <span class="toc-text">AI 驱动的自动优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E9%A2%86%E5%9F%9F%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%BF%81%E7%A7%BB"><span class="toc-number">5.3.</span> <span class="toc-text">跨领域形式化迁移</span></a></li></ol></li></ol></div></div><div class="card-widget card-post-series"><div class="item-headline"><i class="fa-solid fa-layer-group"></i><span>计算机学科专业基础综合</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2025/03/30/ff85d002/" title="计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构"><img src="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构"></a><div class="content"><a class="title" href="/blog/2025/03/30/ff85d002/" title="计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构">计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构</a><time datetime="2025-03-30T08:56:20.000Z" title="发表于 2025-03-30 16:56:20">2025-03-30</time></div></div></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog/2025/03/30/ff85d002/" title="计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构"><img src="https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构"/></a><div class="content"><a class="title" href="/blog/2025/03/30/ff85d002/" title="计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构">计算机学科专业基础综合 · 数据结构番外篇：表达式表示法的形式化演进——从波兰式到DAG结构</a><time datetime="2025-03-30T08:56:25.787Z" title="更新于 2025-03-30 16:56:25">2025-03-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2025/03/14/531ad9e1/" title="博客搭建 · 搭建一个自己的博客 05：写作"><img src="https://bluelove2u.github.io/blog/2025/03/12/df23f528/cover.png" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="博客搭建 · 搭建一个自己的博客 05：写作"/></a><div class="content"><a class="title" href="/blog/2025/03/14/531ad9e1/" title="博客搭建 · 搭建一个自己的博客 05：写作">博客搭建 · 搭建一个自己的博客 05：写作</a><time datetime="2025-03-26T02:23:49.241Z" title="更新于 2025-03-26 10:23:49">2025-03-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2025/03/22/47bf9e0d/" title="英语单词记忆 · 解码英语单词的 DNA 02：后缀篇"><img src="https://bluelove2u.github.io/blog/2025/03/19/2e8eb92a/cover.png" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="英语单词记忆 · 解码英语单词的 DNA 02：后缀篇"/></a><div class="content"><a class="title" href="/blog/2025/03/22/47bf9e0d/" title="英语单词记忆 · 解码英语单词的 DNA 02：后缀篇">英语单词记忆 · 解码英语单词的 DNA 02：后缀篇</a><time datetime="2025-03-25T07:16:29.501Z" title="更新于 2025-03-25 15:16:29">2025-03-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2025/03/12/f998bd2d/" title="博客搭建 · 搭建一个自己的博客 02：环境准备"><img src="https://bluelove2u.github.io/blog/2025/03/12/df23f528/cover.png" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="博客搭建 · 搭建一个自己的博客 02：环境准备"/></a><div class="content"><a class="title" href="/blog/2025/03/12/f998bd2d/" title="博客搭建 · 搭建一个自己的博客 02：环境准备">博客搭建 · 搭建一个自己的博客 02：环境准备</a><time datetime="2025-03-24T04:57:29.872Z" title="更新于 2025-03-24 12:57:29">2025-03-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog/2025/03/12/7f64acf1/" title="博客搭建 · 搭建一个自己的博客 03：安装配置"><img src="https://bluelove2u.github.io/blog/2025/03/12/df23f528/cover.png" onerror="this.onerror=null;this.src='/blog/img/404.jpg'" alt="博客搭建 · 搭建一个自己的博客 03：安装配置"/></a><div class="content"><a class="title" href="/blog/2025/03/12/7f64acf1/" title="博客搭建 · 搭建一个自己的博客 03：安装配置">博客搭建 · 搭建一个自己的博客 03：安装配置</a><time datetime="2025-03-24T04:48:10.737Z" title="更新于 2025-03-24 12:48:10">2025-03-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://bluelove2u.github.io/blog/2025/03/30/ff85d002/cover.png);"><div id="footer-wrap"><div class="copyright">&copy;2025 By Blueboy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">愿世间美好与你环环相扣 💙</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog/js/utils.js"></script><script src="/blog/js/main.js"></script><script src="/blog/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+  const getUtterancesTheme = theme => theme === 'dark' ? 'photon-dark' : 'github-light'
+
+  const loadUtterances = (el = document, key) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyUtterances = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const config = {
+      src: 'https://utteranc.es/client.js',
+      repo: 'BlueLove2U/blog',
+      theme: getUtterancesTheme(document.documentElement.getAttribute('data-theme')),
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      'issue-term': isShuoshuo ? key : (option && option['issue-term']) || 'pathname'
+    }
+
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => ele.setAttribute(key, value))
+    el.querySelector('#utterances-wrap').appendChild(ele)
+  }
+
+  const changeUtterancesTheme = theme => {
+    const iframe = document.querySelector('#utterances-wrap iframe')
+    if (iframe) {
+      const message = {
+        type: 'set-theme',
+        theme: getUtterancesTheme(theme)
+      };
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeUtterancesTheme, 'utterances')
+
+  if (isShuoshuo) {
+    'Utterances' === 'Utterances'
+      ? window.shuoshuoComment = { loadComment: loadUtterances }
+      : window.loadOtherComment = loadUtterances
+    return
+  }
+  
+  if ('Utterances' === 'Utterances' || !true) {
+    if (true) btf.loadComment(document.getElementById('utterances-wrap'), loadUtterances)
+    else loadUtterances()
+  } else {
+    window.loadOtherComment = loadUtterances
+  }
+})()</script></div><script id="canvas_nest" defer="defer" color="236,44,100" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="Because,Love,yoU,Everyday" data-fontsize="15px" data-random="false" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/blog/js/search/local-search.js"></script></div></div></body></html>
